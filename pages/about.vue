@@ -12,7 +12,9 @@
             </div>
           </div>
           <div class="about__header-right img-wrap">
-            <div><img src="~/assets/img/about-img.jpg" alt="" /></div>
+            <div>
+              <vue-picture url="/img/about-img.jpg" />
+            </div>
           </div>
         </div>
         <div class="about__wrap">
@@ -242,3 +244,10 @@
     </footer>
   </div>
 </template>
+
+<script>
+import vuePicture from '~/components/vue-picture.vue'
+export default {
+  components: { vuePicture },
+}
+</script>

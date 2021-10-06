@@ -3,7 +3,9 @@
     <section class="texts">
       <div class="center-wrap">
         <div class="texts__img-wrap img-wrap">
-          <div><img src="~/assets/img/text-img.jpg" alt="" /></div>
+          <div>
+            <vue-picture url="/img/text-img.jpg" />
+          </div>
         </div>
         <div class="texts__top">
           <div class="back"><a class="back__link" href="/"> назад</a></div>
@@ -274,7 +276,13 @@
                       <div class="texts__box-section">Текст художника</div>
                       <div class="texts__box-info">
                         <div class="texts__box-name">игорь терехов</div>
-                        <div class="texts__box-position texts__box-position--mobile">Художник</div>
+                        <div
+                          class="
+                            texts__box-position texts__box-position--mobile
+                          "
+                        >
+                          Художник
+                        </div>
                       </div>
                       <span class="texts__box-icon"></span>
                     </div>
@@ -731,7 +739,13 @@
                       <div class="texts__box-section">Текст художника</div>
                       <div class="texts__box-info">
                         <div class="texts__box-name">игорь терехов</div>
-                        <div class="texts__box-position texts__box-position--mobile">Художник</div>
+                        <div
+                          class="
+                            texts__box-position texts__box-position--mobile
+                          "
+                        >
+                          Художник
+                        </div>
                       </div>
                       <span class="texts__box-icon"></span>
                     </div>
@@ -955,3 +969,10 @@
     </footer>
   </div>
 </template>
+
+<script>
+import vuePicture from '~/components/vue-picture.vue'
+export default {
+  components: { vuePicture },
+}
+</script>

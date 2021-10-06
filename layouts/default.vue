@@ -20,6 +20,14 @@ export default {
   },
 
   async mounted() {
+    const { default: supportsWebP } = await import('supports-webp')
+
+    if (await supportsWebP) {
+      this.$store.commit('app/setIsWebp', true)
+    } else {
+      this.$store.commit('app/setIsWebp', false)
+    }
+
     this.winSizes()
     const { SmoothScroll } = await import('@emotionagency/smoothscroll')
     const { raf } = await import('@emotionagency/utils')

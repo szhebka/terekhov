@@ -21,7 +21,7 @@
               >2010/2020</a
             >
           </div>
-          <div class="periods__box" id="periods__box-one">
+          <div id="periods__box-one" class="periods__box">
             <div class="periods__box-top">
               <div class="periods__box-number">№01</div>
               <div class="periods__box-year">1989/2002</div>
@@ -34,7 +34,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img1.jpg" alt="" />
+                      <vue-picture url="/img/periods-img1.jpg" />
                     </div>
                   </div>
                   <div
@@ -42,7 +42,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img2.jpg" alt="" />
+                      <vue-picture url="/img/periods-img2.jpg" />
                     </div>
                   </div>
                   <div
@@ -66,15 +66,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img3.jpg"
-                        alt=""
+                        url="/img/periods-img3.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img5.jpg"
-                        alt=""
+                        url="/img/periods-img5.jpg"
                       />
                     </div>
                   </div>
@@ -83,15 +81,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img4.jpg"
-                        alt=""
+                        url="/img/periods-img4.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img6.jpg"
-                        alt=""
+                        url="/img/periods-img6.jpg"
                       />
                     </div>
                   </div>
@@ -104,15 +100,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img5.jpg"
-                        alt=""
+                        url="/img/periods-img5.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img8.jpg"
-                        alt=""
+                        url="/img/periods-img8.jpg"
                       />
                     </div>
                   </div>
@@ -125,15 +119,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img6.jpg"
-                        alt=""
+                        url="/img/periods-img6.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img3.jpg"
-                        alt=""
+                        url="/img/periods-img3.jpg"
                       />
                     </div>
                   </div>
@@ -142,7 +134,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img7.jpg" alt="" />
+                      <vue-picture url="/img/periods-img7.jpg" />
                     </div>
                   </div>
                 </div>
@@ -154,15 +146,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img8.jpg"
-                        alt=""
+                        url="/img/periods-img8.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img4.jpg"
-                        alt=""
+                        url="/img/periods-img4.jpg"
                       />
                     </div>
                   </div>
@@ -170,7 +160,7 @@
               </div>
             </div>
           </div>
-          <div class="periods__box" id="periods__box-two">
+          <div id="periods__box-two" class="periods__box">
             <div class="periods__box-top">
               <div class="periods__box-number">№02</div>
               <div class="periods__box-year">2003/2007</div>
@@ -183,7 +173,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img9.jpg" alt="" />
+                      <vue-picture url="/img/periods-img9.jpg" />
                     </div>
                   </div>
                 </div>
@@ -193,15 +183,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img10.jpg"
-                        alt=""
+                        url="/img/periods-img10.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img11.jpg"
-                        alt=""
+                        url="/img/periods-img11.jpg"
                       />
                     </div>
                   </div>
@@ -218,15 +206,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img11.jpg"
-                        alt=""
+                        url="/img/periods-img11.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img10.jpg"
-                        alt=""
+                        url="/img/periods-img10.jpg"
                       />
                     </div>
                   </div>
@@ -239,7 +225,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img12.jpg" alt="" />
+                      <vue-picture url="/img/periods-img12.jpg" />
                     </div>
                   </div>
                 </div>
@@ -260,15 +246,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img13.jpg"
-                        alt=""
+                        url="/img/periods-img13.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img14.jpg"
-                        alt=""
+                        url="/img/periods-img14.jpg"
                       />
                     </div>
                   </div>
@@ -285,15 +269,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img14.jpg"
-                        alt=""
+                        url="/img/periods-img14.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img13.jpg"
-                        alt=""
+                        url="/img/periods-img13.jpg"
                       />
                     </div>
                   </div>
@@ -306,14 +288,14 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img15.jpg" alt="" />
+                      <vue-picture url="/img/periods-img15.jpg" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="periods__box" id="periods__box-three">
+          <div id="periods__box-three" class="periods__box">
             <div class="periods__box-top">
               <div class="periods__box-number">№03</div>
               <div class="periods__box-year">2008/2010</div>
@@ -326,7 +308,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img16.jpg" alt="" />
+                      <vue-picture url="/img/periods-img16.jpg" />
                     </div>
                   </div>
                   <div
@@ -334,7 +316,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img17.jpg" alt="" />
+                      <vue-picture url="/img/periods-img17.jpg" />
                     </div>
                   </div>
                   <div
@@ -342,7 +324,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img18.jpg" alt="" />
+                      <vue-picture url="/img/periods-img18.jpg" />
                     </div>
                   </div>
                 </div>
@@ -358,7 +340,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img19.jpg" alt="" />
+                      <vue-picture url="/img/periods-img19.jpg" />
                     </div>
                   </div>
                   <div
@@ -370,7 +352,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img20.jpg" alt="" />
+                      <vue-picture url="/img/periods-img20.jpg" />
                     </div>
                   </div>
                 </div>
@@ -382,14 +364,14 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img21.jpg" alt="" />
+                      <vue-picture url="/img/periods-img21.jpg" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="periods__box" id="periods__box-four">
+          <div id="periods__box-four" class="periods__box">
             <div class="periods__box-top">
               <div class="periods__box-number">№04</div>
               <div class="periods__box-year">2010/2020</div>
@@ -407,7 +389,7 @@
                       onclick="show_popup('img')"
                     >
                       <div>
-                        <img src="~/assets/img/periods-img22.jpg" alt="" />
+                        <vue-picture url="/img/periods-img22.jpg" />
                       </div>
                     </div>
                     <div
@@ -433,7 +415,7 @@
                       onclick="show_popup('img')"
                     >
                       <div>
-                        <img src="~/assets/img/periods-img23.jpg" alt="" />
+                        <vue-picture url="/img/periods-img23.jpg" />
                       </div>
                     </div>
                   </div>
@@ -446,15 +428,13 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--desktop"
-                        src="~/assets/img/periods-img24.jpg"
-                        alt=""
+                        url="/img/periods-img24.jpg"
                       />
-                      <img
+                      <vue-picture
                         class="periods__img-wrap--mobile"
-                        src="~/assets/img/periods-img25.jpg"
-                        alt=""
+                        url="/img/periods-img25.jpg"
                       />
                     </div>
                   </div>
@@ -468,15 +448,13 @@
                       onclick="show_popup('img')"
                     >
                       <div>
-                        <img
+                        <vue-picture
                           class="periods__img-wrap--desktop"
-                          src="~/assets/img/periods-img25.jpg"
-                          alt=""
+                          url="/img/periods-img25.jpg"
                         />
-                        <img
+                        <vue-picture
                           class="periods__img-wrap--mobile"
-                          src="~/assets/img/periods-img24.jpg"
-                          alt=""
+                          url="/img/periods-img24.jpg"
                         />
                       </div>
                     </div>
@@ -503,7 +481,7 @@
                       onclick="show_popup('img')"
                     >
                       <div>
-                        <img src="~/assets/img/periods-img26.jpg" alt="" />
+                        <vue-picture url="/img/periods-img26.jpg" />
                       </div>
                     </div>
                   </div>
@@ -520,7 +498,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img27.jpg" alt="" />
+                      <vue-picture url="/img/periods-img27.jpg" />
                     </div>
                   </div>
                   <div
@@ -532,7 +510,7 @@
                     onclick="show_popup('img')"
                   >
                     <div>
-                      <img src="~/assets/img/periods-img28.jpg" alt="" />
+                      <vue-picture url="/img/periods-img28.jpg" />
                     </div>
                   </div>
                 </div>
@@ -555,3 +533,10 @@
     </footer>
   </div>
 </template>
+
+<script>
+import vuePicture from '~/components/vue-picture.vue'
+export default {
+  components: { vuePicture },
+}
+</script>

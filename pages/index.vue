@@ -6,7 +6,7 @@
         <h2 class="main-screen__subtitle">живопись</h2>
         <div class="main-screen__img-wrap img-wrap">
           <div>
-            <img src="~/assets/img/main-screen-img.jpg" alt="" />
+            <vue-picture url="/img/main-screen-img.jpg" />
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
             <div class="thesis__left">
               <div class="thesis__img-wrap img-wrap">
                 <div>
-                  <img src="~/assets/img/thesis-img.jpg" alt="" />
+                  <vue-picture url="/img/thesis-img.jpg" />
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
             </div>
             <div class="philosophy__img-wrap img-wrap">
               <div>
-                <img src="~/assets/img/philosophy-img.jpg" alt="" />
+                <vue-picture url="/img/philosophy-img.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -121,7 +121,9 @@
         <div class="poet__wrap">
           <div class="poet__left">
             <div class="img-wrap">
-              <div><img src="~/assets/img/poet-img1.jpg" alt="" /></div>
+              <div>
+                <vue-picture url="/img/poet-img1.jpg" />
+              </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap img-descr__wrap--right">
@@ -135,7 +137,7 @@
             <div class="poet__photo">
               <div class="img-wrap img-wrap--contain">
                 <div>
-                  <img src="~/assets/img/poet-photo.jpg" alt="" />
+                  <vue-picture url="/img/poet-photo.jpg" />
                 </div>
               </div>
             </div>
@@ -151,7 +153,9 @@
               </div>
             </div>
             <div class="img-wrap">
-              <div><img src="~/assets/img/poet-img2.jpg" alt="" /></div>
+              <div>
+                <vue-picture url="/img/poet-img2.jpg" />
+              </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap">
@@ -190,13 +194,15 @@
           </div>
         </div>
         <div class="meaning__img-wrap img-wrap">
-          <div><img src="~/assets/img/meaning-img1.jpg" alt="" /></div>
+          <div>
+            <vue-picture url="/img/meaning-img1.jpg" />
+          </div>
         </div>
         <div class="meaning__box">
           <div class="meaning__box-left">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <img src="~/assets/img/meaning-img2.jpg" alt="" />
+                <vue-picture url="/img/meaning-img2.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -210,7 +216,7 @@
           <div class="meaning__box-right">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <img src="~/assets/img/meaning-img3.jpg" alt="" />
+                <vue-picture url="/img/meaning-img3.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -240,7 +246,9 @@
         <div class="buber__wrap">
           <div class="buber__wrap-img">
             <div class="img-wrap">
-              <div><img src="~/assets/img/buber-img1.jpg" alt="" /></div>
+              <div>
+                <vue-picture url="/img/buber-img1.jpg" />
+              </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap">
@@ -252,7 +260,9 @@
           </div>
           <div class="buber__wrap-img">
             <div class="img-wrap">
-              <div><img src="~/assets/img/buber-img2.jpg" alt="" /></div>
+              <div>
+                <vue-picture url="/img/buber-img2.jpg" />
+              </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap img-descr__wrap--right">
@@ -291,21 +301,23 @@
           </div>
         </div>
         <div class="exposition__img-wrap img-wrap">
-          <div><img src="~/assets/img/exposition-img.jpg" alt="" /></div>
+          <div>
+            <vue-picture url="/img/exposition-img.jpg" />
+          </div>
         </div>
         <div class="exposition__images">
           <div class="exposition__images-wrap">
             <div class="exposition__images-item">
               <div class="exposition__images-img img-wrap">
                 <div>
-                  <img src="~/assets/img/exposition-slider-img1.jpg" alt="" />
+                  <vue-picture url="/img/exposition-slider-img1.jpg" />
                 </div>
               </div>
             </div>
             <div class="exposition__images-item">
               <div class="exposition__images-img img-wrap">
                 <div>
-                  <img src="~/assets/img/exposition-slider-img2.jpg" alt="" />
+                  <vue-picture url="/img/exposition-slider-img2.jpg" />
                 </div>
               </div>
             </div>
@@ -364,7 +376,9 @@
                 <div class="stage__list-date">1989/2002</div>
               </div>
               <div class="stage__img-wrap img-wrap">
-                <div><img src="~/assets/img/stage-img.jpg" alt="" /></div>
+                <div>
+                  <vue-picture url="/img/stage-img.jpg" />
+                </div>
               </div> </a
             ><a class="stage__list-row" href="/periods">
               <div class="stage__list-info">
@@ -372,7 +386,7 @@
                 <div class="stage__list-date">2003/2007</div>
               </div>
               <div class="stage__img-wrap img-wrap">
-                <div><img src="~/assets/img/stage-img.jpg" alt="" /></div>
+                <div><vue-picture url="/img/stage-img.jpg" /></div>
               </div> </a
             ><a class="stage__list-row" href="/periods">
               <div class="stage__list-info">
@@ -380,7 +394,9 @@
                 <div class="stage__list-date">2008/2010</div>
               </div>
               <div class="stage__img-wrap img-wrap">
-                <div><img src="~/assets/img/stage-img.jpg" alt="" /></div>
+                <div>
+                  <vue-picture url="/img/stage-img.jpg" />
+                </div>
               </div> </a
             ><a class="stage__list-row" href="/periods">
               <div class="stage__list-info">
@@ -388,7 +404,9 @@
                 <div class="stage__list-date">2010/2021</div>
               </div>
               <div class="stage__img-wrap img-wrap">
-                <div><img src="~/assets/img/stage-img.jpg" alt="" /></div>
+                <div>
+                  <vue-picture url="/img/stage-img.jpg" />
+                </div>
               </div>
             </a>
           </div>
@@ -403,7 +421,9 @@
           Сингапура, Японии.
         </h2>
         <div class="biography__img-wrap img-wrap img-wrap--contain">
-          <div><img src="~/assets/img/biography-img.jpg" alt="" /></div>
+          <div>
+            <vue-picture url="/img/biography-img.jpg" />
+          </div>
         </div>
         <nuxt-link class="biography__link" to="/about"> биография </nuxt-link>
       </div>
@@ -421,3 +441,11 @@
     </footer>
   </div>
 </template>
+
+<script>
+import VuePicture from '~/components/vue-picture.vue'
+
+export default {
+  components: { VuePicture },
+}
+</script>
