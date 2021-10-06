@@ -1,65 +1,71 @@
 <template>
   <div>
-    <section class="main-screen">
+    <section ref="imageParent" class="main-screen">
       <div class="center-wrap">
-        <h1 class="main-screen__title">Igor Terekhov</h1>
-        <h2 class="main-screen__subtitle">живопись</h2>
-        <div class="main-screen__img-wrap img-wrap">
+        <div ref="textEl" class="main-screen__e-text">
+          <h1 class="main-screen__title">Igor Terekhov</h1>
+          <h2 class="main-screen__subtitle">живопись</h2>
+        </div>
+        <div ref="imageEl" class="main-screen__img-wrap img-wrap">
           <div>
             <vue-picture url="/img/main-screen-img.jpg" />
           </div>
         </div>
       </div>
     </section>
-    <section class="thesis">
-      <div class="center-wrap">
-        <div class="thesis__top">
-          <div class="thesis__small-title small-title">тезис</div>
-          <h2 class="thesis__simple-title simple-title simple-title--color">
-            Плоскость холста предупреждает — здесь вы встретитесь
-            с&nbsp;заведомо иным.
-          </h2>
-        </div>
-        <div class="thesis__body">
-          <div class="thesis__wrap">
-            <div class="thesis__left"><span class="line"></span></div>
-            <div class="thesis__right">
-              <div class="thesis__content content">
-                <p>
-                  Возможности этого пространства расширились, в сравнении с
-                  «абстрактной живописью». Мы имеем дело с открытой формой и она
-                  конденсируется из квантованного пространства. Гераклитов
-                  огонь, вспыхивающий и меркнущий, голос света.
-                </p>
-                <p>
-                  Замаскированный под «живопись», объект обретает бытие. Вместо
-                  живописи действия – процесс становления, подъёма.
-                </p>
-              </div>
+    <div data-parallax-wrapper>
+      <div v-multi-ref:parallax data-offset="0">
+        <section class="thesis">
+          <div class="center-wrap">
+            <div class="thesis__top">
+              <div class="thesis__small-title small-title">тезис</div>
+              <h2 class="thesis__simple-title simple-title simple-title--color">
+                Плоскость холста предупреждает — здесь вы встретитесь
+                с&nbsp;заведомо иным.
+              </h2>
             </div>
-          </div>
-          <div class="thesis__wrap">
-            <div class="thesis__left">
-              <div class="thesis__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/thesis-img.jpg" />
+            <div class="thesis__body">
+              <div class="thesis__wrap">
+                <div class="thesis__left"><span class="line"></span></div>
+                <div class="thesis__right">
+                  <div class="thesis__content content">
+                    <p>
+                      Возможности этого пространства расширились, в сравнении с
+                      «абстрактной живописью». Мы имеем дело с открытой формой и
+                      она конденсируется из квантованного пространства.
+                      Гераклитов огонь, вспыхивающий и меркнущий, голос света.
+                    </p>
+                    <p>
+                      Замаскированный под «живопись», объект обретает бытие.
+                      Вместо живописи действия – процесс становления, подъёма.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="thesis__wrap">
+                <div class="thesis__left">
+                  <div class="thesis__img-wrap img-wrap">
+                    <div>
+                      <vue-picture url="/img/thesis-img.jpg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="thesis__right">
+                  <span class="line"></span>
+                  <div class="img-descr">
+                    <div class="img-descr__wrap">
+                      <p>Воздух</p>
+                      <p>180х170 см 2008 г.</p>
+                      <p>холст, масло</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="thesis__right">
-              <span class="line"></span>
-              <div class="img-descr">
-                <div class="img-descr__wrap">
-                  <p>Воздух</p>
-                  <p>180х170 см 2008 г.</p>
-                  <p>холст, масло</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
     <section class="philosophy">
       <div class="center-wrap">
         <div class="philosophy__wrap">
@@ -447,5 +453,20 @@ import VuePicture from '~/components/vue-picture.vue'
 
 export default {
   components: { VuePicture },
+
+  async mounted() {
+    // const { ImageScrolling } = await import('~/scripts/OnScroll/ImageScrolling')
+
+    // this.sIS = new ImageScrolling(this.$refs.imageEl, this.$refs.imageParent)
+    // this.sectionParallaxInit()
+  },
+
+  methods: {
+    async sectionParallaxInit() {
+      const { SectionParallax } = await import('~/scripts/SectionParallax')
+      this.sp = new SectionParallax(this.$refs.parallax)
+      this.sp.init()
+    },
+  },
 }
 </script>

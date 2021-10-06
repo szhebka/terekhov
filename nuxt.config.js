@@ -1,6 +1,4 @@
-import {
-  fi
-} from './gulp-src/fonts-include.js'
+import { fi } from './gulp-src/fonts-include.js'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -9,31 +7,35 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'emotion',
-    meta: [{
-        charset: 'utf-8'
+    meta: [
+      {
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: ''
+        content: '',
       },
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }, ...fi],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+      ...fi,
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/styles/index.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '@/plugins/multiRef.js', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

@@ -11402,6 +11402,11 @@ vue-meta@^2.4.0:
   dependencies:
     deepmerge "^4.2.2"
 
+vue-multi-ref@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-multi-ref/-/vue-multi-ref-2.0.1.tgz#17a2096766ccfb22cb7f553a8b11f2b4d8c440a8"
+  integrity sha512-4wkM36tp/0lsAs/B5T+FwBK+VHwL7tagaG1zDTqOG2p6am3l3RXQn2rYfcT84QsDgQJ5xw7BYnMkMY1+5fhMWA==
+
 vue-no-ssr@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vue-no-ssr/-/vue-no-ssr-1.1.1.tgz#875f3be6fb0ae41568a837f3ac1a80eaa137b998"

@@ -1,83 +1,74 @@
 .main-screen {
-    padding-bottom: 25rem;
-    padding-top: 20rem;
-    text-align: center;
-    font-weight: 400;
-    text-transform: uppercase;
+  padding-bottom: 25rem;
+  padding-top: 20rem;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  // @include media('>#{$br1}') {
+  //   min-height: 250vh;
+  // }
 
-    @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
+    padding-bottom: 20rem;
+  }
 
-        padding-bottom: 20rem;
-    }
+  @media screen and (max-width: $large_mobile) {
+    padding-bottom: 12rem;
+  }
 
-    @media screen and (max-width:$large_mobile) {
-
-        padding-bottom: 12rem;
-    }
-
-    @media screen and (max-width:$small_mobile) {
-
-        padding-top: 12rem;
-        padding-bottom: 7rem;
-    }
+  @media screen and (max-width: $small_mobile) {
+    padding-top: 12rem;
+    padding-bottom: 7rem;
+  }
 }
 
 .main-screen__title {
-    font-size: 16rem;
-    line-height: 75%;
-    margin-bottom: 4rem;
-    font-family: 'Forum', cursive;
-    font-weight: 400;
+  font-size: 16rem;
+  line-height: 75%;
+  margin-bottom: 4rem;
+  font-family: 'Forum', cursive;
+  font-weight: 400;
 
+  @media screen and (max-width: $large_mobile) {
+    font-size: 8.7rem;
+    margin-bottom: 3rem;
+  }
 
-    @media screen and (max-width:$large_mobile) {
-
-        font-size: 8.7rem;
-        margin-bottom: 3rem;
-    }
-
-
-    @media screen and (max-width:$small_mobile) {
-
-        font-size: 3.2rem;
-        margin-bottom: 1.5rem;
-    }
+  @media screen and (max-width: $small_mobile) {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .main-screen__subtitle {
-    font-size: 2.8rem;
-    line-height: 120%;
-    margin-bottom: 20rem;
-    font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 120%;
+  margin-bottom: 20rem;
+  font-weight: 400;
 
+  @media screen and (max-width: $large_tablet) {
+    font-size: 2rem;
+  }
 
-    @media screen and (max-width:$large_tablet) {
-        font-size: 2rem;
-    }
+  @media screen and (max-width: $large_mobile) {
+    margin-bottom: 14rem;
+  }
 
-
-    @media screen and (max-width:$large_mobile) {
-
-        margin-bottom: 14rem;
-    }
-
-
-    @media screen and (max-width:$small_mobile) {
-
-        font-size: 1rem;
-        margin-bottom: 5.5rem;
-    }
+  @media screen and (max-width: $small_mobile) {
+    font-size: 1rem;
+    margin-bottom: 5.5rem;
+  }
 }
 
 .main-screen__img-wrap {
-    max-width: 75.5rem;
-    margin: 0 auto;
+  max-width: 75.5rem;
+  margin: 0 auto;
 
-    @media screen and (max-width:$small_mobile) {
-        max-width: calc(100% - 30px);
-    }
+  @media screen and (max-width: $small_mobile) {
+    max-width: calc(100% - 30px);
+  }
 }
 
-.main-screen__img-wrap>div {
-    padding-bottom: 121.45%;
+.main-screen__img-wrap > div {
+  padding-bottom: 121.45%;
 }
