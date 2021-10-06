@@ -16,8 +16,8 @@
         <div class="thesis__top">
           <div class="thesis__small-title small-title">тезис</div>
           <h2 class="thesis__simple-title simple-title simple-title--color">
-            Плоскость холста предупреждает — здесь вы встретитесь с заведомо
-            иным.
+            Плоскость холста предупреждает — здесь вы&nbsp;встретитесь
+            с&nbsp;заведомо иным.
           </h2>
         </div>
         <div class="thesis__body">
