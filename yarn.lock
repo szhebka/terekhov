@@ -889,6 +889,28 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@emotionagency/smoothscroll@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-0.1.6.tgz#550477254cacc3a81ea539ecb9bd0e68bcba6407"
+  integrity sha512-dwyInShfOM4mLUoNIR6lQIx/B1TLllQeqRS3J4Qt6+9N4iNbdlQQrU0y5M22ObIQVNOViX9TKw82WZyREzxN+A==
+  dependencies:
+    "@emotionagency/utils" "0.0.6"
+    virtual-scroll "^2.1.1"
+
+"@emotionagency/utils@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-0.0.6.tgz#978ea5050d680d18f70386b33060ead5a859a32c"
+  integrity sha512-ARdRJXhk1Y8PeWuMO4Hfjp+H1n+Xigi0BOf6syDZtbLEWHjY7Aa1gGepgk4UBBxmtFW+1gkt+/K8aDF1SUndyA==
+  dependencies:
+    debounce "^1.2.0"
+
+"@emotionagency/utils@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-0.0.7.tgz#ff21f75624110b3cbbfcbb0a5c89c2d4e32c7a32"
+  integrity sha512-7YIbBezR0I+tHhMLt2HyEhHpgjgx+ZYp5NRttGBlUf7ysA/GSZYTSRuLZxV330AnNorcI1wwvVORKesbOP8WyQ==
+  dependencies:
+    debounce "^1.2.0"
+
 "@eslint/eslintrc@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.0.tgz#99cc0a0584d72f1df38b900fb062ba995f395547"
@@ -3571,6 +3593,11 @@ de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
   integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
+
+debounce@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
@@ -10728,6 +10755,11 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
+tiny-emitter@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
+  integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -11312,6 +11344,13 @@ vinyl@^2.0.0, vinyl@^2.2.0:
     cloneable-readable "^1.0.0"
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
+
+virtual-scroll@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/virtual-scroll/-/virtual-scroll-2.1.1.tgz#58edde77b37b5d83542803747d99340b14e94101"
+  integrity sha512-sOkn32ErO1rOXyf6v9YKRZ8pj+1JzYfMlM8TFVgGua90dAVlRHvKRWizJs1PmtBCv9zmgOzjyIDl/PLxDt2JOw==
+  dependencies:
+    tiny-emitter "^2.1.0"
 
 vm-browserify@^1.0.1:
   version "1.1.2"
