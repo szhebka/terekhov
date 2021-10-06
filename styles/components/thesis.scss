@@ -1,0 +1,220 @@
+.thesis {
+  padding-top: 13.5rem;
+  padding-bottom: 15rem;
+  background: #1e1e1e;
+
+  @media screen and (max-width:$small_desktop) {
+    padding-bottom: 12rem;
+  }
+
+  @media screen and (max-width:$large_tablet) {
+    padding: 10rem 0;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.thesis__small-title {
+  width: 49.5%;
+  display: inline-block;
+
+
+  @media screen and (max-width:$large_tablet) {
+    width: 33%;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+    width: 36.5%;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+
+    margin-bottom: 2rem;
+  }
+}
+
+.thesis__simple-title {
+  display: inline;
+  vertical-align: top;
+  // @media screen and (max-width:$large_tablet) {
+  // vertical-align: bottom;
+  // }
+  @media screen and (max-width:$small_mobile) {
+  padding-right: 1rem;
+  }
+}
+
+.thesis__top {
+  margin-bottom: 15rem;
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    margin-bottom: 8rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    margin-bottom: 4rem;
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+.thesis__content {
+  max-width: 39.5rem;
+  width: 100%;
+
+  @media screen and (max-width:$large_tablet) {
+    max-width: 37rem;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+    max-width: 36rem;
+  }
+}
+
+.thesis__wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    flex-direction: column;
+  }
+}
+
+.thesis__wrap+.thesis__wrap {
+  margin-top: 15rem;
+
+  @media screen and (max-width:$small_desktop) {
+    margin-top: 20rem;
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+    margin-top: 14rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+    border-top: 1px solid var(--grey-light);
+    padding-top: 2rem;
+    margin-top: 14rem;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+    padding-top: 1rem;
+    margin-top: 4rem;
+  }
+}
+
+.thesis__wrap+.thesis__wrap {
+  .thesis__left {
+    @media screen and (max-width:$large_mobile) {
+      max-width: 37rem;
+    }
+
+    @media screen and (max-width:$small_mobile) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .thesis__right {
+    @media screen and (max-width:$large_mobile) {
+      width: calc(100% - 37rem - 8.5rem);
+      margin-left: 8.5rem;
+    }
+
+    @media screen and (max-width:$small_mobile) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.thesis__left {
+  // max-width: 65rem;
+  // width: 100%;
+  width: calc(100% - 77.5rem - 10.5rem);
+
+  @media screen and (max-width:$small_desktop) {
+    width: calc(100% - 62.5rem - 9.5rem);
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+    max-width: 45.5rem;
+    width: 100%;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+    max-width: 18.5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.thesis__left .line {
+  @media screen and (max-width:$large_mobile) {
+    background-color: var(--grey-light);
+  }
+}
+
+.thesis__right {
+  margin-left: 10.5rem;
+  max-width: 75.5rem;
+  width: 100%;
+
+  @media screen and (max-width:$small_desktop) {
+    max-width: 62.5rem;
+    margin-left: 9.5rem;
+  }
+
+  @media screen and (max-width:$large_tablet) {
+    max-width: 40rem;
+    margin-left: 0;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+    max-width: 37rem;
+    // width: calc(100% - 18.5rem - 4.5rem);
+    // margin-left: 4.5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.thesis__right .line {
+  margin-bottom: 1rem;
+
+  @media screen and (max-width:$large_mobile) {
+    display: none;
+  }
+}
+
+.thesis__img-wrap>div {
+  padding-bottom: 106.15%;
+}

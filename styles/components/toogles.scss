@@ -1,0 +1,46 @@
+.toogles:not(.toogles--mobile) .toogles__item-content {
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  display: none;
+}
+
+.toogles:not(.toogles--mobile) .toogles__item-content[style*="display: block"] {
+  display: inherit;
+}
+
+.toogles:not(.toogles--mobile) .toogles__item-content>div {
+  display: inherit;
+  flex-direction: inherit;
+  flex-wrap: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  width: 100%;
+}
+
+.toogles--mobile .toogles__item-content {
+  @media screen and (max-width:$large_tablet) {
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    display: none;
+  }
+
+}
+
+.toogles--mobile .toogles__item-content[style*="display: block"] {
+  @media screen and (max-width:$large_tablet) {
+    display: inherit;
+  }
+}
+
+.toogles--mobile .toogles__item-content>div {
+  @media screen and (max-width:$large_tablet) {
+    display: inherit;
+    flex-direction: inherit;
+    flex-wrap: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    width: 100%;
+  }
+}

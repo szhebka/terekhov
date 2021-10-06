@@ -1,0 +1,10 @@
+.line {
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: var(--grey);
+}
+
+.line--bg {
+    background-color: var(--grey-light);
+}

@@ -1,0 +1,42 @@
+.content {
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 130%;
+    color: var(--secondary-c);
+    font-family: 'Inter', sans-serif;
+
+    &--color {
+        color: var(--primary-c);
+    }
+
+
+    @media screen and (max-width:$large_mobile) {
+        font-size: 1.4rem;
+    }
+
+
+    @media screen and (max-width:$small_mobile) {
+        font-size: 1.2rem;
+    }
+}
+
+.content p+p {
+    margin-top: 1rem;
+}
+
+.content h6 {
+    margin-bottom: 4rem;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 130%;
+    color: var(--primary-c);
+    font-family: 'Inter', sans-serif;
+}
+
+.content li {
+    margin-bottom: 4rem;
+}
+
+.content li:last-child {
+    margin-bottom: 0px;
+}

@@ -1,0 +1,46 @@
+:root {
+  --primary-c: #1E1E1E;
+  --primary-c05: RGBA(30, 30, 30, 0.5);
+  --secondary-c: #EFE5DF;
+  --primary-bg: #FFF6EF;
+  --grey-light: #919191;
+  --grey: #4f4f4f;
+  --danger-c: #ff0000;
+  --black: #28282a;
+}
+
+///
+$primary-f:'Inter',
+sans-serif;
+$secondary-f1:'Cormorant',
+serif;
+$secondary-f2:'Forum',
+cursive;
+
+// Media
+$large_desktop: 1600px;
+$small_desktop: 1340px;
+$large_tablet: 1000px;
+$large_mobile: 640px;
+$small_mobile: 450px;
+///
+//screen config
+$maxWidth: 1920;
+$minWidth: 375;
+
+//breakpoints
+$uls: 2100px;
+$ls: 1366px;
+$br1: 1060px;
+$br2: 960px;
+$br3: 768px;
+$br4: 460px;
+
+//fonts
+$def-size: size(24, 16);
+
+//easings
+$easing: cubic-bezier(0.16, 1, 0.3, 1);
+
+// layouts
+$g-offset: size(160, 20);

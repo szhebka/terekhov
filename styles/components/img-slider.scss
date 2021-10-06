@@ -1,0 +1,92 @@
+.img-slider {
+    max-width: 67rem;
+    width: 100%;
+    position: relative;
+
+    @media screen and (max-width:$small_desktop) {
+
+        max-width: 55.5rem;
+    }
+
+    @media screen and (max-width:$large_tablet) {
+
+        max-width: 40rem;
+    }
+
+    @media screen and (max-width:$large_mobile) {
+
+        order: 3;
+        max-width: 100%;
+        margin-top: 14rem;
+    }
+
+    @media screen and (max-width:$small_mobile) {
+
+        margin-top: 5rem;
+    }
+}
+
+.img-slider__img-wrap>div {
+    padding-bottom: 120.14%;
+}
+
+.img-slider .swiper-pagination {
+    bottom: initial;
+    top: calc(100% + 1.5rem);
+    font-weight: normal;
+    font-family: 'Forum', cursive;
+    font-size: 2rem;
+    line-height: 101%;
+    text-transform: uppercase;
+    color: var(--black);
+
+
+    @media screen and (max-width:$small_mobile) {
+
+        font-size: 1.6rem;
+    }
+}
+
+.img-slider .swiper-button {
+    @media screen and (max-width:$large_tablet) {
+        display: none;
+    }
+}
+
+
+.img-slider .swiper-button-prev {
+    left: auto;
+    right: calc(100% + 20rem);
+}
+
+.img-slider .swiper-button-prev:hover svg {
+    transform: translateX(-1rem);
+}
+
+.img-slider .swiper-button-next {
+    right: auto;
+    left: calc(100% + 20rem);
+}
+
+.img-slider .swiper-button-next:hover svg {
+    transform: translateX(1rem);
+}
+
+.img-slider .swiper-button-prev,
+.img-slider .swiper-button-next {
+    margin-top: 0;
+    transform: translateY(-50%);
+}
+
+.img-slider .swiper-button-prev:after,
+.img-slider .swiper-button-next:after {
+    display: none;
+}
+
+.img-slider .swiper-button-prev svg,
+.img-slider .swiper-button-next svg {
+    width: 2.8rem;
+    fill: var(--black);
+    transition: transform 0.5s;
+    will-change: transform;
+}

@@ -1,0 +1,299 @@
+.philosophy {
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+
+  @media screen and (max-width:$large_tablet) {
+
+    padding-top: 10rem;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+
+    padding-bottom: 7.5rem;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+}
+
+.philosophy__wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media screen and (max-width:$small_mobile) {
+
+    flex-direction: column;
+  }
+}
+
+.philosophy__title {
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 95%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  @media screen and (max-width:$large_mobile) {
+
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+
+    font-size: 2rem;
+  }
+}
+
+.philosophy__bottom .philosophy__right {
+  margin-left: auto;
+
+  @media screen and (max-width:$large_mobile) {
+
+    max-width: 100%;
+    margin-left: initial;
+  }
+}
+
+.philosophy__left {
+  width: calc(100% - 75.5rem - 20rem);
+  margin-right: 20rem;
+
+
+  @media screen and (max-width:$small_desktop) {
+
+    width: calc(100% - 62.5rem - 20rem);
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    width: calc(100% - 45.5rem - 20rem);
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    width: calc(100% - 37rem - 5.5rem);
+    margin-right: 5.5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+}
+
+.philosophy__right {
+  max-width: 75.5rem;
+  width: 100%;
+
+
+  @media screen and (max-width:$small_desktop) {
+
+    max-width: 62.5rem;
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    max-width: 45.5rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    max-width: 37rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    max-width: 100%;
+  }
+}
+
+.philosophy__right-wrap {
+  display: flex;
+  margin-bottom: 5rem;
+
+  @media screen and (max-width:$large_mobile) {
+    padding-top: 1rem;
+    border-top: 1px solid var(--grey-light);
+  }
+}
+
+.philosophy__descr {
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    margin-bottom: 4rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    font-size: 1.5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.philosophy__line {
+  margin-bottom: 1rem;
+
+  @media screen and (max-width:$large_mobile) {
+    display: none;
+  }
+}
+
+.philosophy__author {
+  max-width: 27rem;
+  width: 100%;
+
+
+  @media screen and (max-width:$small_desktop) {
+
+    max-width: 20rem;
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    max-width: 14.5rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    width: calc(100% - 37rem - 5.5rem);
+    margin-right: 5.5rem;
+    max-width: 100%;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    display: none;
+  }
+}
+
+.philosophy__author-name {
+  max-width: 17.5rem;
+  width: 100%;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 130%;
+  text-transform: uppercase;
+
+  @media screen and (max-width:$large_tablet) {
+
+    font-size: 1rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    font-size: 0.6rem;
+    max-width: 8.5rem;
+  }
+}
+
+.philosophy__author-name--lm {
+  @media screen and (max-width:$small_mobile) {
+    display: none;
+
+  }
+
+}
+
+
+.philosophy__author-name--sm {
+  display: none;
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    display: block;
+  }
+}
+
+
+
+.philosophy__content {
+  width: calc(100% - 27rem - 14.5rem);
+  margin-left: 14.5rem;
+
+
+  @media screen and (max-width:$small_desktop) {
+
+    width: calc(100% - 20rem - 8.5rem);
+    margin-left: 8.5rem;
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    width: calc(100% - 14.5rem - 2rem);
+    margin-left: 2rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    width: 100%;
+    max-width: 37rem;
+    margin-left: 0;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    max-width: 18.5rem;
+    margin-left: auto;
+  }
+}
+
+.philosophy__img-wrap {
+  margin-bottom: 1rem;
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    max-width: 37rem;
+    margin-left: auto;
+  }
+}
+
+.philosophy__img-wrap>div {
+  padding-bottom: 142.66%;
+}
+
+.philosophy .img-descr {
+  @media screen and (max-width:$large_mobile) {
+
+    max-width: 37rem;
+    margin-left: auto;
+
+  }
+}

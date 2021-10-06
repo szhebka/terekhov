@@ -1,0 +1,147 @@
+.stage {
+  padding: 30rem 0;
+  text-transform: uppercase;
+  color: var(--primary-c);
+  font-family: 'Forum', cursive;
+
+  @media screen and (max-width:$small_desktop) {
+
+    padding-top: 25rem;
+    padding-bottom: 22rem;
+  }
+
+  @media screen and (max-width:$large_tablet) {
+
+    padding-top: 18rem;
+    padding-bottom: 15rem;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.stage__wrap {
+  display: flex;
+}
+
+.stage__img-wrap {
+  max-width: 37.5rem;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: calc(100% - 11rem);
+  transition: opacity 0.5s, visibility 0.5s;
+  z-index: 2;
+
+  @media screen and (max-width:$large_mobile) {
+
+    max-width: 25rem;
+    left: calc(100% - 5rem);
+  }
+
+  @media screen and (max-width:$small_mobile) {
+
+    max-width: 10rem;
+  }
+}
+
+.stage__img-wrap>div {
+  padding-bottom: 121.6%;
+}
+
+.stage__list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage__list-info {
+  display: flex;
+  align-items: baseline;
+}
+
+.stage__list-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7rem;
+  position: relative;
+
+  @media screen and (max-width:$large_mobile) {
+
+    margin-bottom: 5rem;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+    margin-bottom: 3rem;
+  }
+}
+
+.stage__list-row:last-child {
+  margin-bottom: 0px;
+}
+
+.stage__list-row:hover .stage__list-date {
+  transform: translateX(10rem);
+  z-index: 3;
+
+
+  @media screen and (max-width:$small_mobile) {
+    transform: translateX(3rem);
+  }
+}
+
+.stage__list-row:hover .stage__list-date,
+.stage__list-row:hover .stage__list-number {
+  color: var(--primary-c);
+}
+
+.stage__list-row:hover .stage__img-wrap {
+  opacity: 1;
+  visibility: visible;
+}
+
+.stage__list-number {
+  margin-right: 4rem;
+  transition: color 0.5s;
+  color: var(--grey-light);
+
+  @media screen and (max-width:$large_mobile) {
+    font-size: 1.4rem;
+    color: var(--primary-c);
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    font-size: 0.8rem;
+    margin-right: 2.5rem;
+  }
+}
+
+.stage__list-date {
+  font-size: 8.5rem;
+  line-height: 1;
+  transition: color 0.5s, transform 0.5s;
+  color: var(--grey-light);
+
+  @media screen and (max-width:$large_mobile) {
+    color: var(--primary-c);
+    font-size: 5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    font-size: 3rem;
+  }
+}

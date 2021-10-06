@@ -1,0 +1,269 @@
+.poet {
+  padding-bottom: 20rem;
+  padding-top: 15rem;
+
+  @media screen and (max-width:$small_desktop) {
+
+    padding-top: 10rem;
+    padding-bottom: 15rem;
+  }
+
+  @media screen and (max-width:$large_tablet) {
+
+    padding-bottom: 10rem;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+
+  @media screen and (max-width:$small_mobile) {
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.poet__wrap {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width:$small_mobile) {
+
+    flex-direction: column;
+  }
+}
+
+.poet__left {
+  // max-width: 56.5rem;
+  // width: 100%;
+  margin-right: 20rem;
+  width: calc(100% - 77.5rem - 20rem);
+
+  @media screen and (max-width:$small_desktop) {
+    margin-right: 9rem;
+    width: calc(100% - 62.5rem - 9rem);
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+    margin-right: 0;
+    max-width: 40rem;
+    width: 100%;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+    max-width: 25.5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    max-width: 18.5rem;
+    margin-bottom: 8rem;
+  }
+}
+
+.poet__left .img-wrap {
+  margin-bottom: 1rem;
+}
+
+.poet__left .img-wrap>div {
+  padding-bottom: 123.89%;
+}
+
+.poet__right {
+  max-width: 77.5rem;
+  width: 100%;
+  // width: calc(100% - 56.5rem - 20rem);
+  // margin-left: 20rem;
+
+
+  @media screen and (max-width:$small_desktop) {
+    max-width: 62.5rem;
+    // width: calc(100% - 54.5rem - 9rem);
+    // margin-left: 9rem;
+  }
+
+
+  @media screen and (max-width:$large_tablet) {
+    width: calc(100% - 40rem - 7rem);
+    margin-left: 7rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    width: calc(100% - 25.5rem - 5rem);
+    margin-left: 5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.poet__right .img-wrap {
+  margin-bottom: 1rem;
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    max-width: 22.5rem;
+    margin-left: auto;
+  }
+}
+
+.poet__right .img-wrap>div {
+  padding-bottom: 119.86%;
+}
+
+.poet__right .img-descr {
+  @media screen and (max-width:$small_mobile) {
+    max-width: 22.5rem;
+    margin-left: auto;
+  }
+}
+
+
+.poet__photo {
+  max-width: 46.6rem;
+  width: 100%;
+  margin: 0 0 34.5rem auto;
+
+  .img-wrap {
+    max-width: 16.1rem;
+  }
+
+  @media screen and (max-width:$small_desktop) {
+    max-width: 16.1rem;
+    margin: 0 auto 34.5rem;
+
+    .img-wrap {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width:$large_tablet) {
+    margin: 0 auto 27rem;
+  }
+
+  @media screen and (max-width:$large_mobile) {
+    max-width: 7rem;
+    margin-left: 15rem;
+    margin-bottom: 16rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    display: none;
+  }
+
+
+}
+
+.poet__photo .img-wrap>div {
+  padding-bottom: 103.72%;
+}
+
+.poet__simple-title {
+  margin-bottom: 7rem;
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    margin-bottom: 3rem;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    margin-bottom: 3.5rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    text-align: right;
+    padding-right: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.poet__line {
+  margin-bottom: 2rem;
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    margin-bottom: 1rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+    max-width: 18.6rem;
+    width: 100%;
+    background-color: var(--primary-c);
+    opacity: 0.2;
+  }
+}
+
+.poet__descr {
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 120%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: 'Forum', cursive;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26rem;
+
+
+  @media screen and (max-width:$large_tablet) {
+
+    margin-bottom: 20rem;
+    font-size: 1.6rem;
+    max-width: 29.5rem;
+    width: 100%;
+    margin-left: auto;
+  }
+
+
+  @media screen and (max-width:$large_mobile) {
+
+    font-size: 1.2rem;
+    margin-bottom: 10rem;
+  }
+
+
+  @media screen and (max-width:$small_mobile) {
+
+    max-width: 18.6rem;
+    font-size: 0.8rem;
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+
+.poet__descr-wrap {
+  margin-left: auto;
+  max-width: 46.6rem;
+  width: 100%;
+  text-align: justify;
+}
+
+.poet .img-descr__wrap--right {
+  @media screen and (max-width:$large_tablet) {
+    margin-left: initial;
+  }
+
+}

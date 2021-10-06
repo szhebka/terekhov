@@ -1,0 +1,25 @@
+.img-descr {
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 130%;
+    color: var(--secondary-c);
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width:$small_mobile) {
+
+        font-size: 0.8rem;
+    }
+}
+
+.img-descr__wrap--right {
+    margin-left: auto;
+}
+
+.img-descr--color {
+    color: var(--primary-c);
+}
+
+.img-descr p+p {
+    margin-top: 0.2rem;
+}
