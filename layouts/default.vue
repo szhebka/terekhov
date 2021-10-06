@@ -20,6 +20,7 @@ export default {
   },
 
   async mounted() {
+    this.winSizes()
     const { SmoothScroll } = await import('@emotionagency/smoothscroll')
     const { raf } = await import('@emotionagency/utils')
 
@@ -32,6 +33,14 @@ export default {
       stepSize: 0.9,
       raf,
     })
+  },
+
+  methods: {
+    async winSizes() {
+      const { winSizes } = await import('~/scripts/utils/winSizes')
+      const { resize } = await import('@emotionagency/utils')
+      resize.on(winSizes)
+    },
   },
 }
 </script>

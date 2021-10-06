@@ -17,23 +17,20 @@ img {
   max-width: 100%;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-
 input {
-  -webkit-border-radius: 0px;
+  border-radius: 0px;
   -webkit-appearance: none;
 }
-
 
 ul {
   list-style: none;
 }
-
 
 a {
   text-decoration: none;
@@ -44,27 +41,27 @@ html,
 body {
   font-size: 62.5%;
 
-  @media screen and (max-width:$large_desktop) {
+  @media screen and (max-width: $large_desktop) {
     font-size: 100vw / (1600/10);
   }
 
-  @media screen and (max-width:$small_desktop) {
+  @media screen and (max-width: $small_desktop) {
     font-size: 100vw / (1340/10);
   }
 
-  @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
     font-size: 100vw / (1000/10);
   }
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     font-size: 100vw / (640/10);
   }
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     font-size: 100vw / (320/10);
   }
 
-  @media screen and (max-width:320px) {
+  @media screen and (max-width: 320px) {
     font-size: 100vw / (320/10);
   }
 }
@@ -77,13 +74,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  height: var(--vh);
+  overflow: hidden;
   font-size: 1.6rem;
 }
 
 main {
   flex-grow: 1;
-
 }
 
 .center-wrap {
@@ -92,18 +89,18 @@ main {
   margin: 0px auto;
   padding: 0px 15px;
 
-  @media screen and (max-width:$large_desktop) {
+  @media screen and (max-width: $large_desktop) {
     max-width: calc(100% - 50px);
     // max-width: 1600px;
     // padding: 0 40px;
   }
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     padding: 0 20px;
     max-width: 100%;
   }
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     padding: 0 10px;
   }
 }
@@ -115,7 +112,6 @@ h4 {
   margin: 0px;
 }
 
-
 .simple-title {
   font-weight: normal;
   font-size: 10rem;
@@ -124,18 +120,17 @@ h4 {
 
   font-family: $secondary-f2;
 
-  @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
     font-size: 7.5rem;
   }
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     font-size: 5rem;
   }
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     font-size: 3rem;
   }
-
 }
 
 .simple-title--color {
@@ -149,13 +144,11 @@ h4 {
   text-transform: uppercase;
   color: var(--primary-bg);
 
-
-
-  @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
     font-size: 1rem;
   }
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     font-size: 0.6rem;
   }
 }
@@ -167,7 +160,7 @@ h4 {
 .img-wrap {
   width: 100%;
 
-  >div {
+  > div {
     position: relative;
     padding-bottom: 100%;
 
@@ -180,12 +173,10 @@ h4 {
       object-fit: cover;
     }
   }
-
-
 }
 
 .img-wrap--contain {
-  >div {
+  > div {
     img {
       object-fit: contain;
     }
@@ -198,7 +189,7 @@ h4 {
   line-height: 1.21429;
   letter-spacing: -0.03em;
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     font-size: 1rem;
   }
 }
@@ -207,7 +198,7 @@ h4 {
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0px;
     bottom: -2px;
@@ -215,7 +206,7 @@ h4 {
     height: 1px;
     background: var(--primary-c);
     opacity: 0;
-    transition: opacity .5s, width .5s;
+    transition: opacity 0.5s, width 0.5s;
   }
 
   &:hover::before {
