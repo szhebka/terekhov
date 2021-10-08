@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <section class="about">
       <div class="center-wrap">
         <div class="about__header">
@@ -242,7 +242,7 @@
         </div>
       </div>
     </footer>
-  </div>
+  </main>
 </template>
 
 <script>

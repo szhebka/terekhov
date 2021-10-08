@@ -5,7 +5,7 @@
   font-weight: 400;
   text-transform: uppercase;
   // @include media('>#{$br1}') {
-  //   min-height: 250vh;
+  min-height: 250rem;
   // }
 
   @media screen and (max-width: $large_tablet) {
@@ -26,7 +26,7 @@
   font-size: 16rem;
   line-height: 75%;
   margin-bottom: 4rem;
-  font-family: 'Forum', cursive;
+  font-family: $secondary-f2;
   font-weight: 400;
 
   @media screen and (max-width: $large_mobile) {
@@ -71,4 +71,18 @@
 
 .main-screen__img-wrap > div {
   padding-bottom: 121.45%;
+}
+
+.main-screen__e-image-sticky {
+  position: relative;
+  // @include media('>#{$br1}') {
+  min-height: 250rem;
+  will-change: transform;
+
+  // }
+}
+
+.main-screen__img-wrap {
+  position: sticky;
+  top: 3rem;
 }

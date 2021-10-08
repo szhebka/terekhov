@@ -13,7 +13,7 @@ export class TextScrolling extends Scrolling {
 
   get transformY() {
     const min = 0
-    const max = 200 * (window.innerWidth / 1920)
+    const max = 1500 * (window.innerWidth / 1920)
     return this.computeFromMinToMax(min, max)
   }
 
@@ -25,9 +25,7 @@ export class TextScrolling extends Scrolling {
 
   onScroll() {
     super.onScroll()
-    this.$el.style.transform = `scale(${this.scale / 100}) translateY(${
-      this.transformY
-    }px)`
+    this.$el.style.transform = `translateY(${this.transformY}px)`
     this.$el.style.opacity = this.opacity
   }
 }

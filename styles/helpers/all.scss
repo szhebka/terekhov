@@ -71,16 +71,16 @@ body {
   color: var(--primary-c);
   background: var(--primary-bg);
   font-weight: 400;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: var(--vh);
-  overflow: hidden;
   font-size: 1.6rem;
+  overflow: hidden !important;
+  position: relative;
+  overscroll-behavior-y: none;
+  @include smooth-font;
 }
 
-main {
-  flex-grow: 1;
+.e-fixed {
+  overflow: hidden !important;
 }
 
 .center-wrap {
@@ -213,4 +213,21 @@ h4 {
     width: 100%;
     opacity: 1;
   }
+}
+
+[data-parallax-wrapper] {
+  pointer-events: none;
+}
+
+[data-a-l] {
+  width: 0%;
+}
+
+[data-a-t] {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+[data-a-o] {
+  opacity: 0;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <section class="periods">
       <div class="center-wrap">
         <div class="periods__header">
@@ -531,7 +531,7 @@
         </div>
       </div>
     </footer>
-  </div>
+  </main>
 </template>
 
 <script>

@@ -12,7 +12,7 @@ export class SectionParallax {
     this.compute = this.compute.bind(this)
     this.resize = this.resize.bind(this)
 
-    resize.on(this.resize)
+    raf.on(this.compute)
   }
 
   resize() {

@@ -1,8 +1,8 @@
 :root {
-  --primary-c: #1E1E1E;
+  --primary-c: #1e1e1e;
   --primary-c05: RGBA(30, 30, 30, 0.5);
-  --secondary-c: #EFE5DF;
-  --primary-bg: #FFF6EF;
+  --secondary-c: #efe5df;
+  --primary-bg: #fff6ef;
   --grey-light: #919191;
   --grey: #4f4f4f;
   --danger-c: #ff0000;
@@ -10,12 +10,9 @@
 }
 
 ///
-$primary-f:'Inter',
-sans-serif;
-$secondary-f1:'Cormorant',
-serif;
-$secondary-f2:'Forum',
-cursive;
+$primary-f: 'Inter', sans-serif;
+$secondary-f1: 'Cormorant', serif;
+$secondary-f2: 'Forum', serif;
 
 // Media
 $large_desktop: 1600px;
