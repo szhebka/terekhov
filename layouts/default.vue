@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header />
-    <div id="scroll-container">
+    <div id="scroll-container" style="opacity: 0">
+      <Header />
       <Nuxt />
     </div>
   </div>

@@ -51,8 +51,12 @@
   @media screen and (max-width: $small_mobile) {
     padding-right: 1rem;
   }
-  opacity: 0;
   line-height: 0em;
+}
+
+[data-a-h] {
+  opacity: 0;
+
   .char {
     display: inline-block;
     overflow: hidden;

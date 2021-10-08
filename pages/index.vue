@@ -1,15 +1,15 @@
 <template>
   <main>
-    <section ref="textParent" class="main-screen">
+    <section ref="textParent" data-home class="main-screen">
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 class="main-screen__title">Igor Terekhov</h1>
-          <h2 class="main-screen__subtitle">живопись</h2>
+          <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
+          <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
           <div class="sticky-rel"></div>
           <div ref="imageEl" class="main-screen__img-wrap img-wrap">
-            <div>
+            <div data-a-t>
               <vue-picture url="/img/main-screen-img.jpg" />
             </div>
           </div>
@@ -22,7 +22,10 @@
           <div data-a-p class="center-wrap">
             <div class="thesis__top">
               <div data-a-o class="thesis__small-title small-title">тезис</div>
-              <h2 class="thesis__simple-title simple-title simple-title--color">
+              <h2
+                data-a-h
+                class="thesis__simple-title simple-title simple-title--color"
+              >
                 Плоскость холста предупреждает — здесь вы встретитесь
                 с&nbsp;заведомо иным.
               </h2>
@@ -47,8 +50,8 @@
                   </div>
                 </div>
               </div>
-              <div class="thesis__wrap">
-                <div data-a-t class="thesis__left">
+              <div data-a-t class="thesis__wrap">
+                <div class="thesis__left">
                   <div class="thesis__img-wrap img-wrap">
                     <div>
                       <vue-picture url="/img/thesis-img.jpg" />
@@ -56,7 +59,7 @@
                   </div>
                 </div>
                 <div data-a-t class="thesis__right">
-                  <span class="line"></span>
+                  <span data-a-l class="line"></span>
                   <div class="img-descr">
                     <div class="img-descr__wrap">
                       <p>Воздух</p>
@@ -471,6 +474,10 @@ export default {
     this.sectionParallaxInit()
 
     new ScrollAnimations()
+
+    const { homeAnimation } = await import('~/scripts/homeAnimation')
+
+    homeAnimation()
   },
 
   methods: {

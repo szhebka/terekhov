@@ -7,6 +7,9 @@
   // @include media('>#{$br1}') {
   min-height: 250rem;
   // }
+  @include media('<=#{$br3}') {
+    min-height: 200rem;
+  }
 
   @media screen and (max-width: $large_tablet) {
     padding-bottom: 20rem;
@@ -78,11 +81,16 @@
   // @include media('>#{$br1}') {
   min-height: 250rem;
   will-change: transform;
-
+  @include media('<=#{$br3}') {
+    min-height: 200rem;
+  }
   // }
 }
 
 .main-screen__img-wrap {
   position: sticky;
   top: 3rem;
+  @include media('<=#{$br3}') {
+    top: 15rem;
+  }
 }
