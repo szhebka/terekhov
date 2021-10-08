@@ -1,34 +1,42 @@
 <template>
-  <div>
-    <section ref="imageParent" class="main-screen">
+  <main>
+    <section ref="textParent" data-home class="main-screen">
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 class="main-screen__title">Igor Terekhov</h1>
-          <h2 class="main-screen__subtitle">живопись</h2>
+          <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
+          <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
-        <div ref="imageEl" class="main-screen__img-wrap img-wrap">
-          <div>
-            <vue-picture url="/img/main-screen-img.jpg" />
+        <div ref="imageParent" class="main-screen__e-image-sticky">
+          <div class="sticky-rel"></div>
+          <div ref="imageEl" class="main-screen__img-wrap img-wrap">
+            <div data-a-t>
+              <vue-picture url="/img/main-screen-img.jpg" />
+            </div>
           </div>
         </div>
       </div>
     </section>
     <div data-parallax-wrapper>
       <div v-multi-ref:parallax data-offset="0">
-        <section class="thesis">
-          <div class="center-wrap">
+        <section data-in-view class="thesis">
+          <div data-a-p class="center-wrap">
             <div class="thesis__top">
-              <div class="thesis__small-title small-title">тезис</div>
-              <h2 class="thesis__simple-title simple-title simple-title--color">
+              <div data-a-o class="thesis__small-title small-title">тезис</div>
+              <h2
+                data-a-h
+                class="thesis__simple-title simple-title simple-title--color"
+              >
                 Плоскость холста предупреждает — здесь вы встретитесь
                 с&nbsp;заведомо иным.
               </h2>
             </div>
             <div class="thesis__body">
               <div class="thesis__wrap">
-                <div class="thesis__left"><span class="line"></span></div>
+                <div class="thesis__left">
+                  <span data-a-l class="line"></span>
+                </div>
                 <div class="thesis__right">
-                  <div class="thesis__content content">
+                  <div data-a-o class="thesis__content content">
                     <p>
                       Возможности этого пространства расширились, в сравнении с
                       «абстрактной живописью». Мы имеем дело с открытой формой и
@@ -42,7 +50,7 @@
                   </div>
                 </div>
               </div>
-              <div class="thesis__wrap">
+              <div data-a-t class="thesis__wrap">
                 <div class="thesis__left">
                   <div class="thesis__img-wrap img-wrap">
                     <div>
@@ -50,8 +58,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="thesis__right">
-                  <span class="line"></span>
+                <div data-a-t class="thesis__right">
+                  <span data-a-l class="line"></span>
                   <div class="img-descr">
                     <div class="img-descr__wrap">
                       <p>Воздух</p>
@@ -445,7 +453,7 @@
         </div>
       </div>
     </footer>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -455,10 +463,21 @@ export default {
   components: { VuePicture },
 
   async mounted() {
-    // const { ImageScrolling } = await import('~/scripts/OnScroll/ImageScrolling')
+    const { default: ScrollAnimations } = await import(
+      '~/scripts/scroll/ScrollAnimations'
+    )
+    const { ImageScrolling } = await import('~/scripts/OnScroll/ImageScrolling')
+    this.sIS = new ImageScrolling(this.$refs.imageEl, this.$refs.imageParent)
 
-    // this.sIS = new ImageScrolling(this.$refs.imageEl, this.$refs.imageParent)
-    // this.sectionParallaxInit()
+    const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
+    this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
+    this.sectionParallaxInit()
+
+    new ScrollAnimations()
+
+    const { homeAnimation } = await import('~/scripts/homeAnimation')
+
+    homeAnimation()
   },
 
   methods: {

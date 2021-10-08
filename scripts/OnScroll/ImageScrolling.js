@@ -1,8 +1,10 @@
 import Scrolling from './Scrolling'
+import { secondScreenAnimation } from './SecondScreenAnimation'
 
 export class ImageScrolling extends Scrolling {
   init() {
     super.init()
+    this.isActivated = false
   }
 
   get scale() {
@@ -25,9 +27,12 @@ export class ImageScrolling extends Scrolling {
 
   onScroll() {
     super.onScroll()
-    this.$el.style.transform = `scale(${this.scale / 100}) translateY(${
-      this.transformY
-    }px)`
-    this.$el.style.opacity = this.opacity
+    this.$el.style.transform = `scale(${this.scale / 100})`
+
+    if (this.percentScrolled === 1 && !this.isActivated) {
+      secondScreenAnimation()
+      this.isActivated = true
+    }
+    // this.$el.style.opacity = this.opacity
   }
 }

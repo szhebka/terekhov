@@ -50,6 +50,13 @@ export default {
       isOpen: false,
     }
   },
+
+  async mounted() {
+    const { default: NavbarPos } = await import('~/scripts/utils/navbarPos')
+
+    this.navbarPos = new NavbarPos()
+    this.navbarPos.init()
+  },
   methods: {
     closeMenu() {
       this.isOpen = false

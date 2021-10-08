@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <section class="texts">
       <div class="center-wrap">
         <div class="texts__img-wrap img-wrap">
@@ -967,7 +967,7 @@
         </div>
       </div>
     </footer>
-  </div>
+  </main>
 </template>
 
 <script>
