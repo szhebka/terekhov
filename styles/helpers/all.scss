@@ -231,3 +231,18 @@ h4 {
 [data-a-o] {
   opacity: 0;
 }
+
+[data-a-h] {
+  opacity: 0;
+  .char {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1.05em;
+  }
+  .char-inner {
+    display: inline-block;
+    will-change: transform;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
