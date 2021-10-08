@@ -8,7 +8,11 @@ export const textAnimation = $el => {
     if ($el.classList.contains('splitted')) {
       return
     }
-    const text = new SplitType($el, { types: 'words, chars', tagName: 'span' })
+    const text = new SplitType($el, {
+      types: 'lines, words, chars',
+      tagName: 'span',
+      lineClass: 'e-line',
+    })
 
     text.chars.forEach(char => {
       char.innerHTML = `<span class="char-inner">${char.innerHTML}</span>`
@@ -21,7 +25,7 @@ export const textAnimation = $el => {
   }
 
   return {
-    in: ($el, duration = 1, stagger = 0.03) => {
+    in: ($el, duration = 1.5) => {
       prepare($el)
       $el.style.opacity = 1
 
@@ -29,8 +33,7 @@ export const textAnimation = $el => {
         duration,
         y: '0%',
         opacity: 1,
-        ease: 'expo.out',
-        stagger,
+        ease: 'power2.out',
         overwrite: true,
       })
     },
