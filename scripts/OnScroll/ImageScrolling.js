@@ -1,5 +1,5 @@
 import Scrolling from './Scrolling'
-import { secondScreenAnimation } from './SecondScreenAnimation'
+import { secondScreenAnimation } from './secondScreenAnimation'
 
 export class ImageScrolling extends Scrolling {
   init() {
