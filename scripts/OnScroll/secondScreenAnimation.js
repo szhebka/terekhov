@@ -3,7 +3,9 @@ import { textAnimation } from '../textAnimation'
 
 export const secondScreenAnimation = () => {
   const $el = document.querySelector('.thesis')
-  const $h = document.querySelector('.thesis__simple-title')
+  const $h = $el.querySelector('[data-a-h]')
+
+  console.log($h)
 
   NodeList.prototype.animation = function (options) {
     this.length > 0 && gsap.to(this, options)

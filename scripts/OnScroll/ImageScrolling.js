@@ -9,11 +9,11 @@ export class ImageScrolling extends Scrolling {
   }
 
   get scale() {
-    const min = 1
-    const max = 3
+    const min = 0
+    const max = 4
     const value = max * this.percentScrolled
 
-    return clamp(value + 1, min, max)
+    return clamp(value, min, max)
   }
 
   get transformY() {
@@ -30,7 +30,7 @@ export class ImageScrolling extends Scrolling {
 
   onScroll() {
     super.onScroll()
-    this.$el.style.transform = `scale(${this.scale})`
+    this.$el.style.transform = `scale(${this.scale + 1})`
 
     if (this.percentScrolled === 1 && !this.isActivated) {
       secondScreenAnimation()
