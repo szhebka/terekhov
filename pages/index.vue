@@ -25,8 +25,8 @@
                 data-a-h
                 class="thesis__simple-title simple-title simple-title--color"
               >
-                Плоскость холста предупреждает — здесь вы встретитесь
-                с&nbsp;заведомо иным.
+                Плоскость холста предупреждает — здесь вы встретитесь с заведомо
+                иным.
               </h2>
             </div>
             <div class="thesis__body">

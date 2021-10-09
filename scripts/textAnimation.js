@@ -9,7 +9,7 @@ export const textAnimation = $el => {
       return
     }
     const text = new SplitType($el, {
-      types: 'lines, words, chars',
+      types: 'words, chars',
       tagName: 'span',
       lineClass: 'e-line',
     })
@@ -31,9 +31,10 @@ export const textAnimation = $el => {
 
       gsap.to($toAnimate, {
         duration,
-        y: '0%',
+        x: '0%',
+        stagger: 0.05,
         opacity: 1,
-        ease: 'power2.out',
+        ease: 'expo.out',
         overwrite: true,
       })
     },

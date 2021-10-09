@@ -240,13 +240,13 @@ h4 {
   opacity: 0;
   .char {
     display: inline-block;
-    overflow: hidden;
+    // overflow: hidden;
     line-height: 1.05em;
   }
   .char-inner {
     display: inline-block;
     will-change: transform;
-    transform: translateY(100%);
+    transform: translateX(100%);
     opacity: 0;
   }
 }
