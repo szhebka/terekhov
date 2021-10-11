@@ -1,7 +1,8 @@
 import gsap from 'gsap'
 import { textAnimation } from './textAnimation'
+import { delayPromise } from './utils/delay'
 
-export const homeAnimation = () => {
+export const homeAnimation = async () => {
   const $sc = document.querySelector('#scroll-container')
   const $el = document.querySelector('[data-home]')
   const $h = $el.querySelector('[data-a-h]')
@@ -10,6 +11,7 @@ export const homeAnimation = () => {
     this.length > 0 && gsap.to(this, options)
   }
 
+  await delayPromise(1000)
   gsap.to($sc, { duration: 0.5, opacity: 1 })
 
   $el.querySelectorAll('[data-a-l]').animation({
@@ -19,7 +21,7 @@ export const homeAnimation = () => {
     stagger: 0.2,
   })
 
-  textAnimation().in($h, 1.5, 0.06)
+  textAnimation().in($h, 2, 0)
 
   $el.querySelectorAll('[data-a-t]').animation({
     duration: 1,
