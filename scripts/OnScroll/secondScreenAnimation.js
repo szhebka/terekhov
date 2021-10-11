@@ -5,8 +5,6 @@ export const secondScreenAnimation = () => {
   const $el = document.querySelector('.thesis')
   const $h = $el.querySelector('[data-a-h]')
 
-  console.log($h)
-
   NodeList.prototype.animation = function (options) {
     this.length > 0 && gsap.to(this, options)
   }
@@ -18,7 +16,7 @@ export const secondScreenAnimation = () => {
     stagger: 0.2,
   })
 
-  textAnimation().in($h)
+  textAnimation().in($h, 3)
 
   $el.querySelectorAll('[data-a-t]').animation({
     duration: 1,
@@ -26,7 +24,7 @@ export const secondScreenAnimation = () => {
     opacity: 1,
     y: 0,
     ease: 'power1.out',
-    stagger: 0.2,
+    stagger: 0.4,
   })
 
   $el.querySelectorAll('[data-a-o]').animation({
