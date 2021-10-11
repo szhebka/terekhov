@@ -7,7 +7,6 @@
           <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
-          <div class="sticky-rel"></div>
           <div ref="imageEl" class="main-screen__img-wrap img-wrap">
             <div data-a-t>
               <vue-picture url="/img/main-screen-img.jpg" />
@@ -26,8 +25,8 @@
                 data-a-h
                 class="thesis__simple-title simple-title simple-title--color"
               >
-                Плоскость холста предупреждает — здесь вы встретитесь
-                с&nbsp;заведомо иным.
+                Плоскость холста предупреждает — здесь вы встретитесь с заведомо
+                иным.
               </h2>
             </div>
             <div class="thesis__body">

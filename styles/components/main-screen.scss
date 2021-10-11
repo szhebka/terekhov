@@ -78,19 +78,9 @@
 
 .main-screen__e-image-sticky {
   position: relative;
-  // @include media('>#{$br1}') {
   min-height: 250rem;
   will-change: transform;
   @include media('<=#{$br3}') {
     min-height: 200rem;
-  }
-  // }
-}
-
-.main-screen__img-wrap {
-  position: sticky;
-  top: 3rem;
-  @include media('<=#{$br3}') {
-    top: 15rem;
   }
 }
