@@ -5,6 +5,10 @@
   height: var(--vh);
   overflow: hidden;
   will-change: scroll-position;
+  @include media('<=#{$br1}') {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
