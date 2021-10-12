@@ -49,17 +49,18 @@
                   </div>
                 </div>
               </div>
-              <div data-a-t class="thesis__wrap">
-                <div class="thesis__left">
+              <div class="thesis__wrap">
+                <span data-a-l class="line mob-line"></span>
+                <div data-a-t class="thesis__left">
                   <div class="thesis__img-wrap img-wrap">
                     <div>
                       <vue-picture url="/img/thesis-img.jpg" />
                     </div>
                   </div>
                 </div>
-                <div data-a-t class="thesis__right">
+                <div class="thesis__right">
                   <span data-a-l class="line"></span>
-                  <div class="img-descr">
+                  <div data-a-t class="img-descr">
                     <div class="img-descr__wrap">
                       <p>Воздух</p>
                       <p>180х170 см 2008 г.</p>
@@ -465,8 +466,11 @@ export default {
     const { default: ScrollAnimations } = await import(
       '~/scripts/scroll/ScrollAnimations'
     )
+
+    const imageParent =
+      window.innerWidth > 460 ? this.$refs.imageParent : this.$refs.textParent
     const { ImageScrolling } = await import('~/scripts/OnScroll/ImageScrolling')
-    this.sIS = new ImageScrolling(this.$refs.imageEl, this.$refs.imageParent)
+    this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
 
     const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
     this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)

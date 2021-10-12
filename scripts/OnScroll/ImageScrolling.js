@@ -8,9 +8,16 @@ export class ImageScrolling extends Scrolling {
     this.isActivated = false
   }
 
+  fluidSize(pc, mob) {
+    const addSize = pc - mob
+    const maxWidth = 1920 - 375
+
+    return mob + addSize * ((window.innerWidth - 375) / maxWidth)
+  }
+
   get scale() {
     const min = 0
-    const max = 4
+    const max = this.fluidSize(4, 12)
     const value = max * this.percentScrolled
 
     return clamp(value, min, max)
