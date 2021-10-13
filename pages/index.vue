@@ -289,7 +289,7 @@
         </div>
       </div>
     </section>
-    <section class="exposition">
+    <section id="expo" class="exposition">
       <div class="center-wrap"></div>
       <div class="exposition__wrap">
         <div class="exposition__left">
@@ -458,9 +458,11 @@
 
 <script>
 import VuePicture from '~/components/vue-picture.vue'
+import AnchorVue from '~/mixins/anchor-vue.vue'
 
 export default {
   components: { VuePicture },
+  mixins: [AnchorVue],
 
   async mounted() {
     const { default: ScrollAnimations } = await import(

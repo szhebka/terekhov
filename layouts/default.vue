@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="scroll-container" style="opacity: 0">
+    <div id="scroll-container">
       <Header />
       <Nuxt />
     </div>

@@ -247,7 +247,9 @@
 
 <script>
 import vuePicture from '~/components/vue-picture.vue'
+import anchorVue from '~/mixins/anchor-vue.vue'
 export default {
   components: { vuePicture },
+  mixins: [anchorVue],
 }
 </script>

@@ -13,13 +13,18 @@
         </div>
         <div class="periods__body anchors">
           <div class="periods__body-list">
-            <a class="periods__body-item" href="periods__box-one">1989/2002</a
-            ><a class="periods__body-item" href="periods__box-two">2003/2007</a
-            ><a class="periods__body-item" href="periods__box-three"
-              >2008/2010</a
-            ><a class="periods__body-item" href="periods__box-four"
-              >2010/2020</a
-            >
+            <div class="periods__body-item" data-href="#periods__box-one">
+              1989/2002
+            </div>
+            <div class="periods__body-item" data-href="#periods__box-two">
+              2003/2007
+            </div>
+            <div class="periods__body-item" data-href="#periods__box-three">
+              2008/2010
+            </div>
+            <div class="periods__body-item" data-href="#periods__box-four">
+              2010/2020
+            </div>
           </div>
           <div id="periods__box-one" class="periods__box">
             <div class="periods__box-top">
@@ -536,7 +541,9 @@
 
 <script>
 import vuePicture from '~/components/vue-picture.vue'
+import anchorVue from '~/mixins/anchor-vue.vue'
 export default {
   components: { vuePicture },
+  mixins: [anchorVue],
 }
 </script>
