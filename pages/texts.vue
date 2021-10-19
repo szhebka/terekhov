@@ -508,11 +508,24 @@ export default {
     }
   },
 
+  watch: {
+    filteredItems() {
+      this.$nextTick(() => {
+        this.accordeon.update()
+      })
+    },
+  },
+
   async mounted() {
     const { default: Accordeon } = await import('~/scripts/Accordeon')
+    this.AccInst = Accordeon
     this.accordeon = new Accordeon('.texts__box', '.texts__box-right')
 
     this.filterItems('all')
+  },
+
+  beforeDestroy() {
+    this.accordeon && this.accordeon.destroy()
   },
 
   methods: {
