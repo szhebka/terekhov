@@ -66,6 +66,10 @@ body {
   }
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   font-family: $primary-f;
   color: var(--primary-c);
@@ -227,15 +231,18 @@ h4 {
 
 [data-a-l] {
   width: 0%;
+  will-change: width;
 }
 
 [data-a-t] {
   opacity: 0;
   transform: translateY(40px);
+  will-change: transform, opacity;
 }
 
 [data-a-o] {
   opacity: 0;
+  will-change: opacity;
 }
 
 [data-a-h] {
@@ -250,6 +257,7 @@ h4 {
     will-change: transform;
     transform: translateY(100%);
     opacity: 0;
+    will-change: transform, opacity;
   }
 }
 
@@ -266,6 +274,7 @@ h4 {
   }
   .line-inner {
     transform: translateY(110%);
+    will-change: transform, opacity;
   }
 }
 
