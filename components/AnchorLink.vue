@@ -34,7 +34,12 @@ export default {
 
       const distance = endLocation - startLocation + window.innerHeight / 4
 
-      window.ss.state.target = distance
+      if (window.innerWidth >= 1024) {
+        window.ss.state.target = distance
+      } else {
+        const $sc = document.querySelector('#scroll-container')
+        $sc.scrollTop = distance
+      }
     },
   },
 }
