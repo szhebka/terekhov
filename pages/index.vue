@@ -475,7 +475,11 @@ export default {
     new ScrollAnimations()
 
     const { BlackBg } = await import('~/scripts/BlackBg')
-    new BlackBg()
+    this.blackBg = new BlackBg()
+  },
+
+  beforeDestroy() {
+    this.blackBg && this.blackBg.destroy()
   },
 
   methods: {

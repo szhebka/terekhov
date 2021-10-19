@@ -54,5 +54,6 @@ export class BlackBg {
 
   destroy() {
     raf.off(this.animate)
+    document.body.classList.remove('e-black')
   }
 }
