@@ -18,10 +18,19 @@ export const anchorScroll = selector => {
 
     const distance = endLocation - startLocation
 
-    gsap.to(window.ss.state, {
-      duration: 1,
-      target: distance,
-    })
+    if (window.innerWidth >= 1024) {
+      gsap.to(window.ss.state, {
+        duration: 1,
+        target: distance,
+      })
+    } else {
+      const $sc = document.querySelector('#scroll-container')
+
+      gsap.to($sc, {
+        duration: 1,
+        scrollTop: distance,
+      })
+    }
   }
 
   const handlers = []

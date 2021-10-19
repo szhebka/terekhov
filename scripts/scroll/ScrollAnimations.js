@@ -20,7 +20,7 @@ class ScrollAnimations extends ScrollInView {
 
   sectionAnimation(elem) {
     elem.querySelectorAll('[data-a-l]').animation({
-      duration: 1.5,
+      duration: 2,
       width: '100%',
       ease: 'power1.out',
       stagger: 0.2,
@@ -33,7 +33,7 @@ class ScrollAnimations extends ScrollInView {
       })
 
     elem.querySelectorAll('[data-a-t]').animation({
-      duration: 1.5,
+      duration: 2,
       delay: 0.5,
       opacity: 1,
       y: 0,
@@ -42,7 +42,7 @@ class ScrollAnimations extends ScrollInView {
     })
 
     elem.querySelectorAll('[data-a-o]').animation({
-      duration: 1.5,
+      duration: 2,
       delay: 0.5,
       opacity: 1,
       ease: 'power1.out',

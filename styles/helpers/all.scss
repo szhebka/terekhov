@@ -77,6 +77,12 @@ body {
   position: relative;
   overscroll-behavior-y: none;
   @include smooth-font;
+  width: 100%;
+  transition: color 2s ease, background 1s ease;
+  &.e-black {
+    color: #fff;
+    background: var(--primary-c);
+  }
 }
 
 .e-fixed {
@@ -225,7 +231,7 @@ h4 {
 
 [data-a-t] {
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(40px);
 }
 
 [data-a-o] {

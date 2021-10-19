@@ -20,7 +20,7 @@ export const loadAnimation = cb => {
   gsap.to($sc, { duration: 0.5, opacity: 1 })
 
   $el.querySelectorAll('[data-a-l]').animation({
-    duration: 1,
+    duration: 2,
     width: '100%',
     ease: 'power1.out',
     stagger: 0.2,
@@ -32,7 +32,7 @@ export const loadAnimation = cb => {
     })
 
   $el.querySelectorAll('[data-a-t]').animation({
-    duration: 1,
+    duration: 2,
     delay: 0.5,
     opacity: 1,
     y: 0,
@@ -41,7 +41,7 @@ export const loadAnimation = cb => {
   })
 
   $el.querySelectorAll('[data-a-o]').animation({
-    duration: 1,
+    duration: 2,
     delay: 0.5,
     opacity: 1,
     ease: 'power1.out',

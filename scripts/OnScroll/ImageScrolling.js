@@ -17,7 +17,7 @@ export class ImageScrolling extends Scrolling {
 
   get scale() {
     const min = 0
-    const max = this.fluidSize(4, 12)
+    const max = this.fluidSize(4, 10)
     const value = max * this.percentScrolled
 
     return clamp(value, min, max)

@@ -34,7 +34,7 @@ export default {
       breakpoint: 1024,
       passive: false,
       isFixed: false,
-      friction: 0.05,
+      friction: 0.03,
       stepSize: 0.9,
       raf,
     })

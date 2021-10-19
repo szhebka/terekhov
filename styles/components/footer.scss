@@ -8,14 +8,11 @@
   text-transform: uppercase;
   margin-top: -1px;
 
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     font-size: 1.2rem;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     font-size: 1rem;
   }
 }
@@ -24,15 +21,15 @@
   max-width: 100%;
   padding: 0 80px;
 
-  @media screen and (max-width:$large_desktop) {
+  @media screen and (max-width: $large_desktop) {
     padding: 0 40px;
   }
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     padding: 0 20px;
   }
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     padding: 0 10px;
   }
 }
@@ -58,22 +55,16 @@
   display: flex;
   align-items: center;
 
-
-  @media screen and (max-width:$small_desktop) {
-
+  @media screen and (max-width: $small_desktop) {
     padding: 2rem 0;
   }
 
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     align-items: flex-start;
     padding: 1rem 0;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -84,7 +75,7 @@
 }
 
 .footer__home::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0px;
   bottom: -2px;
@@ -104,25 +95,25 @@
   margin-left: 41.5%;
   position: relative;
 
-  @media screen and (max-width:$small_desktop) {
+  @media screen and (max-width: $small_desktop) {
     margin-left: 40%;
   }
 
-  @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
     margin-left: 36%;
   }
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     margin-left: 31%;
   }
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     margin-left: initial;
   }
 }
 
 .footer__email::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0px;
   bottom: -2px;
@@ -141,14 +132,11 @@
 .footer__copyr {
   margin-left: auto;
 
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     max-width: 13rem;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     width: 100%;
     max-width: 100%;
     margin-left: initial;

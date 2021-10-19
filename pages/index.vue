@@ -7,7 +7,13 @@
           <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
-          <div ref="imageEl" class="main-screen__img-wrap img-wrap">
+          <div
+            ref="imageEl"
+            data-dark
+            data-dark-offset-top="0.1"
+            data-dark-offset-bottom="0.7"
+            class="main-screen__img-wrap img-wrap"
+          >
             <div data-a-t>
               <vue-picture url="/img/main-screen-img.jpg" />
             </div>
@@ -15,7 +21,12 @@
         </div>
       </div>
     </section>
-    <div data-parallax-wrapper>
+    <div
+      data-dark
+      data-dark-offset-top="2"
+      data-dark-offset-bottom="0.7"
+      data-parallax-wrapper
+    >
       <div v-multi-ref:parallax data-offset="0">
         <section class="thesis">
           <div data-a-p class="center-wrap">
@@ -79,21 +90,18 @@
         <div class="philosophy__wrap">
           <div class="philosophy__left">
             <h2 data-a-h2 class="philosophy__title">Αλήθεια</h2>
-            <div
-              data-a-t
-              class="philosophy__author-name philosophy__author-name--sm"
-            >
+            <div class="philosophy__author-name philosophy__author-name--sm">
               М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
             </div>
           </div>
           <div class="philosophy__right">
-            <div data-a-t class="philosophy__descr">
+            <div class="philosophy__descr">
               άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
               ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
               θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών
               πολιτεύεσθαι;
             </div>
-            <span data-a-l class="line line--bg philosophy__line"></span>
+            <span class="line line--bg philosophy__line"></span>
           </div>
         </div>
         <div class="philosophy__bottom">
@@ -101,13 +109,12 @@
             <div class="philosophy__right-wrap">
               <div class="philosophy__author">
                 <div
-                  data-a-t
                   class="philosophy__author-name philosophy__author-name--lm"
                 >
                   М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
                 </div>
               </div>
-              <div data-a-t class="philosophy__content content content--color">
+              <div class="philosophy__content content content--color">
                 <p>
                   «Он же вернулся в святилище Артемиды, чтобы поиграть с детьми
                   в кости; вокруг него собрались эфесяне, и он сказал им: «Чему
@@ -295,7 +302,7 @@
         </div>
       </div>
     </section>
-    <section id="expo" class="exposition">
+    <section id="expo" data-dark class="exposition">
       <div class="center-wrap"></div>
       <div class="exposition__wrap">
         <div class="exposition__left">
@@ -343,47 +350,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="exposition-slider">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="novelty-slider__img">
-                  <div>
-                    <figure
-                      class="slide-bgimg"
-                      style="
-                        background-image: url('~/assets/img/exposition-slider-img1.jpg');
-                      "
-                    >
-                      <img
-                        class="entity-img"
-                        src="~/assets/img/exposition-slider-img1.jpg"
-                        alt=""
-                      />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="novelty-slider__img">
-                  <div>
-                    <figure
-                      class="slide-bgimg"
-                      style="
-                        background-image: url('~/assets/img/exposition-slider-img2.jpg');
-                      "
-                    ></figure>
-                    <img
-                      class="entity-img"
-                      src="~/assets/img/exposition-slider-img2.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </section>
     <div class="stage">
@@ -494,19 +460,26 @@ export default {
     const { ImageScrolling } = await import('~/scripts/OnScroll/ImageScrolling')
     this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
 
-    const { ImageScrollingTwo } = await import(
-      '~/scripts/OnScroll/ImageScrollingTwo'
-    )
-    this.sIS2 = new ImageScrollingTwo(
-      this.$refs.meaningImage,
-      this.$refs.meaningParent
-    )
+    // const { ImageScrollingTwo } = await import(
+    //   '~/scripts/OnScroll/ImageScrollingTwo'
+    // )
+    // this.sIS2 = new ImageScrollingTwo(
+    //   this.$refs.meaningImage,
+    //   this.$refs.meaningImage
+    // )
 
     const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
     this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
     this.sectionParallaxInit()
 
     new ScrollAnimations()
+
+    const { BlackBg } = await import('~/scripts/BlackBg')
+    this.blackBg = new BlackBg()
+  },
+
+  beforeDestroy() {
+    this.blackBg && this.blackBg.destroy()
   },
 
   methods: {

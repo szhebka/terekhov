@@ -30,8 +30,6 @@ export default class Accordeon {
 
     if (elem.classList.contains('opened')) elem.classList.remove('opened')
     else {
-      this.elem.forEach(el => el.classList.remove('opened'))
-
       this.resizeCb = () => {
         this.setSizes(elem)
       }

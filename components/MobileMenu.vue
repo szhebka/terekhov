@@ -39,9 +39,12 @@
             </nuxt-link>
           </li>
           <li class="mobile-menu__nav-item" @click="closeMenu">
-            <nuxt-link class="mobile-menu__nav-link" to="/">
+            <anchor-link
+              class="mobile-menu__nav-link"
+              data-anchor-href="/#expo"
+            >
               экспозиция
-            </nuxt-link>
+            </anchor-link>
           </li>
           <li class="mobile-menu__nav-item" @click="closeMenu">
             <nuxt-link class="mobile-menu__nav-link" to="/periods">
@@ -72,7 +75,9 @@
 </template>
 
 <script>
+import AnchorLink from './AnchorLink.vue'
 export default {
+  components: { AnchorLink },
   props: {
     isOpen: {
       type: Boolean,
