@@ -7,8 +7,8 @@
   // @include media('>#{$br1}') {
   min-height: 250rem;
   // }
-  @include media('<=#{$br3}') {
-    min-height: 200rem;
+  @include media('<=#{$br4}') {
+    min-height: 180rem;
   }
 
   @media screen and (max-width: $large_tablet) {
@@ -80,7 +80,7 @@
   position: relative;
   min-height: 250rem;
   will-change: transform;
-  @include media('<=#{$br3}') {
-    min-height: 200rem;
+  @include media('<=#{$br4}') {
+    min-height: 180rem;
   }
 }

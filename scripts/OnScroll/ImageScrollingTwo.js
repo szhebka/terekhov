@@ -1,11 +1,9 @@
 import { clamp } from '@emotionagency/utils'
 import Scrolling from './Scrolling'
-import { secondScreenAnimation } from './secondScreenAnimation'
 
-export class ImageScrolling extends Scrolling {
+export class ImageScrollingTwo extends Scrolling {
   init() {
     super.init()
-    this.isActivated = false
   }
 
   fluidSize(pc, mob) {
@@ -25,7 +23,7 @@ export class ImageScrolling extends Scrolling {
 
   get transformY() {
     const min = 0
-    const max = -500 * (window.innerWidth / 1920)
+    const max = -300 * (window.innerWidth / 1920)
     return this.computeFromMinToMax(min, max)
   }
 
@@ -42,10 +40,6 @@ export class ImageScrolling extends Scrolling {
     super.onScroll()
     this.$el.style.transform = `scale(${this.scale + 1})`
 
-    if (this.percentScrolled === 1 && !this.isActivated) {
-      secondScreenAnimation()
-      this.isActivated = true
-    }
     this.$el.style.opacity = this.opacity
   }
 }

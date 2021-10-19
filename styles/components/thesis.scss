@@ -103,8 +103,6 @@
   }
 
   @media screen and (max-width: $large_mobile) {
-    border-top: 1px solid var(--grey-light);
-    padding-top: 2rem;
     margin-top: 14rem;
   }
 
@@ -118,6 +116,7 @@
   .thesis__left {
     @media screen and (max-width: $large_mobile) {
       max-width: 37rem;
+      margin-top: 2rem;
     }
 
     @media screen and (max-width: $small_mobile) {
@@ -199,6 +198,13 @@
   margin-bottom: 1rem;
 
   @media screen and (max-width: $large_mobile) {
+    display: none;
+  }
+}
+
+.mob-line {
+  background-color: var(--grey-light);
+  @media screen and (min-width: $large_mobile) {
     display: none;
   }
 }
