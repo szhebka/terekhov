@@ -196,6 +196,12 @@
   max-width: 23rem;
   width: 100%;
 
+  @media screen and (min-width: $large_tablet) {
+    height: fit-content;
+    position: sticky;
+    top: 40px;
+  }
+
   @media screen and (max-width: $large_tablet) {
     max-width: 100%;
     margin-bottom: 3rem;

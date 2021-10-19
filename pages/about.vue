@@ -7,7 +7,7 @@
             <div data-a-o class="back about__back">
               <a class="back__link" href="/"> назад</a>
             </div>
-            <div data-a-o class="about__email">
+            <div data-a-t class="about__email">
               <a href="mailto:artiter@gmail.com">artiter@gmail.com</a>
             </div>
           </div>

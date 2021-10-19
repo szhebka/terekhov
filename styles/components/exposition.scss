@@ -1,16 +1,10 @@
 .exposition {
-  background-color: var(--primary-c);
-
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     padding-bottom: 6rem;
     padding-top: 4.5rem;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     padding-top: 3rem;
     padding-bottom: 4rem;
   }
@@ -20,21 +14,16 @@
   display: flex;
   padding-left: calc((100% - 1520px) / 2);
 
-
-  @media screen and (max-width:$large_desktop) {
+  @media screen and (max-width: $large_desktop) {
     padding-left: 40px;
   }
 
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     padding-left: 20px;
     flex-direction: column;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     padding-left: 10px;
   }
 }
@@ -42,15 +31,11 @@
 .exposition__simple-title {
   margin-bottom: 7rem;
 
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     margin-bottom: 5rem;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     margin-bottom: 4rem;
   }
 }
@@ -58,9 +43,7 @@
 .exposition__box {
   display: flex;
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     border-top: 1px solid var(--grey);
     padding-top: 0.5rem;
   }
@@ -70,25 +53,22 @@
   width: calc(100% - 45.5rem - 3rem);
   margin-right: 3rem;
 
-  @media screen and (max-width:$small_desktop) {
+  @media screen and (max-width: $small_desktop) {
     width: calc(100% - 45.5rem - 9rem);
     margin-right: 9rem;
   }
 
-  @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
     width: calc(100% - 45.5rem - 3rem);
     margin-right: 3rem;
   }
 
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     width: calc(100% - 38rem - 3rem);
     margin-right: 3rem;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     width: calc(100% - 18.5rem - 3rem);
   }
 }
@@ -97,15 +77,11 @@
   max-width: 45.5rem;
   width: 100%;
 
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     max-width: 38rem;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     max-width: 18.5rem;
   }
 }
@@ -115,24 +91,18 @@
   width: calc(100% - 60.5rem - 21.5rem);
   margin-right: 21.5rem;
 
-
-  @media screen and (max-width:$small_desktop) {
-
+  @media screen and (max-width: $small_desktop) {
     width: calc(100% - 50.6rem - 10.5rem);
     margin-right: 10.5rem;
   }
 
-
-  @media screen and (max-width:$large_tablet) {
-
+  @media screen and (max-width: $large_tablet) {
     width: calc(100% - 15rem - 20rem);
     margin-right: 20rem;
     padding-bottom: 45rem;
   }
 
-
-  @media screen and (max-width:$large_mobile) {
-
+  @media screen and (max-width: $large_mobile) {
     width: 90%;
     padding-bottom: 0;
     margin-bottom: 10rem;
@@ -140,9 +110,7 @@
     padding-right: 10px;
   }
 
-
-  @media screen and (max-width:$small_mobile) {
-
+  @media screen and (max-width: $small_mobile) {
     width: 100%;
     margin-bottom: 5rem;
   }
@@ -151,8 +119,7 @@
 .exposition__line {
   margin-bottom: 1rem;
 
-
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     display: none !important;
   }
 }
@@ -161,17 +128,15 @@
   max-width: 60.5rem;
   width: 100%;
 
-
-  @media screen and (max-width:$small_desktop) {
+  @media screen and (max-width: $small_desktop) {
     max-width: 50.6rem;
   }
 
-
-  @media screen and (max-width:$large_tablet) {
+  @media screen and (max-width: $large_tablet) {
     max-width: 15rem;
   }
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     display: none;
   }
 }
@@ -179,12 +144,12 @@
 .exposition-slider {
   display: none;
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     display: block;
   }
 }
 
-.exposition__img-wrap>div {
+.exposition__img-wrap > div {
   padding-bottom: 148.76%;
   height: 100%;
 }
@@ -192,7 +157,7 @@
 .exposition__images {
   display: none;
 
-  @media screen and (max-width:$large_mobile) {
+  @media screen and (max-width: $large_mobile) {
     display: block;
     overflow: auto;
 
@@ -211,7 +176,7 @@
   min-width: 58rem;
   margin-right: 1.6rem;
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     min-width: 29rem;
     margin-right: 1rem;
   }
@@ -220,7 +185,7 @@
 .exposition__images-img div {
   padding-bottom: 66.89%;
 
-  @media screen and (max-width:$small_mobile) {
+  @media screen and (max-width: $small_mobile) {
     padding-bottom: 70.89%;
   }
 }

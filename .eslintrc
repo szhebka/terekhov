@@ -24,6 +24,7 @@
     "no-new": "off",
     "no-unused-vars": "warn",
     "prefer-const": "warn",
+    "no-lonely-if": "off",
     "prettier/prettier": [
       "off",
       {
