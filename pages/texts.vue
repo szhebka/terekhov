@@ -8,24 +8,33 @@
           </div>
         </div>
         <div class="texts__top">
-          <div class="back"><a class="back__link" href="/"> назад</a></div>
+          <div class="back">
+            <nuxt-link class="back__link" to="/"> назад</nuxt-link>
+          </div>
           <h2 class="texts__top-title">тексты</h2>
         </div>
         <div class="texts__body toogles toogles--fade">
           <div class="texts__body-left">
             <ul class="texts__body-list">
               <li
-                class="
-                  texts__body-item
-                  toogles__item-title toogles__item-title--active
-                "
+                data-type="all"
+                class="texts__body-item toogles__item-title"
+                @click="filterItems('all')"
               >
                 <p class="texts__body-link">все</p>
               </li>
-              <li class="texts__body-item toogles__item-title">
+              <li
+                data-type="criticism"
+                class="texts__body-item toogles__item-title"
+                @click="filterItems('criticism')"
+              >
                 <p class="texts__body-link">критика</p>
               </li>
-              <li class="texts__body-item toogles__item-title">
+              <li
+                data-type="artist"
+                class="texts__body-item toogles__item-title"
+                @click="filterItems('artist')"
+              >
                 <p class="texts__body-link">текст художника</p>
               </li>
             </ul>
@@ -34,7 +43,11 @@
             <div class="toogles__item toogles__item--active">
               <div class="toogles__item-content" style="display: block">
                 <div>
-                  <div v-for="item in items" :key="item._id" class="texts__box">
+                  <div
+                    v-for="item in filteredItems"
+                    :key="item._id"
+                    class="texts__box"
+                  >
                     <div class="texts__box-inner">
                       <div class="texts__box-left">
                         <div class="texts__box-section">{{ item.section }}</div>
@@ -95,6 +108,7 @@ export default {
         {
           _id: keysGenerator(8),
           section: 'Критика',
+          sectionId: 'criticism',
           name: 'Анна Чудецкая',
           position: 'Кандидат искусствоведения, доцент',
           html: `<p>
@@ -141,6 +155,7 @@ export default {
         {
           _id: keysGenerator(8),
           section: 'Критика',
+          sectionId: 'criticism',
           name: 'Игорь Ножов',
           position: 'Арт - критик',
           html: `<p>
@@ -166,6 +181,7 @@ export default {
         {
           _id: keysGenerator(8),
           section: 'Критика',
+          sectionId: 'criticism',
           name: 'Михаил Красилин',
           position: 'Искусствовед',
           html: `<p>
@@ -231,6 +247,7 @@ export default {
         {
           _id: keysGenerator(8),
           section: 'Критика',
+          sectionId: 'criticism',
           name: 'Сергей Попов',
           position: 'Искусствовед, галерист',
           html: `<p>
@@ -286,6 +303,7 @@ export default {
         {
           _id: keysGenerator(8),
           section: 'Текст художника',
+          sectionId: 'artist',
           name: 'Игорь Терехов',
           position: 'Художник',
           onlyMobile: true,
@@ -484,12 +502,33 @@ export default {
                           </ul>`,
         },
       ],
+      filteredItems: [],
     }
   },
 
   async mounted() {
     const { default: Accordeon } = await import('~/scripts/Accordeon')
     this.accordeon = new Accordeon('.texts__box', '.texts__box-right')
+
+    this.filterItems('all')
+  },
+
+  methods: {
+    filterItems(value) {
+      const $filterNodes = document.querySelectorAll('[data-type]')
+      const $filterNodeActive = document.querySelector(`[data-type="${value}"]`)
+
+      $filterNodes.forEach(node =>
+        node.classList.remove('toogles__item-title--active')
+      )
+      $filterNodeActive.classList.add('toogles__item-title--active')
+
+      if (value === 'all') {
+        this.filteredItems = this.items
+        return
+      }
+      this.filteredItems = this.items.filter(item => item.sectionId === value)
+    },
   },
 }
 </script>
