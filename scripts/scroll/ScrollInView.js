@@ -6,10 +6,6 @@ export default class ScrollInView {
     this.intersectionRatio = offset
 
     this.inView()
-
-    window.requestAnimationFrame(
-      () => new ScrollInView(elements, callback, offset)
-    )
   }
 
   inView() {

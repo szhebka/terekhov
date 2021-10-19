@@ -1,17 +1,22 @@
 import gsap from 'gsap'
-import { textAnimation } from './textAnimation'
-import { delayPromise } from './utils/delay'
+import { textLineAnimation } from './textLineAnimation'
 
-export const homeAnimation = async () => {
+const noop = () => {}
+
+export const loadAnimation = cb => {
   const $sc = document.querySelector('#scroll-container')
-  const $el = document.querySelector('[data-home]')
-  const $h = $el.querySelector('[data-a-h]')
+  const $el = document.querySelector('[data-route]')
+
+  const callback = cb || noop
+
+  if (!$el) return
+  const $h = $el.querySelectorAll('[data-a-h2]')
 
   NodeList.prototype.animation = function (options) {
     this.length > 0 && gsap.to(this, options)
   }
 
-  await delayPromise(1000)
+  callback()
   gsap.to($sc, { duration: 0.5, opacity: 1 })
 
   $el.querySelectorAll('[data-a-l]').animation({
@@ -21,7 +26,10 @@ export const homeAnimation = async () => {
     stagger: 0.2,
   })
 
-  textAnimation().in($h, 2, 0)
+  $h.length &&
+    $h.forEach(el => {
+      textLineAnimation().in(el)
+    })
 
   $el.querySelectorAll('[data-a-t]').animation({
     duration: 1,
@@ -34,7 +42,7 @@ export const homeAnimation = async () => {
 
   $el.querySelectorAll('[data-a-o]').animation({
     duration: 1,
-    delay: 0.3,
+    delay: 0.5,
     opacity: 1,
     ease: 'power1.out',
     stagger: 0.2,

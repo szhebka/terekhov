@@ -219,10 +219,6 @@ h4 {
   pointer-events: none;
 }
 
-.e-line {
-  display: inline !important;
-}
-
 [data-a-l] {
   width: 0%;
 }
@@ -251,7 +247,23 @@ h4 {
   }
 }
 
+[data-a-h2] {
+  opacity: 0;
+  line-height: 1em;
+  .line,
+  .line-inner {
+    display: inline-block;
+  }
+  .e-line {
+    overflow: hidden;
+    line-height: 1em;
+  }
+  .line-inner {
+    transform: translateY(110%);
+  }
+}
+
 [data-href],
-[nav-href] {
+[data-anchor-href] {
   cursor: pointer;
 }

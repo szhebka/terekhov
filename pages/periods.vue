@@ -1,17 +1,19 @@
 <template>
-  <main>
+  <main data-route data-periods>
     <section class="periods">
       <div class="center-wrap">
         <div class="periods__header">
-          <div class="back"><a class="back__link" href="/"> назад</a></div>
+          <div data-a-t class="back">
+            <a class="back__link" href="/"> назад</a>
+          </div>
           <div class="periods__header-right">
-            <div class="periods__header-text">
+            <div data-a-h2 class="periods__header-text">
               Некоторые работы основных творческих периодов
             </div>
-            <div class="periods__header-title">периоды</div>
+            <div data-a-h2 class="periods__header-title">периоды</div>
           </div>
         </div>
-        <div class="periods__body anchors">
+        <div data-a-o class="periods__body anchors">
           <div class="periods__body-list">
             <div class="periods__body-item" data-href="#periods__box-one">
               1989/2002
@@ -542,8 +544,10 @@
 <script>
 import vuePicture from '~/components/vue-picture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
+import transition from '~/mixins/transition.vue'
+
 export default {
   components: { vuePicture },
-  mixins: [anchorVue],
+  mixins: [anchorVue, transition],
 }
 </script>

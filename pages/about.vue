@@ -1,23 +1,23 @@
 <template>
-  <main>
+  <main data-route data-about>
     <section class="about">
       <div class="center-wrap">
         <div class="about__header">
           <div class="about__header-left">
-            <div class="back about__back">
+            <div data-a-o class="back about__back">
               <a class="back__link" href="/"> назад</a>
             </div>
-            <div class="about__email">
+            <div data-a-o class="about__email">
               <a href="mailto:artiter@gmail.com">artiter@gmail.com</a>
             </div>
           </div>
-          <div class="about__header-right img-wrap">
+          <div data-a-o class="about__header-right img-wrap">
             <div>
               <vue-picture url="/img/about-img.jpg" />
             </div>
           </div>
         </div>
-        <div class="about__wrap">
+        <div data-a-o class="about__wrap">
           <div class="about__wrap-left">
             <div class="about__box">
               <h2 class="about__box-title">Терехов Игорь</h2>
@@ -248,8 +248,10 @@
 <script>
 import vuePicture from '~/components/vue-picture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
+import transition from '~/mixins/transition.vue'
+
 export default {
   components: { vuePicture },
-  mixins: [anchorVue],
+  mixins: [anchorVue, transition],
 }
 </script>

@@ -19,13 +19,9 @@
               </nuxt-link>
             </li>
             <li class="header__nav-item">
-              <div
-                class="header__nav-link"
-                nav-href="#expo"
-                @click.prevent="expoClick"
-              >
+              <anchor-link class="header__nav-link" data-anchor-href="/#expo">
                 экспозиция
-              </div>
+              </anchor-link>
             </li>
             <li class="header__nav-item">
               <nuxt-link class="header__nav-link" to="/periods">
@@ -46,9 +42,10 @@
 </template>
 
 <script>
+import AnchorLink from './AnchorLink.vue'
 import MobileMenu from './MobileMenu.vue'
 export default {
-  components: { MobileMenu },
+  components: { MobileMenu, AnchorLink },
   data() {
     return {
       isOpen: false,
@@ -67,30 +64,6 @@ export default {
     },
     openMenu() {
       this.isOpen = true
-    },
-    expoClick(e) {
-      if (this.$route.name === 'index') {
-        this.goToAnchor(e.currentTarget.getAttribute('nav-href'))
-        return
-      }
-      this.$router.push('/')
-      const href = e.currentTarget.getAttribute('nav-href')
-
-      this.$nextTick(() => {
-        setTimeout(() => {
-          this.goToAnchor(href)
-        }, 1000)
-      })
-    },
-    goToAnchor(href) {
-      const target = document.querySelector(href)
-
-      const startLocation = window.pageYOffset
-      const endLocation = target.offsetTop
-
-      const distance = endLocation - startLocation + window.innerHeight / 4
-
-      window.ss.state.target = distance
     },
   },
 }
