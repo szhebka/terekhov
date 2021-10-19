@@ -411,7 +411,7 @@
         </div>
       </div>
     </div>
-    <section data-dark class="biography">
+    <section class="biography">
       <div class="center-wrap">
         <h2 class="biography__title">
           Работы находятся в собрании Государственного Русского музея в
