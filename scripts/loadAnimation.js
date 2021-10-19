@@ -17,7 +17,7 @@ export const loadAnimation = cb => {
   }
 
   callback()
-  gsap.to($sc, { duration: 0.5, opacity: 1 })
+  $sc && gsap.to($sc, { duration: 0.5, opacity: 1 })
 
   $el.querySelectorAll('[data-a-l]').animation({
     duration: 1.5,
