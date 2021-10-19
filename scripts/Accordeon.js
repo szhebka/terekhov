@@ -2,10 +2,23 @@ import { resize } from '@emotionagency/utils'
 
 export default class Accordeon {
   constructor(elem, child) {
+    this.elemSelector = elem
     this.elem = document.querySelectorAll(elem)
     this.child = child
 
     this.render = this.render.bind(this)
+
+    this.elem.forEach(el => {
+      el.addEventListener('click', this.render)
+    })
+  }
+
+  update() {
+    this.elem.forEach(el => {
+      el.removeEventListener('click', this.render)
+    })
+
+    this.elem = document.querySelectorAll(this.elemSelector)
 
     this.elem.forEach(el => {
       el.addEventListener('click', this.render)
