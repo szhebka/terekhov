@@ -13,7 +13,7 @@
           </div>
           <h2 data-a-h2 class="texts__top-title">тексты</h2>
         </div>
-        <div data-a-o class="texts__body toogles toogles--fade">
+        <div ref="textBody" data-a-o class="texts__body toogles toogles--fade">
           <div class="texts__body-left">
             <ul class="texts__body-list">
               <li
@@ -521,7 +521,7 @@ export default {
     this.AccInst = Accordeon
     this.accordeon = new Accordeon('.texts__box', '.texts__box-right')
 
-    this.filterItems('all')
+    this.filterItems('all', false)
   },
 
   beforeDestroy() {
@@ -529,7 +529,7 @@ export default {
   },
 
   methods: {
-    filterItems(value) {
+    filterItems(value, isResetScroll = true) {
       const $filterNodes = document.querySelectorAll('[data-type]')
       const $filterNodeActive = document.querySelector(`[data-type="${value}"]`)
 
@@ -540,9 +540,21 @@ export default {
 
       if (value === 'all') {
         this.filteredItems = this.items
+        if (isResetScroll) {
+          this.resetTextsScroll()
+        }
         return
       }
       this.filteredItems = this.items.filter(item => item.sectionId === value)
+      this.resetTextsScroll()
+    },
+
+    resetTextsScroll() {
+      const elTop = window.innerHeight
+
+      if (window.ss?.state) {
+        window.ss.state.target = elTop
+      }
     },
   },
 }
