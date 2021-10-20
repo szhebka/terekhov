@@ -168,8 +168,13 @@
   transition: transform 0.5s;
 }
 
-.header__nav-link:hover::before {
-  transform: scaleX(1);
+.header__nav-link {
+  &:hover,
+  &.nuxt-link-exact-active {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .header__burger {

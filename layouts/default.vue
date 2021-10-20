@@ -38,6 +38,8 @@ export default {
       stepSize: 0.9,
       raf,
     })
+
+    this.parallaxInit()
   },
 
   beforeDestroy() {
@@ -49,6 +51,11 @@ export default {
       const { winSizes } = await import('~/scripts/utils/winSizes')
       const { resize } = await import('@emotionagency/utils')
       resize.on(winSizes)
+    },
+
+    async parallaxInit() {
+      const { Parallax } = await import('~/scripts/Parallax')
+      window.parallax = new Parallax()
     },
   },
 }
