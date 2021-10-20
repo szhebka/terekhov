@@ -3,7 +3,7 @@
     <section class="periods">
       <div class="center-wrap">
         <div class="periods__header">
-          <div data-a-t class="back">
+          <div data-a-o class="back">
             <nuxt-link class="back__link" to="/">назад</nuxt-link>
           </div>
           <div class="periods__header-right">
