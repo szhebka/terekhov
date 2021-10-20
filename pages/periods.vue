@@ -4,7 +4,7 @@
       <div class="center-wrap">
         <div class="periods__header">
           <div data-a-t class="back">
-            <a class="back__link" href="/"> назад</a>
+            <nuxt-link class="back__link" to="/">назад</nuxt-link>
           </div>
           <div class="periods__header-right">
             <div data-a-h2 class="periods__header-text">

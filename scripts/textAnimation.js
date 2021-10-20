@@ -29,14 +29,15 @@ export const textAnimation = $el => {
       prepare($el)
       $el.style.opacity = 1
 
-      gsap.to($toAnimate, {
-        duration,
-        y: '0%',
-        stagger,
-        opacity: 1,
-        ease: 'expo.out',
-        overwrite: true,
-      })
+      $toAnimate?.length &&
+        gsap.to($toAnimate, {
+          duration,
+          y: '0%',
+          stagger,
+          opacity: 1,
+          ease: 'expo.out',
+          overwrite: true,
+        })
     },
   }
 }

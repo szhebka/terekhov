@@ -199,7 +199,8 @@
   @media screen and (min-width: $large_tablet) {
     height: fit-content;
     position: sticky;
-    top: 40px;
+    transition: top 0.3s ease;
+    top: calc(40px + var(--no));
   }
 
   @media screen and (max-width: $large_tablet) {

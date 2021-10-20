@@ -32,7 +32,7 @@ export const loadAnimation = cb => {
     })
 
   $el.querySelectorAll('[data-a-t]').animation({
-    duration: 1.5,
+    duration: 1,
     delay: 0.5,
     opacity: 1,
     y: 0,

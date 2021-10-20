@@ -11,7 +11,7 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@emotionagency/smoothscroll": "^0.1.6",
+    "@emotionagency/smoothscroll": "^0.1.8",
     "@emotionagency/utils": "^0.0.7",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",

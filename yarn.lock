@@ -889,10 +889,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@emotionagency/smoothscroll@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-0.1.6.tgz#550477254cacc3a81ea539ecb9bd0e68bcba6407"
-  integrity sha512-dwyInShfOM4mLUoNIR6lQIx/B1TLllQeqRS3J4Qt6+9N4iNbdlQQrU0y5M22ObIQVNOViX9TKw82WZyREzxN+A==
+"@emotionagency/smoothscroll@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-0.1.8.tgz#f80452f967913b01d488f02e91c4a1717f8ed9cd"
+  integrity sha512-MDbPTS7DkIKiQn8dmJfY+k6Ig2N+faX4+V1LI3yeJ3cUYZftPrilYj+3zHpmta2NHra0+bq57xwnh644Tplf1g==
   dependencies:
     "@emotionagency/utils" "0.0.6"
     virtual-scroll "^2.1.1"
