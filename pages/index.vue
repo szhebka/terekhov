@@ -9,7 +9,6 @@
         <div ref="imageParent" class="main-screen__e-image-sticky">
           <div
             ref="imageEl"
-            data-dark
             data-dark-offset-top="0.1"
             data-dark-offset-bottom="0.7"
             class="main-screen__img-wrap img-wrap"
@@ -22,8 +21,10 @@
       </div>
     </section>
     <div
+      ref="thesis"
+      data-in-view
       data-dark
-      data-dark-offset-top="2"
+      data-dark-offset-top="1"
       data-dark-offset-bottom="0.7"
       data-parallax-wrapper
     >
@@ -457,20 +458,20 @@ export default {
 
     const imageParent =
       window.innerWidth > 460 ? this.$refs.imageParent : this.$refs.textParent
-    const { ImageScrolling } = await import('~/scripts/OnScroll/ImageScrolling')
-    this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
 
-    // const { ImageScrollingTwo } = await import(
-    //   '~/scripts/OnScroll/ImageScrollingTwo'
-    // )
-    // this.sIS2 = new ImageScrollingTwo(
-    //   this.$refs.meaningImage,
-    //   this.$refs.meaningImage
-    // )
+    if (window.innerWidth > 1024) {
+      const { ImageScrolling } = await import(
+        '~/scripts/OnScroll/ImageScrolling'
+      )
+      this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
 
-    const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
-    this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
-    this.sectionParallaxInit()
+      this.$refs.imageEl.setAttribute('data-dark', '')
+      this.$refs.thesis.setAttribute('data-dark-offset-top', '2')
+
+      const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
+      this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
+      this.sectionParallaxInit()
+    }
 
     new ScrollAnimations()
 
