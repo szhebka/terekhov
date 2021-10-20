@@ -5,7 +5,7 @@
         <div class="about__header">
           <div class="about__header-left">
             <div data-a-o class="back about__back">
-              <a class="back__link" href="/"> назад</a>
+              <nuxt-link class="back__link" to="/"> назад</nuxt-link>
             </div>
             <div data-a-t class="about__email">
               <a href="mailto:artiter@gmail.com">artiter@gmail.com</a>

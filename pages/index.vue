@@ -220,7 +220,7 @@
           </div>
         </div>
         <div class="meaning__img-wrap img-wrap">
-          <div ref="meaningImage">
+          <div ref="meaningImage" data-parallax="0.3">
             <vue-picture url="/img/meaning-img1.jpg" />
           </div>
         </div>
