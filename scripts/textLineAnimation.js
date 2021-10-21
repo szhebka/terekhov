@@ -25,7 +25,7 @@ export const textLineAnimation = $el => {
   }
 
   return {
-    in: ($el, duration = 2.5, stagger = 0.3) => {
+    in: ($el, duration = 2.3, stagger = 0.2) => {
       prepare($el)
       $el.style.opacity = 1
 

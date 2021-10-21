@@ -1,7 +1,6 @@
 import { raf } from '@emotionagency/utils'
 import gsap from 'gsap'
-import { textAnimation } from '../textAnimation'
-import { textLineAnimation } from '../textLineAnimation'
+import { animations } from '../animations'
 import ScrollInView from './ScrollInView.js'
 
 class ScrollAnimations extends ScrollInView {
@@ -20,39 +19,7 @@ class ScrollAnimations extends ScrollInView {
   }
 
   sectionAnimation(elem) {
-    elem.querySelectorAll('[data-a-l]').animation({
-      duration: 2.5,
-      width: '100%',
-      ease: 'power1.out',
-      stagger: 0.2,
-    })
-
-    const $h = elem.querySelector('[data-a-h]')
-    const $h2 = elem.querySelectorAll('[data-a-h2]')
-
-    $h2.length &&
-      $h2.forEach(el => {
-        textLineAnimation().in(el)
-      })
-
-    $h && textAnimation().in($h, 3)
-
-    elem.querySelectorAll('[data-a-t]').animation({
-      duration: 2.5,
-      delay: 0.5,
-      opacity: 1,
-      y: 0,
-      ease: 'power1.out',
-      stagger: 0.2,
-    })
-
-    elem.querySelectorAll('[data-a-o]').animation({
-      duration: 2.5,
-      delay: 0.5,
-      opacity: 1,
-      ease: 'power1.out',
-      stagger: 0.2,
-    })
+    animations(elem)
   }
 
   destroy() {
