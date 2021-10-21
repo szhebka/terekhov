@@ -4,7 +4,7 @@
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
           <h1 data-a-h2 class="main-screen__title">Igor Terekhov</h1>
-          <h2 data-a-t class="main-screen__subtitle">живопись</h2>
+          <h2 data-a-h2 class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
           <div
