@@ -56,7 +56,7 @@ export const textLineAnimation = $el => {
         })
       }
     },
-    in2: ($el, duration = 2, stagger = 0.2) => {
+    in2: ($el, duration = 1.8, stagger = 0.15) => {
       prepare($el, 'lines')
       $el.style.opacity = 1
 
@@ -69,6 +69,28 @@ export const textLineAnimation = $el => {
           ease: 'expo.out',
           overwrite: true,
         })
+    },
+
+    in3: ($el, duration = 2, stagger = 0.2) => {
+      prepare($el, 'lines')
+      $el.style.opacity = 1
+
+      if ($toAnimate2?.length) {
+        gsap.to($toAnimate2, {
+          duration,
+          y: '0%',
+          rotation: 0,
+          stagger,
+          ease: 'expo.out',
+        })
+
+        gsap.to($toAnimate2, {
+          duration: duration * 1.5,
+          stagger,
+          opacity: 1,
+          ease: 'expo.out',
+        })
+      }
     },
   }
 }

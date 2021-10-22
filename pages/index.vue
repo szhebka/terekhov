@@ -3,7 +3,7 @@
     <section ref="textParent" data-route data-home class="main-screen">
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 data-a-h2 class="main-screen__title">Igor Terekhov</h1>
+          <h1 data-a-title class="main-screen__title">Igor Terekhov</h1>
           <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
@@ -30,11 +30,11 @@
     >
       <div v-multi-ref:parallax data-offset="0">
         <section class="thesis">
-          <div data-a-p class="center-wrap">
+          <div class="center-wrap">
             <div class="thesis__top">
               <div data-a-o class="thesis__small-title small-title">тезис</div>
               <h2
-                data-a-h
+                data-a-thesis
                 class="thesis__simple-title simple-title simple-title--color"
               >
                 Плоскость холста предупреждает — здесь вы встретитесь с заведомо
@@ -90,13 +90,13 @@
       <div class="center-wrap">
         <div class="philosophy__wrap">
           <div class="philosophy__left">
-            <h2 data-a-h3 class="philosophy__title">Αλήθεια</h2>
+            <h2 data-a-h class="philosophy__title">Αλήθεια</h2>
             <div class="philosophy__author-name philosophy__author-name--sm">
               М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
             </div>
           </div>
           <div class="philosophy__right">
-            <div data-a-h3 class="philosophy__descr">
+            <div data-a-o class="philosophy__descr">
               άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
               ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
               θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών
@@ -167,11 +167,11 @@
                 </div>
               </div>
             </div>
-            <h2 data-a-h2 class="poet__simple-title simple-title">Ли Бо</h2>
+            <h2 data-a-h class="poet__simple-title simple-title">Ли Бо</h2>
             <span data-a-l class="poet__line line line--bg"></span>
             <div class="poet__descr">
               <div class="poet__descr-wrap">
-                <p data-a-h3>
+                <p data-a-p>
                   Желтая Река идет в Восточную Бездну, Белое солнце опускается в
                   западное море. Уходящий поток и струящийся свет Летят, мчатся,
                   никого не ждут.
@@ -198,20 +198,20 @@
       <div class="center-wrap">
         <div class="meaning__container">
           <div class="meaning__top">
-            <h2 data-a-h2 class="meaning__simple-title simple-title">
+            <h2 data-a-h class="meaning__simple-title simple-title">
               Смысл живописной деятельности и её содержание неразделимы и это её
               уникальное свойство
             </h2>
             <span data-a-l class="meaning__line line line--bg"></span>
             <div class="meaning__wrap">
               <div
-                data-a-h3
+                data-a-p
                 class="meaning__small-title small-title small-title--color"
               >
                 Мерло–Понти
               </div>
               <div class="meaning__content content content--color">
-                <p data-a-h3>
+                <p data-a-p>
                   Поэтому, вероятно, художники с такой неохотой рассказывают о
                   том, чем они занимаются. Перед ними есть пример создания
                   текстов, призванных объяснить то или иное, и непрестанно
@@ -262,12 +262,12 @@
     <section data-in-view class="buber">
       <div class="center-wrap">
         <div class="buber__top">
-          <h2 data-a-h2 class="buber__simple-title simple-title">
+          <h2 data-a-h class="buber__simple-title simple-title">
             Мартин Бубер
           </h2>
           <div class="buber__top-left">
             <span data-a-l class="buber__line"></span>
-            <div data-a-h3 class="buber__descr">
+            <div data-a-p class="buber__descr">
               Чистый жест, который не похищает мир для себя, но выражает себя
               для мира – какое совершенное определение для последней фазы
               современного искусства.

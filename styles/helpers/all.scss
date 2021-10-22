@@ -246,7 +246,7 @@ h4 {
   will-change: opacity;
 }
 
-[data-a-h] {
+[data-a-thesis] {
   opacity: 0;
   .char {
     display: inline-block;
@@ -262,7 +262,7 @@ h4 {
   }
 }
 
-[data-a-h2] {
+[data-a-title] {
   opacity: 0;
   line-height: 1em;
   .line,
@@ -283,7 +283,25 @@ h4 {
   }
 }
 
-[data-a-h3] {
+[data-a-h] {
+  opacity: 0;
+  line-height: 1em;
+  .line,
+  .line-inner {
+    display: inline-block;
+  }
+  .e-line {
+    overflow: hidden;
+    line-height: 1em;
+  }
+  .line-inner {
+    transform: translateY(110%) rotate(-3deg);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+}
+
+[data-a-p] {
   opacity: 0;
   line-height: 1em;
   .line,

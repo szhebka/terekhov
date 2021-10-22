@@ -11,7 +11,7 @@
           <div data-a-t class="back">
             <nuxt-link class="back__link" to="/"> назад</nuxt-link>
           </div>
-          <h2 data-a-h2 class="texts__top-title">тексты</h2>
+          <h2 data-a-title class="texts__top-title">тексты</h2>
         </div>
         <div ref="textBody" data-a-o class="texts__body toogles toogles--fade">
           <div class="texts__body-left">

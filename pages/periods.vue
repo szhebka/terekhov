@@ -7,10 +7,10 @@
             <nuxt-link class="back__link" to="/">назад</nuxt-link>
           </div>
           <div class="periods__header-right">
-            <div data-a-h2 class="periods__header-text">
+            <div data-a-h class="periods__header-text">
               Некоторые работы основных творческих периодов
             </div>
-            <div data-a-h2 class="periods__header-title">периоды</div>
+            <div data-a-title class="periods__header-title">периоды</div>
           </div>
         </div>
         <div data-a-o class="periods__body anchors">

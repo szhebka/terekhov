@@ -22,7 +22,7 @@ void main() {
 
   vec4 newPosition = modelViewMatrix * vec4(pos, 1.0);
 
-  float scrollValue = -uStrength * 3.;
+  float scrollValue = -uStrength;
 
   newPosition.z += sin(newPosition.y / uViewportY * 2. * PI) * scrollValue;
 

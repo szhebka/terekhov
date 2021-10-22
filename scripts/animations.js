@@ -18,23 +18,30 @@ export const animations = (elem, h1dur = 2.3) => {
     stagger: 0.2,
   })
 
-  const $h = elem.querySelector('[data-a-h]')
-  const $h2 = elem.querySelectorAll('[data-a-h2]')
-  const $h3 = elem.querySelectorAll('[data-a-h3]')
+  const $thesis = elem.querySelector('[data-a-thesis]')
+  const $title = elem.querySelectorAll('[data-a-title]')
+  const $h = elem.querySelectorAll('[data-a-h]')
+  const $p = elem.querySelectorAll('[data-a-p]')
 
-  $h2.length &&
-    $h2.forEach(async (el, i) => {
+  $title.length &&
+    $title.forEach(async (el, i) => {
       await delayPromise(i * 300)
       textLineAnimation().in(el)
     })
 
-  $h3.length &&
-    $h3.forEach(async (el, i) => {
+  $h.length &&
+    $h.forEach(async (el, i) => {
+      await delayPromise(i * 300)
+      textLineAnimation().in3(el, h1dur)
+    })
+
+  $p.length &&
+    $p.forEach(async (el, i) => {
       await delayPromise((i + 1) * 300)
       textLineAnimation().in2(el, h1dur)
     })
 
-  $h && textAnimation().in($h, 3)
+  $thesis && textAnimation().in($thesis, 3)
 
   elem.querySelectorAll('[data-a-t]').animation({
     duration: 2,
