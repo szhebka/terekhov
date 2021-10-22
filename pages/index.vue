@@ -4,7 +4,7 @@
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
           <h1 data-a-h2 class="main-screen__title">Igor Terekhov</h1>
-          <h2 data-a-h2 class="main-screen__subtitle">живопись</h2>
+          <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
           <div
@@ -90,7 +90,7 @@
       <div class="center-wrap">
         <div class="philosophy__wrap">
           <div class="philosophy__left">
-            <h2 data-a-h2 class="philosophy__title">Αλήθεια</h2>
+            <h2 data-a-h3 class="philosophy__title">Αλήθεια</h2>
             <div class="philosophy__author-name philosophy__author-name--sm">
               М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
             </div>
@@ -205,7 +205,7 @@
             <span data-a-l class="meaning__line line line--bg"></span>
             <div class="meaning__wrap">
               <div
-                data-a-h2
+                data-a-h3
                 class="meaning__small-title small-title small-title--color"
               >
                 Мерло–Понти

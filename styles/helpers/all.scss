@@ -271,13 +271,13 @@ h4 {
   }
   .e-line {
     line-height: 1em;
-    overflow: hidden;
+    // overflow: hidden;
   }
   // .line-inner {
 
   // }
-  .line-inner {
-    transform: translateY(100%) rotate(2deg);
+  .char {
+    transform: translateX(60px);
     opacity: 0;
     will-change: transform, opacity;
   }

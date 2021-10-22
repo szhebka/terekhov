@@ -5,12 +5,12 @@ export const textLineAnimation = $el => {
   let $toAnimate
   let $toAnimate2
 
-  const prepare = $el => {
+  const prepare = ($el, by = 'chars, lines') => {
     if ($el.classList.contains('splitted')) {
       return
     }
     const text = new SplitType($el, {
-      types: 'words, lines',
+      types: by,
       tagName: 'span',
       lineClass: 'e-line',
     })
@@ -20,44 +20,44 @@ export const textLineAnimation = $el => {
       line.setAttribute('data-line', line.innerText)
     })
 
-    $toAnimate = [...$el.querySelectorAll('.line-inner')]
+    $toAnimate = [...$el.querySelectorAll('.line-inner .char')]
     $toAnimate2 = [...$el.querySelectorAll('.line-inner')]
     $el.style.opacity = 1
     $el.classList.add('splitted')
   }
 
   return {
-    in: ($el, duration = 1.8, stagger = 0.2) => {
+    in: ($el, duration = 1.8, stagger = 0.08) => {
       prepare($el)
       $el.style.opacity = 1
       const tl = gsap.timeline()
       if ($toAnimate?.length) {
-        $toAnimate2.forEach(el => {})
-        tl.to(
-          $toAnimate,
-          {
-            duration,
-            y: '0%',
-            rotation: 0,
-            stagger,
-            ease: 'expo.out',
-          },
-          0
-        )
-        tl.to(
-          $toAnimate,
-          {
-            duration: duration * 1.5,
-            opacity: 1,
-            stagger,
-            ease: 'power3.out',
-          },
-          0
-        )
+        $toAnimate2.forEach(el => {
+          tl.to(
+            el.querySelectorAll('.char'),
+            {
+              duration,
+              x: '0%',
+              stagger,
+              ease: 'expo.out',
+            },
+            0
+          )
+          tl.to(
+            el.querySelectorAll('.char'),
+            {
+              duration: duration * 1.5,
+              opacity: 1,
+              stagger,
+              ease: 'power3.out',
+            },
+            0
+          )
+        })
       }
     },
     in2: ($el, duration = 2, stagger = 0.2) => {
-      prepare($el)
+      prepare($el, 'lines')
       $el.style.opacity = 1
 
       $toAnimate2?.length &&
