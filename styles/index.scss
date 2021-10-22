@@ -1,2 +1,20 @@
 @import './helpers/all.scss';
 @import './components/all.scss';
+
+#gl,
+#gl-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+#gl {
+  // opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease;
+}
+
+#gl-2 {
+  z-index: -2;
+}

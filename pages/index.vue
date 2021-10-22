@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="philosophy__right">
-            <div class="philosophy__descr">
+            <div data-a-h3 class="philosophy__descr">
               άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
               ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
               θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών
@@ -128,7 +128,7 @@
             </div>
             <div class="philosophy__img-wrap img-wrap">
               <div>
-                <vue-picture url="/img/philosophy-img.jpg" />
+                <vue-gl-picture url="/img/philosophy-img.jpg" />
               </div>
             </div>
             <div data-a-t class="img-descr img-descr--color">
@@ -148,7 +148,7 @@
           <div class="poet__left">
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/poet-img1.jpg" />
+                <vue-gl-picture url="/img/poet-img1.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -163,15 +163,15 @@
             <div class="poet__photo">
               <div class="img-wrap img-wrap--contain">
                 <div>
-                  <vue-picture url="/img/poet-photo.jpg" />
+                  <vue-gl-picture url="/img/poet-photo.jpg" />
                 </div>
               </div>
             </div>
             <h2 data-a-h2 class="poet__simple-title simple-title">Ли Бо</h2>
             <span data-a-l class="poet__line line line--bg"></span>
             <div class="poet__descr">
-              <div data-a-t class="poet__descr-wrap">
-                <p>
+              <div class="poet__descr-wrap">
+                <p data-a-h3>
                   Желтая Река идет в Восточную Бездну, Белое солнце опускается в
                   западное море. Уходящий поток и струящийся свет Летят, мчатся,
                   никого не ждут.
@@ -180,7 +180,7 @@
             </div>
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/poet-img2.jpg" />
+                <vue-gl-picture url="/img/poet-img2.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -203,12 +203,15 @@
               уникальное свойство
             </h2>
             <span data-a-l class="meaning__line line line--bg"></span>
-            <div data-a-t class="meaning__wrap">
-              <div class="meaning__small-title small-title small-title--color">
+            <div class="meaning__wrap">
+              <div
+                data-a-h2
+                class="meaning__small-title small-title small-title--color"
+              >
                 Мерло–Понти
               </div>
               <div class="meaning__content content content--color">
-                <p>
+                <p data-a-h3>
                   Поэтому, вероятно, художники с такой неохотой рассказывают о
                   том, чем они занимаются. Перед ними есть пример создания
                   текстов, призванных объяснить то или иное, и непрестанно
@@ -220,15 +223,15 @@
           </div>
         </div>
         <div class="meaning__img-wrap img-wrap">
-          <div ref="meaningImage" data-parallax="0.3">
-            <vue-picture url="/img/meaning-img1.jpg" />
+          <div ref="meaningImage">
+            <vue-gl-picture url="/img/meaning-img1.jpg" />
           </div>
         </div>
         <div class="meaning__box">
           <div class="meaning__box-left">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-picture url="/img/meaning-img2.jpg" />
+                <vue-gl-picture url="/img/meaning-img2.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -242,7 +245,7 @@
           <div class="meaning__box-right">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-picture url="/img/meaning-img3.jpg" />
+                <vue-gl-picture url="/img/meaning-img3.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -264,7 +267,7 @@
           </h2>
           <div class="buber__top-left">
             <span data-a-l class="buber__line"></span>
-            <div data-a-t class="buber__descr">
+            <div data-a-h3 class="buber__descr">
               Чистый жест, который не похищает мир для себя, но выражает себя
               для мира – какое совершенное определение для последней фазы
               современного искусства.
@@ -275,7 +278,7 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/buber-img1.jpg" />
+                <vue-gl-picture url="/img/buber-img1.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -289,7 +292,7 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/buber-img2.jpg" />
+                <vue-gl-picture url="/img/buber-img2.jpg" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -442,36 +445,46 @@
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import AnchorLink from '~/components/AnchorLink.vue'
 import VuePicture from '~/components/vue-picture.vue'
+import VueGlPicture from '~/components/vue-gl-picture.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 
 export default {
-  components: { VuePicture },
+  components: { VuePicture, VueGlPicture },
   mixins: [AnchorVue, AnchorLink, transition],
 
   async mounted() {
+    const { initImages } = await import('~/scripts/GL/Images/init')
+    if (window.scetch) {
+      initImages()
+    } else {
+      emitter.on('scetchCreated', initImages)
+    }
+
     const { default: ScrollAnimations } = await import(
       '~/scripts/scroll/ScrollAnimations'
     )
 
-    const imageParent =
-      window.innerWidth > 460 ? this.$refs.imageParent : this.$refs.textParent
+    // const imageParent =
+    //   window.innerWidth > 460 ? this.$refs.imageParent : this.$refs.textParent
 
-    if (window.innerWidth > 1024) {
-      const { ImageScrolling } = await import(
-        '~/scripts/OnScroll/ImageScrolling'
-      )
-      this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
+    // if (window.innerWidth > 1024) {
+    //   const { ImageScrolling } = await import(
+    //     '~/scripts/OnScroll/ImageScrolling'
+    //   )
+    //   this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
 
-      this.$refs.imageEl.setAttribute('data-dark', '')
-      this.$refs.thesis.setAttribute('data-dark-offset-top', '2')
+    //   this.$refs.imageEl.setAttribute('data-dark', '')
+    //   this.$refs.thesis.setAttribute('data-dark-offset-top', '2')
 
-      const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
-      this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
-      this.sectionParallaxInit()
-    }
+    //   const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
+    //   this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
+    // this.sectionParallaxInit()
+    // }
 
     new ScrollAnimations()
 

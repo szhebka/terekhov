@@ -3,17 +3,18 @@
     <div id="scroll-container">
       <Header />
       <Nuxt />
+      <div id="gl"></div>
     </div>
   </div>
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import Header from '~/components/Header'
-// import Popup from '~/components/Popup'
 export default {
   components: {
     Header,
-    // Popup,
   },
 
   async mounted() {
@@ -27,8 +28,11 @@ export default {
 
     this.winSizes()
 
+    const { Scetch } = await import('@emotionagency/glhtml')
     const { SmoothScroll } = await import('@emotionagency/smoothscroll')
+
     const { raf } = await import('@emotionagency/utils')
+
     window.ss = new SmoothScroll({
       mobile: false,
       breakpoint: 1024,
@@ -38,6 +42,15 @@ export default {
       stepSize: 0.9,
       raf,
     })
+
+    if (screen.width > 960) {
+      window.scetch = new Scetch('#gl', {
+        raf,
+        dpr: window.devicePixelRatio,
+      })
+
+      emitter.emit('scetchCreated')
+    }
 
     this.parallaxInit()
   },

@@ -6,6 +6,10 @@ import { delayPromise } from '~/scripts/utils/delay'
 
 export default {
   transition() {
+    window.scetch?.figures?.forEach(f => {
+      window.scetch.removeFigure(f._id)
+    })
+
     return {
       mode: 'out-in',
       enter(el, done) {

@@ -270,6 +270,27 @@ h4 {
     display: inline-block;
   }
   .e-line {
+    line-height: 1em;
+    overflow: hidden;
+  }
+  // .line-inner {
+
+  // }
+  .line-inner {
+    transform: translateY(100%) rotate(2deg);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+}
+
+[data-a-h3] {
+  opacity: 0;
+  line-height: 1em;
+  .line,
+  .line-inner {
+    display: inline-block;
+  }
+  .e-line {
     overflow: hidden;
     line-height: 1em;
   }
