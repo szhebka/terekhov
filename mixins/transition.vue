@@ -28,16 +28,14 @@ export default {
 
         loadAnimation()
       },
-      leave(el, done) {
+      leave(_, done) {
         window.ss && (window.ss.isFixed = true)
-        gsap.to(el, { duration: 0.5, opacity: 0 })
         gsap.fromTo(
           rewealer,
-          { y: '100%' },
+          { y: '100%', opacity: 1 },
           {
             duration: 1.5,
             y: '0%',
-            opacity: 1,
             delay: 0.2,
             ease: 'power1.inOut',
             onComplete: done,

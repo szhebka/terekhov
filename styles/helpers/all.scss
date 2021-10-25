@@ -224,11 +224,11 @@ h4 {
     opacity: 1;
   }
 }
-@include media('>#{$br1}') {
-  [data-parallax-wrapper] {
-    pointer-events: none;
-  }
-}
+// @include media('>#{$br1}') {
+//   [data-parallax-wrapper] {
+//     pointer-events: none;
+//   }
+// }
 
 [data-a-l] {
   width: 0%;
