@@ -18,6 +18,22 @@ export const animations = (elem, h1dur = 2.3) => {
     stagger: 0.2,
   })
 
+  elem.querySelectorAll('[data-a-img]').animation({
+    duration: 2,
+    delay: 0.5,
+    opacity: 1,
+    ease,
+    stagger: 0.4,
+  })
+
+  elem.querySelectorAll('[data-a-img] div').animation({
+    duration: 2.5,
+    delay: 0.5,
+    scale: 1,
+    ease,
+    stagger: 0.4,
+  })
+
   const $thesis = elem.querySelector('[data-a-thesis]')
   const $title = elem.querySelectorAll('[data-a-title]')
   const $h = elem.querySelectorAll('[data-a-h]')

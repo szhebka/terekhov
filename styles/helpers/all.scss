@@ -241,6 +241,15 @@ h4 {
   will-change: transform, opacity;
 }
 
+[data-a-img] {
+  opacity: 0;
+  overflow: hidden;
+  div {
+    will-change: transform, opacity;
+    transform: scale(1.1);
+  }
+}
+
 [data-a-o] {
   opacity: 0;
   will-change: opacity;

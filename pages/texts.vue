@@ -2,7 +2,7 @@
   <main data-route data-texts>
     <section class="texts">
       <div class="center-wrap">
-        <div data-a-o class="texts__img-wrap img-wrap">
+        <div data-a-img class="texts__img-wrap img-wrap">
           <div>
             <vue-picture url="/img/text-img.jpg" />
           </div>

@@ -11,7 +11,7 @@
               <a data-a-h href="mailto:artiter@gmail.com">artiter@gmail.com</a>
             </div>
           </div>
-          <div data-a-o class="about__header-right img-wrap">
+          <div data-a-img class="about__header-right img-wrap">
             <div>
               <vue-picture url="/img/about-img.jpg" />
             </div>
