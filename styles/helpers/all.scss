@@ -237,7 +237,7 @@ h4 {
 
 [data-a-t] {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(-40px);
   will-change: transform, opacity;
 }
 
@@ -256,7 +256,7 @@ h4 {
   .char-inner {
     display: inline-block;
     will-change: transform;
-    transform: translateY(100%);
+    transform: translateY(-100%);
     opacity: 0;
     will-change: transform, opacity;
   }
@@ -295,7 +295,7 @@ h4 {
     line-height: 1em;
   }
   .line-inner {
-    transform: translateY(110%) rotate(-3deg);
+    transform: translateY(-110%) rotate(-3deg);
     opacity: 0;
     will-change: transform, opacity;
   }

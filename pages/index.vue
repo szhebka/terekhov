@@ -3,7 +3,7 @@
     <section ref="textParent" data-route data-home class="main-screen">
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 data-a-title class="main-screen__title">Igor Terekhov</h1>
+          <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
           <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
         <div ref="imageParent" class="main-screen__e-image-sticky">
@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="philosophy__right">
-            <div data-a-o class="philosophy__descr">
+            <div data-a-t class="philosophy__descr">
               άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
               ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
               θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών
@@ -306,115 +306,8 @@
         </div>
       </div>
     </section>
-    <section id="expo" data-dark class="exposition">
-      <div class="center-wrap"></div>
-      <div class="exposition__wrap">
-        <div class="exposition__left">
-          <h2 class="exposition__simple-title simple-title simple-title--color">
-            Экспозиция
-          </h2>
-          <div class="exposition__box">
-            <div class="exposition__box-left">
-              <span class="line exposition__line"></span>
-              <div class="small-title">тезис</div>
-            </div>
-            <div class="exposition__box-right">
-              <div class="content content">
-                <p>
-                  Живопись, утратив монополию на изобразительность, развила
-                  способность создавать тотальные объекты с уникальными
-                  свойствами. Пространство холста может расширяться быстрее
-                  Вселенной. Задача не просто найти сингулярность в видимом, а
-                  создать её.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="exposition__img-wrap img-wrap">
-          <div>
-            <vue-picture url="/img/exposition-img.jpg" />
-          </div>
-        </div>
-        <div class="exposition__images">
-          <div class="exposition__images-wrap">
-            <div class="exposition__images-item">
-              <div class="exposition__images-img img-wrap">
-                <div>
-                  <vue-picture url="/img/exposition-slider-img1.jpg" />
-                </div>
-              </div>
-            </div>
-            <div class="exposition__images-item">
-              <div class="exposition__images-img img-wrap">
-                <div>
-                  <vue-picture url="/img/exposition-slider-img2.jpg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="stage">
-      <div class="center-wrap">
-        <div class="stage__list anchors">
-          <div class="stage__list-wrap">
-            <anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-one"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№01</div>
-                <div class="stage__list-date">1989/2002</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/stage-img.jpg" />
-                </div>
-              </div> </anchor-link
-            ><anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-two"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№02</div>
-                <div class="stage__list-date">2003/2007</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div><vue-picture url="/img/stage-img.jpg" /></div>
-              </div> </anchor-link
-            ><anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-three"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№03</div>
-                <div class="stage__list-date">2008/2010</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/stage-img.jpg" />
-                </div>
-              </div> </anchor-link
-            ><anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-four"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№04</div>
-                <div class="stage__list-date">2010/2021</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/stage-img.jpg" />
-                </div>
-              </div>
-            </anchor-link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <the-exposition />
+    <expo-stages />
     <section class="biography">
       <div class="center-wrap">
         <h2 class="biography__title">
@@ -448,13 +341,15 @@
 import emitter from 'tiny-emitter/instance'
 
 import AnchorLink from '~/components/AnchorLink.vue'
-import VuePicture from '~/components/vue-picture.vue'
-import VueGlPicture from '~/components/vue-gl-picture.vue'
+import VuePicture from '~/components/ThePicture.vue'
+import VueGlPicture from '~/components/GlPicture.vue'
+import TheExposition from '~/components/TheExposition.vue'
+import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 
 export default {
-  components: { VuePicture, VueGlPicture },
+  components: { VuePicture, VueGlPicture, TheExposition, ExpoStages },
   mixins: [AnchorVue, AnchorLink, transition],
 
   async mounted() {
@@ -468,23 +363,6 @@ export default {
     const { default: ScrollAnimations } = await import(
       '~/scripts/scroll/ScrollAnimations'
     )
-
-    // const imageParent =
-    //   window.innerWidth > 460 ? this.$refs.imageParent : this.$refs.textParent
-
-    // if (window.innerWidth > 1024) {
-    //   const { ImageScrolling } = await import(
-    //     '~/scripts/OnScroll/ImageScrolling'
-    //   )
-    //   this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
-
-    //   this.$refs.imageEl.setAttribute('data-dark', '')
-    //   this.$refs.thesis.setAttribute('data-dark-offset-top', '2')
-
-    //   const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
-    //   this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
-    // this.sectionParallaxInit()
-    // }
 
     new ScrollAnimations()
 

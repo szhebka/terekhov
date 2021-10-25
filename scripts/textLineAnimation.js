@@ -76,7 +76,8 @@ export const textLineAnimation = $el => {
       $el.style.opacity = 1
 
       if ($toAnimate2?.length) {
-        gsap.to($toAnimate2, {
+        const to = $toAnimate2.reverse()
+        gsap.to(to, {
           duration,
           y: '0%',
           rotation: 0,
@@ -84,7 +85,7 @@ export const textLineAnimation = $el => {
           ease: 'expo.out',
         })
 
-        gsap.to($toAnimate2, {
+        gsap.to(to, {
           duration: duration * 1.5,
           stagger,
           opacity: 1,
