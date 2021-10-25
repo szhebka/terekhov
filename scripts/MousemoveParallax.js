@@ -14,7 +14,6 @@ export class MousemoveParallax {
   constructor(options) {
     this.img = options.img || console.error("There isn't img")
     this.target = options.target || console.error("There isn't target")
-    this.effect = options.effect || 50
 
     this.bounds()
     this.init()
@@ -23,7 +22,6 @@ export class MousemoveParallax {
   init() {
     this.target.addEventListener('mouseenter', this.mouseOn)
     this.target.addEventListener('mouseleave', this.mouseOut)
-    // this.target.addEventListener('mousemove', this.moveMouse)
 
     raf.on(this.animate)
   }
@@ -41,8 +39,8 @@ export class MousemoveParallax {
   }
 
   moveMouse(e) {
-    const offsetX = e.pageX - this.imgBounds.left
-    const offsetY = e.pageY - this.imgBounds.top
+    const offsetX = e.pageX
+    const offsetY = e.pageY
     this.mouse.destX = offsetX - this.imgBounds.width / 2
     this.mouse.destY = offsetY - this.imgBounds.height / 2
   }
@@ -57,10 +55,7 @@ export class MousemoveParallax {
       duration: 0.3,
       autoAlpha: 0,
     })
-    this.mouse.x = 0
-    this.mouse.y = 0
-    this.mouse.destX = 0
-    this.mouse.destY = 0
+
     this.target.removeEventListener('mousemove', this.moveMouse)
   }
 
