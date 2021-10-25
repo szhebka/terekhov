@@ -1,7 +1,17 @@
+.e-black {
+  .stage {
+    background-color: var(--primary-c);
+  }
+}
+
 .stage {
   padding: 30rem 0;
   text-transform: uppercase;
   color: var(--primary-c);
+  background-color: var(--primary-bg);
+  position: relative;
+  z-index: 2;
+  transition: background 1s ease;
   font-family: 'Forum', cursive;
 
   @media screen and (max-width: $small_desktop) {
@@ -36,16 +46,20 @@
   position: absolute;
   top: 0;
   left: 0;
+  transform: translate(50%, 50%);
   z-index: -1;
   will-change: transform, opacity;
 
-  @media screen and (max-width: $large_mobile) {
-    max-width: 25rem;
-    left: calc(100% - 5rem);
-  }
+  // @media screen and (max-width: $large_mobile) {
+  //   max-width: 25rem;
+  //   left: calc(100% - 5rem);
+  // }
 
-  @media screen and (max-width: $small_mobile) {
-    max-width: 10rem;
+  // @media screen and (max-width: $small_mobile) {
+  //   max-width: 10rem;
+  // }
+  picture {
+    opacity: 0;
   }
 }
 

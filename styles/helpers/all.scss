@@ -331,3 +331,19 @@ h4 {
 [data-anchor-href] {
   cursor: pointer;
 }
+
+.rewealer {
+  z-index: 10001;
+  background-color: var(--primary-bg);
+  @include coverdiv(fixed);
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.rewealer-white {
+  z-index: 10000;
+  background-color: #fff;
+  @include coverdiv(fixed);
+  opacity: 0;
+  pointer-events: none;
+}

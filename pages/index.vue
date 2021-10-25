@@ -26,9 +26,8 @@
       data-dark
       data-dark-offset-top="1"
       data-dark-offset-bottom="0.7"
-      data-parallax-wrapper
     >
-      <div v-multi-ref:parallax data-offset="0">
+      <div data-offset="0">
         <section class="thesis">
           <div class="center-wrap">
             <div class="thesis__top">
@@ -308,32 +307,36 @@
     </section>
     <the-exposition />
     <expo-stages />
-    <section class="biography">
-      <div class="center-wrap">
-        <h2 class="biography__title">
-          Работы находятся в собрании Государственного Русского музея в
-          Санкт-Петербурге, частных коллекциях России, Европы, Канады,
-          Сингапура, Японии.
-        </h2>
-        <div class="biography__img-wrap img-wrap img-wrap--contain">
-          <div>
-            <vue-picture url="/img/biography-img.jpg" />
+    <div data-parallax-wrapper>
+      <div v-multi-ref:parallax data-offset="0.1">
+        <section class="biography">
+          <div class="center-wrap">
+            <h2 class="biography__title">
+              Работы находятся в собрании Государственного Русского музея в
+              Санкт-Петербурге, частных коллекциях России, Европы, Канады,
+              Сингапура, Японии.
+            </h2>
+            <div class="biography__img-wrap img-wrap img-wrap--contain">
+              <div>
+                <vue-picture url="/img/biography-img.jpg" />
+              </div>
+            </div>
+            <nuxt-link class="biography__link" to="/about">биография</nuxt-link>
           </div>
-        </div>
-        <nuxt-link class="biography__link" to="/about">биография</nuxt-link>
+        </section>
+        <footer class="footer">
+          <div class="center-wrap">
+            <div class="footer__wrap">
+              <a class="footer__home" href="/">домой</a
+              ><a class="footer__email" href="mailto:artiter@gmail.com"
+                >artiter@gmail.com</a
+              >
+              <p class="footer__copyr">© 2021 все права защищены</p>
+            </div>
+          </div>
+        </footer>
       </div>
-    </section>
-    <footer class="footer">
-      <div class="center-wrap">
-        <div class="footer__wrap">
-          <a class="footer__home" href="/">домой</a
-          ><a class="footer__email" href="mailto:artiter@gmail.com"
-            >artiter@gmail.com</a
-          >
-          <p class="footer__copyr">© 2021 все права защищены</p>
-        </div>
-      </div>
-    </footer>
+    </div>
   </main>
 </template>
 
@@ -368,6 +371,8 @@ export default {
 
     const { BlackBg } = await import('~/scripts/BlackBg')
     this.blackBg = new BlackBg()
+
+    this.sectionParallaxInit()
   },
 
   beforeDestroy() {

@@ -5,14 +5,16 @@
         <div ref="stageParent" class="stage__list-wrap">
           <div ref="stageImg" class="stage__img-wrap img-wrap">
             <div>
-              <vue-picture url="/img/stage-img.jpg" />
-              <vue-picture url="/img/stage-img.jpg" />
-              <vue-picture url="/img/stage-img.jpg" />
-              <vue-picture url="/img/stage-img.jpg" />
+              <vue-picture v-multi-ref:picture url="/img/stages/1.jpg" />
+              <vue-picture v-multi-ref:picture url="/img/stages/2.jpg" />
+              <vue-picture v-multi-ref:picture url="/img/stages/3.jpg" />
+              <vue-picture v-multi-ref:picture url="/img/stages/4.jpg" />
             </div>
           </div>
 
           <anchor-link
+            v-multi-ref:parent
+            data-parent-idx="0"
             class="stage__list-row"
             data-anchor-href="periods/#periods__box-one"
           >
@@ -23,6 +25,8 @@
           </anchor-link>
 
           <anchor-link
+            v-multi-ref:parent
+            data-parent-idx="1"
             class="stage__list-row"
             data-anchor-href="periods/#periods__box-two"
           >
@@ -33,6 +37,8 @@
           </anchor-link>
 
           <anchor-link
+            v-multi-ref:parent
+            data-parent-idx="2"
             class="stage__list-row"
             data-anchor-href="periods/#periods__box-three"
           >
@@ -43,6 +49,8 @@
           </anchor-link>
 
           <anchor-link
+            v-multi-ref:parent
+            data-parent-idx="3"
             class="stage__list-row"
             data-anchor-href="periods/#periods__box-four"
           >
@@ -68,12 +76,18 @@ export default {
     await this.initMouse()
   },
 
+  beforeDestroy() {
+    this.mp && this.mp.destroy()
+  },
+
   methods: {
     async initMouse() {
       const { MousemoveParallax } = await import('~/scripts/MousemoveParallax')
 
-      new MousemoveParallax({
+      this.mp = new MousemoveParallax({
         img: this.$refs.stageImg,
+        images: this.$refs.picture,
+        parents: this.$refs.parent,
         target: this.$refs.stageParent,
       })
     },

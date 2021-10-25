@@ -4,6 +4,8 @@
       <Header />
       <Nuxt />
       <div id="gl"></div>
+      <div class="rewealer"></div>
+      <div class="rewealer-white"></div>
     </div>
   </div>
 </template>

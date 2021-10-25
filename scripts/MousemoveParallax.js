@@ -12,8 +12,10 @@ export class MousemoveParallax {
   ease = 0.015
 
   constructor(options) {
-    this.img = options.img || console.error("There isn't img")
-    this.target = options.target || console.error("There isn't target")
+    this.img = options.img
+    this.images = options.images
+    this.parents = options.parents
+    this.target = options.target
 
     this.bounds()
     this.init()
@@ -23,11 +25,21 @@ export class MousemoveParallax {
     this.target.addEventListener('mouseenter', this.mouseOn)
     this.target.addEventListener('mouseleave', this.mouseOut)
 
+    this.parents.forEach(el => {
+      el.$el.addEventListener('mouseenter', this.parentMouseOn)
+    })
+
     raf.on(this.animate)
   }
 
   bounds() {
-    const methods = ['mouseOn', 'mouseOut', 'moveMouse', 'animate']
+    const methods = [
+      'parentMouseOn',
+      'mouseOn',
+      'mouseOut',
+      'moveMouse',
+      'animate',
+    ]
 
     methods.forEach(m => {
       this[m] = this[m].bind(this)
@@ -36,6 +48,17 @@ export class MousemoveParallax {
 
   get imgBounds() {
     return this.img.getBoundingClientRect()
+  }
+
+  parentMouseOn(e) {
+    const el = e.currentTarget
+    const idx = Number(el.dataset.parentIdx)
+
+    this.images.forEach(el => {
+      el.$el.style.opacity = 0
+    })
+
+    this.images[idx].$el.style.opacity = 1
   }
 
   moveMouse(e) {
@@ -57,6 +80,10 @@ export class MousemoveParallax {
     })
 
     this.target.removeEventListener('mousemove', this.moveMouse)
+
+    this.images.forEach(el => {
+      el.$el.style.opacity = 0
+    })
   }
 
   animate() {
@@ -68,6 +95,18 @@ export class MousemoveParallax {
         x: this.mouse.x,
         y: this.mouse.y,
       },
+    })
+  }
+
+  destroy() {
+    raf.off(this.animate)
+
+    this.target.removeEventListener('mousemove', this.moveMouse)
+
+    this.target.removeEventListener('mouseenter', this.mouseOn)
+    this.target.removeEventListener('mouseleave', this.mouseOut)
+    this.parents.forEach(el => {
+      el.$el.removeEventListener('mouseenter', this.parentMouseOn)
     })
   }
 }

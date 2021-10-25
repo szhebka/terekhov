@@ -45,7 +45,7 @@ export class SectionParallax {
         $el.style.top = offset + 'px'
         $el.style.zIndex = '1'
         $el.style.width = '100%'
-        $el.style.opacity = percent * 1.4
+        $el.style.opacity = percent
       } else {
         $el.style.position = 'relative'
         $el.style.top = '0px'
