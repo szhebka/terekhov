@@ -274,7 +274,7 @@ h4 {
 [data-a-title] {
   opacity: 0;
   line-height: 1em;
-  .line,
+  .e-line,
   .line-inner {
     display: inline-block;
   }
@@ -295,7 +295,7 @@ h4 {
 [data-a-h] {
   opacity: 0;
   line-height: 1em;
-  .line,
+  .e-line,
   .line-inner {
     display: inline-block;
   }
@@ -312,16 +312,18 @@ h4 {
 
 [data-a-p] {
   opacity: 0;
-  line-height: 1em;
-  .line,
-  .line-inner {
-    display: inline-block;
-  }
+  line-height: 1.1em;
   .e-line {
     overflow: hidden;
-    line-height: 1em;
+    // line-height: 1em;
+    display: inline !important;
   }
-  .line-inner {
+  .word {
+    overflow: hidden;
+    display: inline-blok;
+  }
+  .word-inner {
+    display: inline-block;
     transform: translateY(110%);
     will-change: transform, opacity;
   }

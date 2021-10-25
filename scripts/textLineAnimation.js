@@ -14,10 +14,15 @@ export const textLineAnimation = $el => {
       tagName: 'span',
       lineClass: 'e-line',
     })
+    text.words?.forEach(word => {
+      word.innerHTML = `<span class="word-inner">${word.innerHTML}</span>`
+      word.setAttribute('data-word', word.innerText)
+    })
 
-    text.lines.forEach(line => {
+    text.lines.forEach((line, idx) => {
       line.innerHTML = `<span class="line-inner">${line.innerHTML}</span>`
       line.setAttribute('data-line', line.innerText)
+      line.setAttribute('data-line-idx', idx)
     })
 
     $toAnimate = [...$el.querySelectorAll('.line-inner .char')]
@@ -57,18 +62,21 @@ export const textLineAnimation = $el => {
       }
     },
     in2: ($el, duration = 1.8, stagger = 0.15) => {
-      prepare($el, 'lines')
+      prepare($el, 'lines, words')
       $el.style.opacity = 1
 
-      $toAnimate2?.length &&
-        gsap.to($toAnimate2, {
-          duration,
-          y: '0%',
-          stagger,
-          opacity: 1,
-          ease: 'expo.out',
-          overwrite: true,
+      if ($toAnimate2?.length) {
+        $toAnimate2.forEach((el, i) => {
+          setTimeout(() => {
+            gsap.to(el.querySelectorAll(`[data-line-idx="${i}"] .word-inner`), {
+              duration,
+              y: '0%',
+              opacity: 1,
+              ease: 'expo.out',
+            })
+          }, i * stagger * 1000)
         })
+      }
     },
 
     in3: ($el, duration = 2, stagger = 0.2) => {
