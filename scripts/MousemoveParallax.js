@@ -29,6 +29,13 @@ export class MousemoveParallax {
       el.$el.addEventListener('mouseenter', this.parentMouseOn)
     })
 
+    this.mouse = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+      destX: window.innerWidth / 2,
+      destY: window.innerHeight / 2,
+    }
+
     raf.on(this.animate)
   }
 

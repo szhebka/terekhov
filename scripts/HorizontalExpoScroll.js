@@ -6,6 +6,7 @@ export class HorizontalExpoScroll {
     this.$container = $container
     this.$scroller = $scroller
     this.$parallaxEl = $el.querySelector('[data-expo-parallax]')
+
     this.$sc = document.querySelector('#scroll-container')
 
     this.animate = this.animate.bind(this)
@@ -21,10 +22,6 @@ export class HorizontalExpoScroll {
     }
   }
 
-  setHeight() {
-    this.$container.style.height = this.scrollHeight + 'px'
-  }
-
   get scrollHeight() {
     return this.$el.scrollWidth - window.innerHeight
   }
@@ -32,6 +29,23 @@ export class HorizontalExpoScroll {
   get offset() {
     const top = this.$container.getBoundingClientRect().top
     return clamp(top, -this.scrollHeight + window.innerHeight, 0)
+  }
+
+  get scrollPos() {
+    return this.$sc.scrollTop
+  }
+
+  get velocity() {
+    const target = window.ss?.state?.target ?? 0
+    return this.isScrolling ? this.scrollPos - target : 0
+  }
+
+  get isScrolling() {
+    return window.ss?.state?.scrolling ?? false
+  }
+
+  setHeight() {
+    this.$container.style.height = this.scrollHeight + 'px'
   }
 
   animate() {
@@ -43,6 +57,8 @@ export class HorizontalExpoScroll {
     this.$el.style.willChange = 'transform'
     this.$parallaxEl.style.transform = t2
     this.$parallaxEl.style.willChange = 'transform'
+
+    this.$container.style.setProperty('--velocity', this.velocity / 500 + 'deg')
   }
 
   destroy() {

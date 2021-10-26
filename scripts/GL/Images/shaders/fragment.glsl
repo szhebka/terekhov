@@ -27,8 +27,9 @@ void main() {
 
    vec2 newUv = uv;
 
-   newUv += (sin(newUv.y * 10. + (uTime / 5.)) / 500.) * (uStrength * 0.30);
-   newUv += (sin(newUv.x * 10. + (uTime / 15.)) / 500.) * (uStrength * 0.30);
+
+   newUv += (sin(newUv.y * 20. + (uTime / 5.)) / 500.) * (uStrength * 0.30);
+   newUv += (sin(newUv.x * 20. + (uTime / 15.)) / 500.) * (uStrength * 0.30);
 
    vec2 p = (newUv - vec2(0.5, 0.5)) * (1.0 - uScale) + vec2(0.5, 0.5);
 

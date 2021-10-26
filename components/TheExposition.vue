@@ -1,23 +1,24 @@
 <template>
-  <section ref="container" class="expo-scroll">
+  <section id="expo" ref="container" class="expo-scroll">
     <div data-dark class="expo-dark"></div>
-    <div id="expo" class="exposition">
+    <div data-in-view class="exposition">
       <div ref="scroller" class="exposition__container">
         <div ref="el" class="exposition__wrap">
           <div data-expo-parallax class="exposition__left">
             <h2
+              data-a-h
               class="exposition__simple-title simple-title simple-title--color"
             >
               Экспозиция
             </h2>
             <div class="exposition__box">
               <div class="exposition__box-left">
-                <span class="line exposition__line"></span>
-                <div class="small-title">тезис</div>
+                <span data-a-l class="line exposition__line"></span>
+                <div data-a-o class="small-title">тезис</div>
               </div>
               <div class="exposition__box-right">
                 <div class="content content">
-                  <p>
+                  <p data-a-p>
                     Живопись, утратив монополию на изобразительность, развила
                     способность создавать тотальные объекты с уникальными
                     свойствами. Пространство холста может расширяться быстрее
@@ -28,7 +29,7 @@
               </div>
             </div>
           </div>
-          <div class="exposition__img-wrap img-wrap">
+          <div data-a-o class="exposition__img-wrap img-wrap">
             <vue-picture
               class="exposition__image exposition__image--1"
               url="/img/expo/1.jpg"
@@ -39,7 +40,7 @@
               url="/img/expo/3.jpg"
             />
           </div>
-          <div class="exposition__images">
+          <div data-a-o class="exposition__images">
             <div class="exposition__images-wrap">
               <div class="exposition__images-item">
                 <div class="exposition__images-img img-wrap">

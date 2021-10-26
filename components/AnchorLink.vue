@@ -23,7 +23,7 @@ export default {
       this.$nextTick(() => {
         setTimeout(() => {
           this.goToAnchor(href)
-        }, 1000)
+        }, 3000)
       })
     },
     goToAnchor(href) {

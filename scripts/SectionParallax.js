@@ -12,7 +12,7 @@ export class SectionParallax {
     this.compute = this.compute.bind(this)
     this.resize = this.resize.bind(this)
 
-    raf.on(this.compute)
+    resize.on(this.resize)
   }
 
   resize() {
@@ -43,6 +43,9 @@ export class SectionParallax {
       if (b.bottom > offset && b.top < 0) {
         $el.style.position = 'fixed'
         $el.style.top = offset + 'px'
+        $el.style.transform = `translateY(${
+          (b.bottom / this.$sc.scrollTop) * 100
+        }%)`
         $el.style.zIndex = '1'
         $el.style.width = '100%'
         $el.style.opacity = percent
