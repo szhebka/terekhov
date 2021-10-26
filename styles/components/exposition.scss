@@ -1,4 +1,19 @@
+.expo-scroll {
+  position: relative;
+  @media screen and (min-width: $large_mobile) {
+    height: 300vh;
+    width: 100%;
+  }
+}
+
 .exposition {
+  overflow: hidden;
+  width: 100%;
+  @media screen and (min-width: $large_mobile) {
+    position: sticky;
+    top: 0;
+    height: var(--vh);
+  }
   @media screen and (max-width: $large_mobile) {
     padding-bottom: 6rem;
     padding-top: 4.5rem;
@@ -10,9 +25,28 @@
   }
 }
 
+.expo-dark {
+  position: absolute;
+  top: 0;
+  height: 200vh;
+  @media screen and (max-width: $large_mobile) {
+    height: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.exposition__container {
+  height: 100%;
+  width: 100%;
+}
+
 .exposition__wrap {
   display: flex;
+  height: 100%;
   padding-left: calc((100% - 1520px) / 2);
+  width: fit-content;
 
   @media screen and (max-width: $large_desktop) {
     padding-left: 40px;
@@ -21,6 +55,7 @@
   @media screen and (max-width: $large_mobile) {
     padding-left: 20px;
     flex-direction: column;
+    width: 100%;
   }
 
   @media screen and (max-width: $small_mobile) {
@@ -76,9 +111,11 @@
 .exposition__box-right {
   max-width: 45.5rem;
   width: 100%;
+  margin-top: -0.5rem;
 
   @media screen and (max-width: $large_mobile) {
     max-width: 38rem;
+    margin-top: 0px;
   }
 
   @media screen and (max-width: $small_mobile) {
@@ -87,17 +124,29 @@
 }
 
 .exposition__left {
+  --width: 74.6rem;
   padding-top: 10rem;
-  width: calc(100% - 60.5rem - 21.5rem);
   margin-right: 21.5rem;
+  position: relative;
+  z-index: 1;
+  // width: calc(100% - 60.5rem - 21.5rem);
+  // flex: 1 0 calc(100% - 60.5rem - 21.5rem);
+
+  @media screen and (min-width: $large_mobile) {
+    width: var(--width);
+    flex: 0 0 var(--width);
+  }
 
   @media screen and (max-width: $small_desktop) {
-    width: calc(100% - 50.6rem - 10.5rem);
+    // width: calc(100% - 50.6rem - 10.5rem);
+    --width: 69.3rem;
     margin-right: 10.5rem;
   }
 
   @media screen and (max-width: $large_tablet) {
-    width: calc(100% - 15rem - 20rem);
+    --width: 61.8rem;
+
+    // width: calc(100% - 15rem - 20rem);
     margin-right: 20rem;
     padding-bottom: 45rem;
   }
@@ -124,17 +173,41 @@
   }
 }
 
+.exposition__image--1,
+.exposition__image--3 {
+  height: 100%;
+  img {
+    height: 100%;
+  }
+}
+
 .exposition__img-wrap {
-  max-width: 60.5rem;
-  width: 100%;
-
-  @media screen and (max-width: $small_desktop) {
-    max-width: 50.6rem;
+  // max-width: 60.5rem;
+  // width: 100%;
+  display: grid;
+  position: relative;
+  z-index: 2;
+  gap: 35rem;
+  width: fit-content;
+  background: var(--primary-bg);
+  align-items: center;
+  flex: 1 0 auto;
+  grid-auto-flow: column;
+  height: 100%;
+  picture,
+  img {
+    display: block;
+    max-width: none;
+    max-height: 100%;
   }
 
-  @media screen and (max-width: $large_tablet) {
-    max-width: 15rem;
-  }
+  // @media screen and (max-width: $small_desktop) {
+  //   max-width: 50.6rem;
+  // }
+
+  // @media screen and (max-width: $large_tablet) {
+  //   max-width: 15rem;
+  // }
 
   @media screen and (max-width: $large_mobile) {
     display: none;
