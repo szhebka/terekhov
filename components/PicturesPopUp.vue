@@ -52,8 +52,9 @@ export default {
         visibility: 'visible',
       })
 
-      tl.to(
+      tl.fromTo(
         imagesWrapper,
+        { y: '100%' },
         {
           duration: 1.5,
           y: 0,
@@ -62,7 +63,12 @@ export default {
         0.4
       )
 
-      tl.to(currentImage, { duration: 1.5, y: 0, ease: 'power2.inOut' }, 0.4)
+      tl.fromTo(
+        currentImage,
+        { y: '-100%' },
+        { duration: 1.5, y: 0, ease: 'power2.inOut' },
+        0.4
+      )
     },
     close() {
       window.ss && (window.ss.isFixed = false)
@@ -78,11 +84,15 @@ export default {
       })
       gsap.to(images, {
         duration: 1.5,
-        y: '-100%',
+        y: '100%',
         ease: 'power2.inOut',
       })
 
-      gsap.to(imagesWrapper, { duration: 1.5, y: '100%', ease: 'power2.inOut' })
+      gsap.to(imagesWrapper, {
+        duration: 1.5,
+        y: '-100%',
+        ease: 'power2.inOut',
+      })
     },
   },
 }
