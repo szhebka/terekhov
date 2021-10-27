@@ -22,6 +22,7 @@ export class HorizontalExpoScroll {
   resize() {
     if (screen.width > 640) {
       raf.on(this.animate)
+      this.setHeight()
     } else {
       raf.off(this.animate)
     }

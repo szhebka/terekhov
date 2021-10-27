@@ -12,14 +12,14 @@
           <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
           <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
-        <div ref="imageParent" class="main-screen__e-image-sticky">
+        <div ref="imageParent" data-a-img-main class="main-screen__e-image">
           <div
             ref="imageEl"
             data-dark-offset-top="0.1"
             data-dark-offset-bottom="0.7"
             class="main-screen__img-wrap img-wrap"
           >
-            <div data-a-t>
+            <div>
               <vue-picture url="/img/main-screen-img.jpg" />
             </div>
           </div>

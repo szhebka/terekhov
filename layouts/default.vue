@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-loader />
     <div id="scroll-container">
       <Header />
       <Nuxt />
@@ -14,9 +15,11 @@
 import emitter from 'tiny-emitter/instance'
 
 import Header from '~/components/Header'
+import AppLoader from '~/components/AppLoader.vue'
 export default {
   components: {
     Header,
+    AppLoader,
   },
 
   async mounted() {
@@ -40,7 +43,7 @@ export default {
       breakpoint: 1024,
       passive: false,
       isFixed: false,
-      friction: 0.04,
+      friction: 0.03,
       stepSize: 0.9,
       raf,
     })

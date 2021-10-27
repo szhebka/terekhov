@@ -3,7 +3,6 @@ import gsap from 'gsap'
 import imagesLoaded from 'imagesloaded'
 import { resetScroll } from '~/scripts/utils/resetScroll'
 import { loadAnimation } from '~/scripts/loadAnimation'
-import { delayPromise } from '~/scripts/utils/delay'
 
 export default {
   transition() {
@@ -56,11 +55,19 @@ export default {
       },
     }
   },
-  async mounted() {
-    await delayPromise(1000)
-    imagesLoaded(document.querySelector('[data-preload]'), () => {
-      loadAnimation()
-    })
+  computed: {
+    isLoaded() {
+      return this.$store.state.app.loaded
+    },
+  },
+  watch: {
+    isLoaded() {
+      if (this.isLoaded) {
+        imagesLoaded(document.querySelector('[data-preload]'), () => {
+          loadAnimation()
+        })
+      }
+    },
   },
 }
 </script>

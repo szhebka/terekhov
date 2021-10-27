@@ -34,10 +34,39 @@ export const animations = (elem, h1dur = 2.3) => {
     stagger: 0.4,
   })
 
+  elem.querySelectorAll('[data-a-t]').animation({
+    duration: 2,
+    delay: 0.5,
+    opacity: 1,
+    y: 0,
+    ease,
+    stagger: 0.4,
+  })
+
+  elem.querySelectorAll('[data-a-o]').animation({
+    duration: 2,
+    delay: 0.5,
+    opacity: 1,
+    ease,
+    stagger: 0.4,
+  })
+
   const $thesis = elem.querySelector('[data-a-thesis]')
   const $title = elem.querySelectorAll('[data-a-title]')
   const $h = elem.querySelectorAll('[data-a-h]')
   const $p = elem.querySelectorAll('[data-a-p]')
+  const $mainImage = elem.querySelector('[data-a-img-main]')
+
+  if ($mainImage) {
+    const wrapper = $mainImage.querySelector('.img-wrap')
+    const image = wrapper.querySelector('div')
+    const imageInner = image.querySelector('img')
+
+    const tl = gsap.timeline()
+    tl.to(image, { duration: 2, y: 0, ease: 'power2.inOut' }, 0.5)
+    tl.to(imageInner, { duration: 2, scale: 1, ease: 'power2.inOut' }, 0.5)
+    tl.to(wrapper, { duration: 2, y: 0, ease: 'power2.inOut' }, 0.5)
+  }
 
   $title.length &&
     $title.forEach(async (el, i) => {
@@ -58,21 +87,4 @@ export const animations = (elem, h1dur = 2.3) => {
     })
 
   $thesis && textAnimation().in($thesis, 3)
-
-  elem.querySelectorAll('[data-a-t]').animation({
-    duration: 2,
-    delay: 0.5,
-    opacity: 1,
-    y: 0,
-    ease,
-    stagger: 0.4,
-  })
-
-  elem.querySelectorAll('[data-a-o]').animation({
-    duration: 2,
-    delay: 0.5,
-    opacity: 1,
-    ease,
-    stagger: 0.4,
-  })
 }
