@@ -71,8 +71,6 @@ export class HorizontalExpoScroll {
     this.$el.style.willChange = 'transform'
     this.$parallaxEl.style.transform = t2
     this.$parallaxEl.style.willChange = 'transform'
-
-    this.$container.style.setProperty('--velocity', this.velocity / 500 + 'deg')
   }
 
   destroy() {

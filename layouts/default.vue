@@ -42,7 +42,7 @@ export default {
       mobile: false,
       breakpoint: 1024,
       passive: false,
-      isFixed: false,
+      isFixed: true,
       friction: 0.03,
       stepSize: 0.9,
       raf,

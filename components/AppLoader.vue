@@ -47,6 +47,7 @@ export default {
           const tl2 = gsap.timeline({
             onComplete: () => {
               this.$store.commit('app/setLoaded', true)
+              window.ss && (window.ss.isFixed = false)
             },
           })
 
