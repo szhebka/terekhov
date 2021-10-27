@@ -82,14 +82,18 @@ export default {
 
   methods: {
     async initMouse() {
-      const { MousemoveParallax } = await import('~/scripts/MousemoveParallax')
+      if (window.innerWidth > 960) {
+        const { MousemoveParallax } = await import(
+          '~/scripts/MousemoveParallax'
+        )
 
-      this.mp = new MousemoveParallax({
-        img: this.$refs.stageImg,
-        images: this.$refs.picture,
-        parents: this.$refs.parent,
-        target: this.$refs.stageParent,
-      })
+        this.mp = new MousemoveParallax({
+          img: this.$refs.stageImg,
+          images: this.$refs.picture,
+          parents: this.$refs.parent,
+          target: this.$refs.stageParent,
+        })
+      }
     },
   },
 }

@@ -71,7 +71,11 @@
                 <div data-a-t class="thesis__left">
                   <div class="thesis__img-wrap img-wrap">
                     <div>
-                      <vue-picture url="/img/thesis-img.jpg" />
+                      <vue-gl-picture
+                        url="/img/thesis-img.jpg"
+                        data-pp-idx="8"
+                        @click.native="openPPU"
+                      />
                     </div>
                   </div>
                 </div>
@@ -347,21 +351,7 @@
     <expo-stages />
     <div data-parallax-wrapper>
       <div v-multi-ref:parallax data-offset="0.1">
-        <section class="biography">
-          <div class="center-wrap">
-            <h2 class="biography__title">
-              Работы находятся в собрании Государственного Русского музея в
-              Санкт-Петербурге, частных коллекциях России, Европы, Канады,
-              Сингапура, Японии.
-            </h2>
-            <div class="biography__img-wrap img-wrap img-wrap--contain">
-              <div>
-                <vue-picture url="/img/biography-img.jpg" />
-              </div>
-            </div>
-            <nuxt-link class="biography__link" to="/about">биография</nuxt-link>
-          </div>
-        </section>
+        <the-biography />
         <footer class="footer">
           <div class="center-wrap">
             <div class="footer__wrap">
@@ -390,6 +380,7 @@ import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 import PicturesPopUp from '~/components/PicturesPopUp.vue'
+import TheBiography from '~/components/TheBiography.vue'
 
 export default {
   components: {
@@ -398,6 +389,7 @@ export default {
     TheExposition,
     ExpoStages,
     PicturesPopUp,
+    TheBiography,
   },
   mixins: [AnchorVue, AnchorLink, transition],
 

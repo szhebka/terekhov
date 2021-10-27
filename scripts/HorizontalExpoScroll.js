@@ -53,7 +53,15 @@ export class HorizontalExpoScroll {
     this.$container.style.height = this.scrollHeight + 'px'
   }
 
+  get inView() {
+    return this.$container.getBoundingClientRect().top <= window.innerHeight
+  }
+
   animate() {
+    if (!this.inView) {
+      return
+    }
+
     this.setHeight()
     const t = matrixTransform({ move: { x: this.offset } })
     const t2 = matrixTransform({ move: { x: -this.offset * 0.25 } })

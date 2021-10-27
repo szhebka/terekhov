@@ -772,7 +772,7 @@
     @media screen and (max-width: $small_desktop) {
       margin-left: auto;
       margin-right: 1rem;
-      max-width: 41.5rem;
+      max-width: 45.5rem;
     }
 
     @media screen and (max-width: $large_tablet) {
@@ -800,14 +800,6 @@
         .periods__img-wrap--2:first-child {
           > div {
             padding-bottom: 121%;
-
-            @media screen and (max-width: $large_desktop) {
-              padding-bottom: 90%;
-            }
-
-            @media screen and (max-width: $large_mobile) {
-              padding-bottom: 75%;
-            }
           }
         }
       }

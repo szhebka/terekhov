@@ -26,6 +26,7 @@ export default {
         '/img/meaning-img3.jpg',
         '/img/buber-img1.jpg',
         '/img/buber-img2.jpg',
+        '/img/thesis-img.jpg',
       ],
     }
   },

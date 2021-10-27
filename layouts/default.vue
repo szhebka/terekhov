@@ -53,8 +53,6 @@ export default {
 
       emitter.emit('scetchCreated')
     }
-
-    this.parallaxInit()
   },
 
   beforeDestroy() {
