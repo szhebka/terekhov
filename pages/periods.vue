@@ -1,6 +1,6 @@
 <template>
   <main data-route data-periods>
-    <section class="periods">
+    <section class="periods" data-preload>
       <div class="center-wrap">
         <div class="periods__header">
           <div data-a-o class="back">

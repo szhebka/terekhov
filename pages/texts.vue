@@ -1,6 +1,6 @@
 <template>
   <main data-route data-texts>
-    <section class="texts">
+    <section class="texts" data-preload>
       <div class="center-wrap">
         <div data-a-img class="texts__img-wrap img-wrap">
           <div>

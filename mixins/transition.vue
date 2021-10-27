@@ -1,5 +1,6 @@
 <script>
 import gsap from 'gsap'
+import imagesLoaded from 'imagesloaded'
 import { resetScroll } from '~/scripts/utils/resetScroll'
 import { loadAnimation } from '~/scripts/loadAnimation'
 import { delayPromise } from '~/scripts/utils/delay'
@@ -26,7 +27,9 @@ export default {
         gsap.to(rewealer, { duration: 0.5, opacity: 0 })
         gsap.to(rewealerWhite, { duration: 0.5, opacity: 0 })
 
-        loadAnimation()
+        imagesLoaded(document.querySelector('[data-preload]'), () => {
+          loadAnimation()
+        })
       },
       leave(_, done) {
         window.ss && (window.ss.isFixed = true)
@@ -55,7 +58,9 @@ export default {
   },
   async mounted() {
     await delayPromise(1000)
-    loadAnimation()
+    imagesLoaded(document.querySelector('[data-preload]'), () => {
+      loadAnimation()
+    })
   },
 }
 </script>

@@ -1,6 +1,12 @@
 <template>
   <main>
-    <section ref="textParent" data-route data-home class="main-screen">
+    <section
+      ref="textParent"
+      data-route
+      data-home
+      data-preload
+      class="main-screen"
+    >
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
           <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
@@ -127,7 +133,11 @@
             </div>
             <div class="philosophy__img-wrap img-wrap">
               <div>
-                <vue-gl-picture url="/img/philosophy-img.jpg" />
+                <vue-gl-picture
+                  url="/img/philosophy-img.jpg"
+                  data-pp-idx="0"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div data-a-t class="img-descr img-descr--color">
@@ -147,7 +157,11 @@
           <div class="poet__left">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/poet-img1.jpg" />
+                <vue-gl-picture
+                  url="/img/poet-img1.jpg"
+                  data-pp-idx="1"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -179,7 +193,11 @@
             </div>
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/poet-img2.jpg" />
+                <vue-gl-picture
+                  url="/img/poet-img2.jpg"
+                  data-pp-idx="2"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -223,14 +241,22 @@
         </div>
         <div class="meaning__img-wrap img-wrap">
           <div ref="meaningImage">
-            <vue-gl-picture url="/img/meaning-img1.jpg" />
+            <vue-gl-picture
+              url="/img/meaning-img1.jpg"
+              data-pp-idx="3"
+              @click.native="openPPU"
+            />
           </div>
         </div>
         <div class="meaning__box">
           <div class="meaning__box-left">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-gl-picture url="/img/meaning-img2.jpg" />
+                <vue-gl-picture
+                  url="/img/meaning-img2.jpg"
+                  data-pp-idx="4"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -244,7 +270,11 @@
           <div class="meaning__box-right">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-gl-picture url="/img/meaning-img3.jpg" />
+                <vue-gl-picture
+                  url="/img/meaning-img3.jpg"
+                  data-pp-idx="5"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -277,7 +307,11 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/buber-img1.jpg" />
+                <vue-gl-picture
+                  url="/img/buber-img1.jpg"
+                  data-pp-idx="6"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -291,7 +325,11 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/buber-img2.jpg" />
+                <vue-gl-picture
+                  url="/img/buber-img2.jpg"
+                  data-pp-idx="7"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -337,6 +375,7 @@
         </footer>
       </div>
     </div>
+    <pictures-pop-up ref="ppu" />
   </main>
 </template>
 
@@ -350,9 +389,16 @@ import TheExposition from '~/components/TheExposition.vue'
 import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
+import PicturesPopUp from '~/components/PicturesPopUp.vue'
 
 export default {
-  components: { VuePicture, VueGlPicture, TheExposition, ExpoStages },
+  components: {
+    VuePicture,
+    VueGlPicture,
+    TheExposition,
+    ExpoStages,
+    PicturesPopUp,
+  },
   mixins: [AnchorVue, AnchorLink, transition],
 
   async mounted() {
@@ -384,6 +430,12 @@ export default {
       const { SectionParallax } = await import('~/scripts/SectionParallax')
       this.sp = new SectionParallax(this.$refs.parallax)
       this.sp.init()
+    },
+    openPPU(e) {
+      const target = e.currentTarget
+      const idx = target.dataset.ppIdx
+
+      this.$refs.ppu.open(idx)
     },
   },
 }

@@ -1,4 +1,4 @@
-// import gsap from 'gsap'
+import gsap from 'gsap'
 import { lerp } from '@emotionagency/utils'
 import { Figure } from '@emotionagency/glhtml'
 
@@ -82,29 +82,29 @@ export default class Images extends Figure {
   }
 
   onMouseEnter() {
-    // gsap.to(this.material.uniforms.uHover, {
-    //   duration: 1,
-    //   value: 1,
-    //   ease: 'power2.out',
-    // })
-    // gsap.to(this.material.uniforms.uScale, {
-    //   duration: 1,
-    //   value: 0.04,
-    //   ease: 'power1.inOut',
-    // })
+    gsap.to(this.material.uniforms.uHover, {
+      duration: 1,
+      value: 1,
+      ease: 'power2.out',
+    })
+    gsap.to(this.material.uniforms.uScale, {
+      duration: 1,
+      value: 0.02,
+      ease: 'power1.inOut',
+    })
   }
 
   onMouseLeave() {
-    // gsap.to(this.material.uniforms.uHover, {
-    //   duration: 1,
-    //   value: 0,
-    //   ease: 'power2.out',
-    // })
-    // gsap.to(this.material.uniforms.uScale, {
-    //   duration: 1,
-    //   value: 0,
-    //   ease: 'power2.out',
-    // })
+    gsap.to(this.material.uniforms.uHover, {
+      duration: 1,
+      value: 0,
+      ease: 'power2.out',
+    })
+    gsap.to(this.material.uniforms.uScale, {
+      duration: 1,
+      value: 0,
+      ease: 'power2.out',
+    })
   }
 
   resize() {

@@ -1,6 +1,6 @@
 <template>
   <main data-route data-about>
-    <section class="about">
+    <section class="about" data-preload>
       <div class="center-wrap">
         <div class="about__header">
           <div class="about__header-left">

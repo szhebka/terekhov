@@ -6,6 +6,7 @@ uniform float uStrength;
 uniform float uTime;
 uniform float uVisible;
 uniform float uScale;
+uniform float uHover;
 
 vec4 tex(in vec2 st) {
    return texture2D(uTexture, st);
@@ -28,8 +29,11 @@ void main() {
    vec2 newUv = uv;
 
 
-   newUv += (sin(newUv.y * 20. + (uTime / 5.)) / 500.) * (uStrength * 0.30);
-   newUv += (sin(newUv.x * 20. + (uTime / 15.)) / 500.) * (uStrength * 0.30);
+   newUv += (sin(newUv.y * 15. + (uTime / 5.)) / 500.) * (uStrength * 0.30);
+   newUv += (sin(newUv.x * 15. + (uTime / 15.)) / 500.) * (uStrength * 0.30);
+
+   newUv += (sin(newUv.y * 10. + (uTime / 5.)) / 500.) * (uHover * 0.1);
+   newUv += (sin(newUv.x * 10. + (uTime / 15.)) / 500.) * (uHover * 0.1);
 
    vec2 p = (newUv - vec2(0.5, 0.5)) * (1.0 - uScale) + vec2(0.5, 0.5);
 
