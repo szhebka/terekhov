@@ -173,11 +173,6 @@
   }
 }
 
-.exposition__image {
-  transition: transform 0.1s linear;
-  transform: skewX(var(--velocity));
-}
-
 .exposition__image--1,
 .exposition__image--3 {
   height: 100%;
