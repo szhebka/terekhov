@@ -38,6 +38,13 @@ export default {
       const images = imagesWrapper.querySelectorAll('.ppu__image-wrapper')
       const tl = gsap.timeline()
 
+      images.forEach(el => {
+        el.style.opacity = 0
+      })
+      const currentImage = images[Number(idx)]
+
+      currentImage.style.opacity = 1
+
       tl.to(this.$refs.ppu, {
         duration: 1,
         opacity: 1,
@@ -54,11 +61,7 @@ export default {
         0.4
       )
 
-      tl.to(
-        images[Number(idx)],
-        { duration: 1.5, y: 0, ease: 'power2.inOut' },
-        0.4
-      )
+      tl.to(currentImage, { duration: 1.5, y: 0, ease: 'power2.inOut' }, 0.4)
     },
     close() {
       window.ss && (window.ss.isFixed = false)
@@ -72,7 +75,12 @@ export default {
         delay: 0.3,
         visibility: 'hidden',
       })
-      gsap.to(images, { duration: 1.5, y: '-100%', ease: 'power2.inOut' })
+      gsap.to(images, {
+        duration: 1.5,
+        y: '-100%',
+        ease: 'power2.inOut',
+      })
+
       gsap.to(imagesWrapper, { duration: 1.5, y: '100%', ease: 'power2.inOut' })
     },
   },

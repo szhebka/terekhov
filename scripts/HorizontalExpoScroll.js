@@ -1,4 +1,4 @@
-import { clamp, matrixTransform, raf } from '@emotionagency/utils'
+import { clamp, matrixTransform, raf, resize } from '@emotionagency/utils'
 
 export class HorizontalExpoScroll {
   constructor($el, $container, $scroller) {
@@ -10,11 +10,16 @@ export class HorizontalExpoScroll {
     this.$sc = document.querySelector('#scroll-container')
 
     this.animate = this.animate.bind(this)
+    this.resize = this.resize.bind(this)
 
     this.init()
   }
 
   init() {
+    resize.on(this.resize)
+  }
+
+  resize() {
     if (screen.width > 640) {
       raf.on(this.animate)
     } else {
@@ -63,5 +68,6 @@ export class HorizontalExpoScroll {
 
   destroy() {
     raf.off(this.animate)
+    resize.off(this.resize)
   }
 }
