@@ -82,7 +82,7 @@ body {
   overscroll-behavior-y: none;
   @include smooth-font;
   width: 100%;
-  transition: color 2s ease, background 1s ease;
+  transition: color 2s ease, background 1s ease, opacity 0.5s ease;
   &.e-black {
     color: #fff;
     background: var(--primary-c);

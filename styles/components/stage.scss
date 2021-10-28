@@ -121,7 +121,8 @@
 
 .stage__list-number {
   margin-right: 4rem;
-  transition: color 0.5s;
+  transition: color 1s;
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   color: var(--grey-light);
 
   @media screen and (max-width: $large_mobile) {
@@ -138,7 +139,8 @@
 .stage__list-date {
   font-size: 8.5rem;
   line-height: 1;
-  transition: color 0.5s, transform 0.5s;
+  transition: color 1s, transform 1s;
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   color: var(--grey-light);
 
   @media screen and (max-width: $large_mobile) {

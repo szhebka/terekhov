@@ -76,21 +76,21 @@ export class MousemoveParallax {
   }
 
   mouseOn() {
-    gsap.to(this.img, { duration: 0.3, autoAlpha: 1 })
+    gsap.to(this.img, { duration: 1, autoAlpha: 1 })
     this.target.addEventListener('mousemove', this.moveMouse)
   }
 
   mouseOut() {
     gsap.to(this.img, {
-      duration: 0.3,
+      duration: 1,
       autoAlpha: 0,
     })
 
     this.target.removeEventListener('mousemove', this.moveMouse)
 
-    this.images.forEach(el => {
-      el.$el.style.opacity = 0
-    })
+    // this.images.forEach(el => {
+    //   el.$el.style.opacity = 0
+    // })
   }
 
   animate() {

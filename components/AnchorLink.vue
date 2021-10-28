@@ -21,12 +21,14 @@ export default {
       const href = anchor
 
       this.$nextTick(() => {
+        document.body.style.opacity = 0
         setTimeout(() => {
           this.goToAnchor(href)
         }, 3000)
       })
     },
     goToAnchor(href) {
+      const $sc = document.querySelector('#scroll-container')
       const target = document.querySelector(href)
 
       const startLocation = window.pageYOffset
@@ -36,8 +38,8 @@ export default {
 
       if (window.innerWidth >= 1024) {
         window.ss.state.target = distance
+        document.body.style.opacity = 1
       } else {
-        const $sc = document.querySelector('#scroll-container')
         $sc.scrollTop = distance
       }
     },

@@ -16,7 +16,16 @@ export const loadAnimation = cb => {
   }
 
   callback()
-  $sc && gsap.to($sc, { duration: 0.5, opacity: 1 })
+
+  if ($sc && !$sc.classList.contains('sc-loaded')) {
+    gsap.to($sc, {
+      duration: 0.5,
+      opacity: 1,
+      onComplete: () => {
+        $sc.classList.add('sc-loaded')
+      },
+    })
+  }
 
   animations($el, 3)
 }
