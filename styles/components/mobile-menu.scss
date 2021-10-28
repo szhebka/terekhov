@@ -40,12 +40,12 @@
   transition: left 0.5s;
   display: flex;
   flex-direction: column;
-  padding: 3rem 20px 5rem;
+  padding: 2.6rem 20px 5rem;
   overflow: auto;
   transition: transform 1s ease;
 
   @media screen and (max-width: $small_mobile) {
-    padding: 3rem 10px 2rem;
+    padding: 2.6rem 10px 2rem;
   }
 }
 
