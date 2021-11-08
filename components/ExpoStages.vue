@@ -3,15 +3,22 @@
     <div class="center-wrap">
       <div class="stage__list anchors">
         <div ref="stageParent" class="stage__list-wrap">
-          <div ref="stageImg" class="stage__img-wrap img-wrap">
-            <div>
-              <vue-picture v-multi-ref:picture url="/img/stages/1.jpg" />
-              <vue-picture v-multi-ref:picture url="/img/stages/2.jpg" />
-              <vue-picture v-multi-ref:picture url="/img/stages/3.jpg" />
-              <vue-picture v-multi-ref:picture url="/img/stages/4.jpg" />
+          <div class="stage__images">
+            <div
+              v-for="(image, idx) in images"
+              :key="idx"
+              v-multi-ref:child
+              :data-s-idx="idx"
+              class="stage__img-wrap img-wrap"
+            >
+              <div class="stage__img-container">
+                <vue-picture :url="image.a" />
+              </div>
+              <div class="stage__img-container">
+                <vue-picture :url="image.b" />
+              </div>
             </div>
           </div>
-
           <anchor-link
             v-multi-ref:parent
             data-parent-idx="0"
@@ -71,9 +78,22 @@ import VuePicture from '~/components/ThePicture.vue'
 
 export default {
   components: { AnchorLink, VuePicture },
+  computed: {
+    images() {
+      const images = []
+
+      for (let i = 0; i < 4; i++) {
+        images.push({
+          a: `/img/stages/${i + 1}a.jpg`,
+          b: `/img/stages/${i + 1}b.jpg`,
+        })
+      }
+      return images
+    },
+  },
 
   async mounted() {
-    await this.initMouse()
+    await this.initImages()
   },
 
   beforeDestroy() {
@@ -81,18 +101,14 @@ export default {
   },
 
   methods: {
-    async initMouse() {
+    async initImages() {
       if (window.innerWidth > 960) {
-        const { MousemoveParallax } = await import(
-          '~/scripts/MousemoveParallax'
-        )
+        const links = this.$refs.parent
+        const images = this.$refs.child
 
-        this.mp = new MousemoveParallax({
-          img: this.$refs.stageImg,
-          images: this.$refs.picture,
-          parents: this.$refs.parent,
-          target: this.$refs.stageParent,
-        })
+        const { ExpoImages } = await import('~/scripts/ExpoImages')
+
+        new ExpoImages(links, images)
       }
     },
   },

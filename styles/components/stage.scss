@@ -5,8 +5,7 @@
 }
 
 .stage {
-  overflow: hidden;
-  padding: 30rem 0;
+  padding: 35rem 0;
   text-transform: uppercase;
   color: var(--primary-c);
   background-color: var(--primary-bg);
@@ -41,29 +40,29 @@
   display: flex;
 }
 
-.stage__img-wrap {
-  max-width: 37.5rem;
-  opacity: 0;
-  position: fixed;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  transform: translate(50%, 50%);
-  z-index: -1;
-  will-change: transform, opacity;
+// .stage__img-wrap {
+//   max-width: 37.5rem;
+//   opacity: 0;
+//   position: fixed;
+//   pointer-events: none;
+//   top: 0;
+//   left: 0;
+//   transform: translate(50%, 50%);
+//   z-index: -1;
+//   will-change: transform, opacity;
 
-  // @media screen and (max-width: $large_mobile) {
-  //   max-width: 25rem;
-  //   left: calc(100% - 5rem);
-  // }
+//   // @media screen and (max-width: $large_mobile) {
+//   //   max-width: 25rem;
+//   //   left: calc(100% - 5rem);
+//   // }
 
-  // @media screen and (max-width: $small_mobile) {
-  //   max-width: 10rem;
-  // }
-  picture {
-    opacity: 0;
-  }
-}
+//   // @media screen and (max-width: $small_mobile) {
+//   //   max-width: 10rem;
+//   // }
+//   picture {
+//     opacity: 0;
+//   }
+// }
 
 .stage__img-wrap > div {
   padding-bottom: 121.6%;
@@ -73,6 +72,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .stage__list-info {
@@ -150,5 +150,46 @@
 
   @media screen and (max-width: $small_mobile) {
     font-size: 3rem;
+  }
+}
+
+.stage__images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  @include media('<=#{$large_tablet}') {
+    display: none;
+  }
+}
+.stage__img-wrap {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: 100%;
+  > .stage__img-container {
+    will-change: transform, opacity;
+    padding-bottom: 0;
+    opacity: 0;
+    transform: scaleY(1.1) translateY(60px);
+    transform-origin: top;
+    width: 37.2rem;
+    @include media('<=#{$small_desktop}') {
+      width: 24rem;
+    }
+    img {
+      position: static;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    &:nth-of-type(1) {
+      margin-top: 15rem;
+    }
   }
 }
