@@ -44,6 +44,7 @@ export class ExpoImages {
         y: 60,
         opacity: 0,
         ease: 'power2.out',
+        overwrite: true,
       })
     })
   }
