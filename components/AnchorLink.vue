@@ -38,13 +38,13 @@ export default {
 
       const distance = endLocation - startLocation + window.innerHeight / 4
 
+      document.body.style.opacity = 1
       if (window.innerWidth >= 1024) {
-        window.ss.state.target = distance - 500
-        document.body.style.opacity = 1
+        window.ss.state.target = distance - window.innerHeight / 2
         await delayPromise(1000)
         window.ss.opts.friction = 0.03
       } else {
-        $sc.scrollTop = distance
+        $sc.scrollTop = distance - window.innerHeight / 2
       }
     },
   },

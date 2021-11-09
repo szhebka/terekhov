@@ -8,13 +8,15 @@ export default class ScrollInView {
     this.inView()
   }
 
+  isInViewTop(elemTop) {
+    return elemTop <= window.innerHeight * this.intersectionRatio && elemTop > 0
+  }
+
   inView() {
     this.elements.forEach(elem => {
       const elemTop = elem.getBoundingClientRect().top
-      if (
-        elemTop <= window.innerHeight * this.intersectionRatio &&
-        elemTop > 0
-      ) {
+
+      if (this.isInViewTop(elemTop)) {
         if (!elem.classList.contains('activated')) {
           elem.classList.add('activated')
           this.callback(elem)
