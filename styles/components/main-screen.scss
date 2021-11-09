@@ -80,7 +80,7 @@
 
 .main-screen__e-image-sticky {
   position: relative;
-  will-change: transform;
+  will-change: transform, opacity;
   // min-height: 250rem;
   // @include media('<=1440px') {
   //   min-height: 280rem;

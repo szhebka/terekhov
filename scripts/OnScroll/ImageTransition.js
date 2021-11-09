@@ -16,7 +16,7 @@ export class ImageTransition {
   }
 
   resize() {
-    this.end = window.innerHeight * 1.5
+    this.end = window.innerHeight * 1.6
   }
 
   animation() {
