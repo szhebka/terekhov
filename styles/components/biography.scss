@@ -64,6 +64,16 @@
 
 .biography__img-wrap > div {
   padding-bottom: 116.84%;
+  overflow: hidden;
+  img {
+    transition: transform 2s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform;
+  }
+  .bio-img--active {
+    img {
+      transform: scale(1.03);
+    }
+  }
 }
 
 .biography__link {

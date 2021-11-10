@@ -69,6 +69,18 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config, { isDev, isClient }) {
+      config.module.rules.push({
+        test: /\.glsl$/,
+        exclude: '/node_modules/',
+        loader: 'webpack-glsl-loader',
+      })
+      // config.resolve.alias['debug.addIndicators'] =
+      //   '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
+      // config.resolve.alias['animation.gsap'] =
+      //   '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
+    },
+  },
   // generate: { fallback: '404.html' },
 }

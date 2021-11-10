@@ -1,16 +1,16 @@
 <template>
   <main data-route data-periods>
-    <section class="periods">
+    <section class="periods" data-preload>
       <div class="center-wrap">
         <div class="periods__header">
           <div data-a-o class="back">
             <nuxt-link class="back__link" to="/">назад</nuxt-link>
           </div>
           <div class="periods__header-right">
-            <div data-a-h2 class="periods__header-text">
+            <div data-a-h class="periods__header-text">
               Некоторые работы основных творческих периодов
             </div>
-            <div data-a-h2 class="periods__header-title">периоды</div>
+            <div data-a-h class="periods__header-title">периоды</div>
           </div>
         </div>
         <div data-a-o class="periods__body anchors">
@@ -542,7 +542,7 @@
 </template>
 
 <script>
-import vuePicture from '~/components/vue-picture.vue'
+import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 

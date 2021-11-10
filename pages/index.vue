@@ -1,19 +1,20 @@
 <template>
   <main>
-    <section ref="textParent" data-route data-home class="main-screen">
+    <section
+      ref="textParent"
+      data-route
+      data-home
+      data-preload
+      class="main-screen"
+    >
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 data-a-h2 class="main-screen__title">Igor Terekhov</h1>
+          <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
           <h2 data-a-t class="main-screen__subtitle">живопись</h2>
         </div>
-        <div ref="imageParent" class="main-screen__e-image-sticky">
-          <div
-            ref="imageEl"
-            data-dark-offset-top="0.1"
-            data-dark-offset-bottom="0.7"
-            class="main-screen__img-wrap img-wrap"
-          >
-            <div data-a-t>
+        <div ref="imageParent" data-a-img-main class="main-screen__e-image">
+          <div ref="imageEl" class="main-screen__img-wrap img-wrap">
+            <div>
               <vue-picture url="/img/main-screen-img.jpg" />
             </div>
           </div>
@@ -26,15 +27,14 @@
       data-dark
       data-dark-offset-top="1"
       data-dark-offset-bottom="0.7"
-      data-parallax-wrapper
     >
-      <div v-multi-ref:parallax data-offset="0">
+      <div data-offset="0">
         <section class="thesis">
-          <div data-a-p class="center-wrap">
+          <div class="center-wrap">
             <div class="thesis__top">
               <div data-a-o class="thesis__small-title small-title">тезис</div>
               <h2
-                data-a-h
+                data-a-thesis
                 class="thesis__simple-title simple-title simple-title--color"
               >
                 Плоскость холста предупреждает — здесь вы встретитесь с заведомо
@@ -66,7 +66,11 @@
                 <div data-a-t class="thesis__left">
                   <div class="thesis__img-wrap img-wrap">
                     <div>
-                      <vue-picture url="/img/thesis-img.jpg" />
+                      <vue-gl-picture
+                        url="/img/thesis-img.jpg"
+                        data-pp-idx="8"
+                        @click.native="openPPU"
+                      />
                     </div>
                   </div>
                 </div>
@@ -90,13 +94,13 @@
       <div class="center-wrap">
         <div class="philosophy__wrap">
           <div class="philosophy__left">
-            <h2 data-a-h2 class="philosophy__title">Αλήθεια</h2>
+            <h2 data-a-h class="philosophy__title">Αλήθεια</h2>
             <div class="philosophy__author-name philosophy__author-name--sm">
               М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
             </div>
           </div>
           <div class="philosophy__right">
-            <div class="philosophy__descr">
+            <div data-a-t class="philosophy__descr">
               άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
               ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
               θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών
@@ -128,7 +132,11 @@
             </div>
             <div class="philosophy__img-wrap img-wrap">
               <div>
-                <vue-picture url="/img/philosophy-img.jpg" />
+                <vue-gl-picture
+                  url="/img/philosophy-img.jpg"
+                  data-pp-idx="0"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div data-a-t class="img-descr img-descr--color">
@@ -148,7 +156,11 @@
           <div class="poet__left">
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/poet-img1.jpg" />
+                <vue-gl-picture
+                  url="/img/poet-img1.jpg"
+                  data-pp-idx="1"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -163,15 +175,15 @@
             <div class="poet__photo">
               <div class="img-wrap img-wrap--contain">
                 <div>
-                  <vue-picture url="/img/poet-photo.jpg" />
+                  <vue-gl-picture url="/img/poet-photo.jpg" />
                 </div>
               </div>
             </div>
-            <h2 data-a-h2 class="poet__simple-title simple-title">Ли Бо</h2>
+            <h2 data-a-h class="poet__simple-title simple-title">Ли Бо</h2>
             <span data-a-l class="poet__line line line--bg"></span>
             <div class="poet__descr">
-              <div data-a-t class="poet__descr-wrap">
-                <p>
+              <div class="poet__descr-wrap">
+                <p data-a-p>
                   Желтая Река идет в Восточную Бездну, Белое солнце опускается в
                   западное море. Уходящий поток и струящийся свет Летят, мчатся,
                   никого не ждут.
@@ -180,7 +192,11 @@
             </div>
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/poet-img2.jpg" />
+                <vue-gl-picture
+                  url="/img/poet-img2.jpg"
+                  data-pp-idx="2"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -198,17 +214,20 @@
       <div class="center-wrap">
         <div class="meaning__container">
           <div class="meaning__top">
-            <h2 data-a-h2 class="meaning__simple-title simple-title">
+            <h2 data-a-h class="meaning__simple-title simple-title">
               Смысл живописной деятельности и её содержание неразделимы и это её
               уникальное свойство
             </h2>
             <span data-a-l class="meaning__line line line--bg"></span>
-            <div data-a-t class="meaning__wrap">
-              <div class="meaning__small-title small-title small-title--color">
+            <div class="meaning__wrap">
+              <div
+                data-a-p
+                class="meaning__small-title small-title small-title--color"
+              >
                 Мерло–Понти
               </div>
               <div class="meaning__content content content--color">
-                <p>
+                <p data-a-p>
                   Поэтому, вероятно, художники с такой неохотой рассказывают о
                   том, чем они занимаются. Перед ними есть пример создания
                   текстов, призванных объяснить то или иное, и непрестанно
@@ -220,15 +239,23 @@
           </div>
         </div>
         <div class="meaning__img-wrap img-wrap">
-          <div ref="meaningImage" data-parallax="0.3">
-            <vue-picture url="/img/meaning-img1.jpg" />
+          <div ref="meaningImage">
+            <vue-gl-picture
+              url="/img/meaning-img1.jpg"
+              data-pp-idx="3"
+              @click.native="openPPU"
+            />
           </div>
         </div>
         <div class="meaning__box">
           <div class="meaning__box-left">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-picture url="/img/meaning-img2.jpg" />
+                <vue-gl-picture
+                  url="/img/meaning-img2.jpg"
+                  data-pp-idx="4"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -242,7 +269,11 @@
           <div class="meaning__box-right">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-picture url="/img/meaning-img3.jpg" />
+                <vue-gl-picture
+                  url="/img/meaning-img3.jpg"
+                  data-pp-idx="5"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -259,12 +290,12 @@
     <section data-in-view class="buber">
       <div class="center-wrap">
         <div class="buber__top">
-          <h2 data-a-h2 class="buber__simple-title simple-title">
+          <h2 data-a-h class="buber__simple-title simple-title">
             Мартин Бубер
           </h2>
           <div class="buber__top-left">
             <span data-a-l class="buber__line"></span>
-            <div data-a-t class="buber__descr">
+            <div data-a-p class="buber__descr">
               Чистый жест, который не похищает мир для себя, но выражает себя
               для мира – какое совершенное определение для последней фазы
               современного искусства.
@@ -275,7 +306,11 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/buber-img1.jpg" />
+                <vue-gl-picture
+                  url="/img/buber-img1.jpg"
+                  data-pp-idx="6"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -289,7 +324,11 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-picture url="/img/buber-img2.jpg" />
+                <vue-gl-picture
+                  url="/img/buber-img2.jpg"
+                  data-pp-idx="7"
+                  @click.native="openPPU"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -303,180 +342,84 @@
         </div>
       </div>
     </section>
-    <section id="expo" data-dark class="exposition">
-      <div class="center-wrap"></div>
-      <div class="exposition__wrap">
-        <div class="exposition__left">
-          <h2 class="exposition__simple-title simple-title simple-title--color">
-            Экспозиция
-          </h2>
-          <div class="exposition__box">
-            <div class="exposition__box-left">
-              <span class="line exposition__line"></span>
-              <div class="small-title">тезис</div>
-            </div>
-            <div class="exposition__box-right">
-              <div class="content content">
-                <p>
-                  Живопись, утратив монополию на изобразительность, развила
-                  способность создавать тотальные объекты с уникальными
-                  свойствами. Пространство холста может расширяться быстрее
-                  Вселенной. Задача не просто найти сингулярность в видимом, а
-                  создать её.
-                </p>
-              </div>
+    <the-exposition />
+    <expo-stages />
+    <div data-parallax-wrapper>
+      <div v-multi-ref:parallax data-offset="0.1">
+        <the-biography />
+        <footer class="footer">
+          <div class="center-wrap">
+            <div class="footer__wrap">
+              <a class="footer__home" href="/">домой</a
+              ><a class="footer__email" href="mailto:artiter@gmail.com"
+                >artiter@gmail.com</a
+              >
+              <p class="footer__copyr">© 2021 все права защищены</p>
             </div>
           </div>
-        </div>
-        <div class="exposition__img-wrap img-wrap">
-          <div>
-            <vue-picture url="/img/exposition-img.jpg" />
-          </div>
-        </div>
-        <div class="exposition__images">
-          <div class="exposition__images-wrap">
-            <div class="exposition__images-item">
-              <div class="exposition__images-img img-wrap">
-                <div>
-                  <vue-picture url="/img/exposition-slider-img1.jpg" />
-                </div>
-              </div>
-            </div>
-            <div class="exposition__images-item">
-              <div class="exposition__images-img img-wrap">
-                <div>
-                  <vue-picture url="/img/exposition-slider-img2.jpg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="stage">
-      <div class="center-wrap">
-        <div class="stage__list anchors">
-          <div class="stage__list-wrap">
-            <anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-one"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№01</div>
-                <div class="stage__list-date">1989/2002</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/stage-img.jpg" />
-                </div>
-              </div> </anchor-link
-            ><anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-two"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№02</div>
-                <div class="stage__list-date">2003/2007</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div><vue-picture url="/img/stage-img.jpg" /></div>
-              </div> </anchor-link
-            ><anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-three"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№03</div>
-                <div class="stage__list-date">2008/2010</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/stage-img.jpg" />
-                </div>
-              </div> </anchor-link
-            ><anchor-link
-              class="stage__list-row"
-              data-anchor-href="periods/#periods__box-four"
-            >
-              <div class="stage__list-info">
-                <div class="stage__list-number">№04</div>
-                <div class="stage__list-date">2010/2021</div>
-              </div>
-              <div class="stage__img-wrap img-wrap">
-                <div>
-                  <vue-picture url="/img/stage-img.jpg" />
-                </div>
-              </div>
-            </anchor-link>
-          </div>
-        </div>
+        </footer>
       </div>
     </div>
-    <section class="biography">
-      <div class="center-wrap">
-        <h2 class="biography__title">
-          Работы находятся в собрании Государственного Русского музея в
-          Санкт-Петербурге, частных коллекциях России, Европы, Канады,
-          Сингапура, Японии.
-        </h2>
-        <div class="biography__img-wrap img-wrap img-wrap--contain">
-          <div>
-            <vue-picture url="/img/biography-img.jpg" />
-          </div>
-        </div>
-        <nuxt-link class="biography__link" to="/about">биография</nuxt-link>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="center-wrap">
-        <div class="footer__wrap">
-          <a class="footer__home" href="/">домой</a
-          ><a class="footer__email" href="mailto:artiter@gmail.com"
-            >artiter@gmail.com</a
-          >
-          <p class="footer__copyr">© 2021 все права защищены</p>
-        </div>
-      </div>
-    </footer>
+    <pictures-pop-up ref="ppu" />
   </main>
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import AnchorLink from '~/components/AnchorLink.vue'
-import VuePicture from '~/components/vue-picture.vue'
+import VuePicture from '~/components/ThePicture.vue'
+import VueGlPicture from '~/components/GlPicture.vue'
+import TheExposition from '~/components/TheExposition.vue'
+import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
+import PicturesPopUp from '~/components/PicturesPopUp.vue'
+import TheBiography from '~/components/TheBiography.vue'
 
 export default {
-  components: { VuePicture },
+  components: {
+    VuePicture,
+    VueGlPicture,
+    TheExposition,
+    ExpoStages,
+    PicturesPopUp,
+    TheBiography,
+  },
   mixins: [AnchorVue, AnchorLink, transition],
 
   async mounted() {
+    const { initImages } = await import('~/scripts/GL/Images/init')
+    if (window.scetch) {
+      initImages()
+    } else {
+      emitter.on('scetchCreated', initImages)
+    }
+
     const { default: ScrollAnimations } = await import(
       '~/scripts/scroll/ScrollAnimations'
     )
-
-    const imageParent =
-      window.innerWidth > 460 ? this.$refs.imageParent : this.$refs.textParent
-
-    if (window.innerWidth > 1024) {
-      const { ImageScrolling } = await import(
-        '~/scripts/OnScroll/ImageScrolling'
-      )
-      this.sIS = new ImageScrolling(this.$refs.imageEl, imageParent)
-
-      this.$refs.imageEl.setAttribute('data-dark', '')
-      this.$refs.thesis.setAttribute('data-dark-offset-top', '2')
-
-      const { TextScrolling } = await import('~/scripts/OnScroll/TextScrolling')
-      this.sIS = new TextScrolling(this.$refs.textEl, this.$refs.textParent)
-      this.sectionParallaxInit()
-    }
 
     new ScrollAnimations()
 
     const { BlackBg } = await import('~/scripts/BlackBg')
     this.blackBg = new BlackBg()
+
+    this.sectionParallaxInit()
+
+    const { ImageTransition } = await import(
+      '~/scripts/OnScroll/ImageTransition'
+    )
+
+    new ImageTransition(
+      this.$refs.textParent,
+      this.$refs.imageParent,
+      this.$refs.textEl
+    )
+
+    if (window.innerWidth > 960) {
+      this.$refs.thesis.setAttribute('data-dark-offset-top', '1.5')
+    }
   },
 
   beforeDestroy() {
@@ -488,6 +431,12 @@ export default {
       const { SectionParallax } = await import('~/scripts/SectionParallax')
       this.sp = new SectionParallax(this.$refs.parallax)
       this.sp.init()
+    },
+    openPPU(e) {
+      const target = e.currentTarget
+      const idx = target.dataset.ppIdx
+
+      this.$refs.ppu.open(idx)
     },
   },
 }

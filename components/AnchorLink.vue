@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { delayPromise } from '~/scripts/utils/delay'
 export default {
   methods: {
     onClick(e) {
@@ -21,12 +22,15 @@ export default {
       const href = anchor
 
       this.$nextTick(() => {
+        window.ss.opts.friction = 1
+        document.body.style.opacity = 0
         setTimeout(() => {
           this.goToAnchor(href)
-        }, 1000)
+        }, 2500)
       })
     },
-    goToAnchor(href) {
+    async goToAnchor(href) {
+      const $sc = document.querySelector('#scroll-container')
       const target = document.querySelector(href)
 
       const startLocation = window.pageYOffset
@@ -34,11 +38,13 @@ export default {
 
       const distance = endLocation - startLocation + window.innerHeight / 4
 
+      document.body.style.opacity = 1
       if (window.innerWidth >= 1024) {
-        window.ss.state.target = distance
+        window.ss.state.target = distance - window.innerHeight / 2
+        await delayPromise(1000)
+        window.ss.opts.friction = 0.03
       } else {
-        const $sc = document.querySelector('#scroll-container')
-        $sc.scrollTop = distance
+        $sc.scrollTop = distance - window.innerHeight / 2
       }
     },
   },

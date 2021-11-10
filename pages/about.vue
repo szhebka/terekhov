@@ -1,17 +1,17 @@
 <template>
   <main data-route data-about>
-    <section class="about">
+    <section class="about" data-preload>
       <div class="center-wrap">
         <div class="about__header">
           <div class="about__header-left">
             <div data-a-o class="back about__back">
               <nuxt-link class="back__link" to="/"> назад</nuxt-link>
             </div>
-            <div data-a-t class="about__email">
-              <a href="mailto:artiter@gmail.com">artiter@gmail.com</a>
+            <div class="about__email">
+              <a data-a-h href="mailto:artiter@gmail.com">artiter@gmail.com</a>
             </div>
           </div>
-          <div data-a-o class="about__header-right img-wrap">
+          <div data-a-img class="about__header-right img-wrap">
             <div>
               <vue-picture url="/img/about-img.jpg" />
             </div>
@@ -246,7 +246,7 @@
 </template>
 
 <script>
-import vuePicture from '~/components/vue-picture.vue'
+import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 

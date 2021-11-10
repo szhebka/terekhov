@@ -1,8 +1,8 @@
 <template>
   <main data-route data-texts>
-    <section class="texts">
+    <section class="texts" data-preload>
       <div class="center-wrap">
-        <div data-a-o class="texts__img-wrap img-wrap">
+        <div data-a-img class="texts__img-wrap img-wrap">
           <div>
             <vue-picture url="/img/text-img.jpg" />
           </div>
@@ -11,7 +11,7 @@
           <div data-a-t class="back">
             <nuxt-link class="back__link" to="/"> назад</nuxt-link>
           </div>
-          <h2 data-a-h2 class="texts__top-title">тексты</h2>
+          <h2 data-a-h class="texts__top-title">тексты</h2>
         </div>
         <div ref="textBody" data-a-o class="texts__body toogles toogles--fade">
           <div class="texts__body-left">
@@ -96,7 +96,7 @@
 </template>
 
 <script>
-import vuePicture from '~/components/vue-picture.vue'
+import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 

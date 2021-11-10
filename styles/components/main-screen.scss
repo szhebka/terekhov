@@ -4,13 +4,13 @@
   text-align: center;
   font-weight: 400;
   text-transform: uppercase;
-  min-height: 250rem;
-  @include media('<=1440px') {
-    min-height: 280rem;
-  }
-  @include media('<=#{$br1}') {
-    min-height: auto;
-  }
+  // min-height: 250rem;
+  // @include media('<=1440px') {
+  //   min-height: 280rem;
+  // }
+  // @include media('<=#{$br1}') {
+  //   min-height: auto;
+  // }
 
   @media screen and (max-width: $large_tablet) {
     padding-bottom: 20rem;
@@ -80,12 +80,12 @@
 
 .main-screen__e-image-sticky {
   position: relative;
-  will-change: transform;
-  min-height: 250rem;
-  @include media('<=1440px') {
-    min-height: 280rem;
-  }
-  @include media('<=#{$br1}') {
-    min-height: auto;
-  }
+  will-change: transform, opacity;
+  // min-height: 250rem;
+  // @include media('<=1440px') {
+  //   min-height: 280rem;
+  // }
+  // @include media('<=#{$br1}') {
+  //   min-height: auto;
+  // }
 }

@@ -1,19 +1,25 @@
 <template>
   <div id="app">
+    <app-loader />
     <div id="scroll-container">
       <Header />
       <Nuxt />
+      <div id="gl"></div>
+      <div class="rewealer"></div>
+      <div class="rewealer-white"></div>
     </div>
   </div>
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import Header from '~/components/Header'
-// import Popup from '~/components/Popup'
+import AppLoader from '~/components/AppLoader.vue'
 export default {
   components: {
     Header,
-    // Popup,
+    AppLoader,
   },
 
   async mounted() {
@@ -27,19 +33,29 @@ export default {
 
     this.winSizes()
 
+    const { Scetch } = await import('@emotionagency/glhtml')
     const { SmoothScroll } = await import('@emotionagency/smoothscroll')
+
     const { raf } = await import('@emotionagency/utils')
+
     window.ss = new SmoothScroll({
       mobile: false,
       breakpoint: 1024,
       passive: false,
-      isFixed: false,
+      isFixed: true,
       friction: 0.03,
       stepSize: 0.9,
       raf,
     })
 
-    this.parallaxInit()
+    if (screen.width > 960) {
+      window.scetch = new Scetch('#gl', {
+        raf,
+        dpr: window.devicePixelRatio,
+      })
+
+      emitter.emit('scetchCreated')
+    }
   },
 
   beforeDestroy() {
