@@ -1,4 +1,5 @@
 import { clamp, matrixTransform, raf, resize } from '@emotionagency/utils'
+import imagesLoaded from 'imagesloaded'
 
 export class HorizontalExpoScroll {
   constructor($el, $container, $scroller) {
@@ -16,20 +17,26 @@ export class HorizontalExpoScroll {
   }
 
   init() {
-    resize.on(this.resize)
+    imagesLoaded(this.$el, () => {
+      resize.on(this.resize)
+    })
   }
 
   resize() {
     if (screen.width > 640) {
-      raf.on(this.animate)
       this.setHeight()
+      raf.on(this.animate)
     } else {
       raf.off(this.animate)
     }
   }
 
   get scrollHeight() {
-    return this.$el.scrollWidth - window.innerHeight
+    return this.$el.scrollWidth - this.screenDif
+  }
+
+  get screenDif() {
+    return window.innerWidth - window.innerHeight
   }
 
   get offset() {
