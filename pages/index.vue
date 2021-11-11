@@ -69,7 +69,7 @@
                       <vue-gl-picture
                         url="/img/thesis-img.jpg"
                         data-pp-idx="8"
-                        @click.native="openPPU"
+                        
                       />
                     </div>
                   </div>
@@ -135,7 +135,7 @@
                 <vue-gl-picture
                   url="/img/philosophy-img.jpg"
                   data-pp-idx="0"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -159,7 +159,7 @@
                 <vue-gl-picture
                   url="/img/poet-img1.jpg"
                   data-pp-idx="1"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -195,7 +195,7 @@
                 <vue-gl-picture
                   url="/img/poet-img2.jpg"
                   data-pp-idx="2"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -243,7 +243,7 @@
             <vue-gl-picture
               url="/img/meaning-img1.jpg"
               data-pp-idx="3"
-              @click.native="openPPU"
+              
             />
           </div>
         </div>
@@ -254,7 +254,7 @@
                 <vue-gl-picture
                   url="/img/meaning-img2.jpg"
                   data-pp-idx="4"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -272,7 +272,7 @@
                 <vue-gl-picture
                   url="/img/meaning-img3.jpg"
                   data-pp-idx="5"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -309,7 +309,7 @@
                 <vue-gl-picture
                   url="/img/buber-img1.jpg"
                   data-pp-idx="6"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -327,7 +327,7 @@
                 <vue-gl-picture
                   url="/img/buber-img2.jpg"
                   data-pp-idx="7"
-                  @click.native="openPPU"
+                  
                 />
               </div>
             </div>
@@ -360,7 +360,7 @@
         </footer>
       </div>
     </div>
-    <pictures-pop-up ref="ppu" />
+    <!-- <pictures-pop-up ref="ppu" /> -->
   </main>
 </template>
 
@@ -374,7 +374,6 @@ import TheExposition from '~/components/TheExposition.vue'
 import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
-import PicturesPopUp from '~/components/PicturesPopUp.vue'
 import TheBiography from '~/components/TheBiography.vue'
 
 export default {
@@ -383,7 +382,6 @@ export default {
     VueGlPicture,
     TheExposition,
     ExpoStages,
-    PicturesPopUp,
     TheBiography,
   },
   mixins: [AnchorVue, AnchorLink, transition],
