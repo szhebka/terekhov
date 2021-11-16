@@ -40,6 +40,7 @@
 .exposition__container {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .exposition__wrap {
@@ -182,23 +183,21 @@
 }
 
 .exposition__img-wrap {
-  // max-width: 60.5rem;
-  // width: 100%;
-  display: grid;
   position: relative;
   z-index: 2;
-  gap: 35rem;
   width: fit-content;
   background: var(--primary-bg);
   align-items: center;
-  flex: 1 0 auto;
-  grid-auto-flow: column;
+  display: flex;
   height: 100%;
   picture,
   img {
-    display: block;
+    display: inline-block;
     max-width: none;
     max-height: 100%;
+    + picture {
+      margin-left: 35rem;
+    }
   }
 
   // @media screen and (max-width: $small_desktop) {

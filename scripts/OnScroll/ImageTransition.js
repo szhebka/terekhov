@@ -6,7 +6,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 export class ImageTransition {
   end = 0
-  constructor($parent, $el, $text) {
+  constructor($parent, $el, $text, opts = {}) {
+    this.scale = opts.scale || 3
+    this.opacity = opts.opacity ?? true
+    this.y = opts.y ?? 0
     this.$parent = $parent
     this.$el = $el
     this.$text = $text
@@ -16,7 +19,10 @@ export class ImageTransition {
   }
 
   resize() {
-    this.end = window.innerHeight * 1.6
+    this.end =
+      window.innerWidth > 960
+        ? window.innerHeight * 1.6
+        : window.innerHeight * 0.6
   }
 
   animation() {
@@ -31,10 +37,11 @@ export class ImageTransition {
       },
     })
     tl.to(this.$el, {
-      scale: 3,
+      scale: this.scale,
+      y: this.y,
     })
-    tl.to(this.$el, { opacity: 0 }, 0.1)
-    tl.to(this.$text, { y: '-100%' }, 0)
+    this.opacity && tl.to(this.$el, { opacity: 0 }, 0.1)
+    this.$text && tl.to(this.$text, { y: '-100%' }, 0)
   }
 
   destroy() {

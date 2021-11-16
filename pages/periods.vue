@@ -538,16 +538,18 @@
         </div>
       </div>
     </footer>
+    <periods-slider />
   </main>
 </template>
 
 <script>
 import vuePicture from '~/components/ThePicture.vue'
+import PeriodsSlider from '~/components/slider/SliderWindow.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 
 export default {
-  components: { vuePicture },
+  components: { vuePicture, PeriodsSlider },
   mixins: [anchorVue, transition],
 }
 </script>

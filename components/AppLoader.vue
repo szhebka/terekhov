@@ -1,5 +1,6 @@
 <template>
   <div ref="loader" class="app-loader">
+    <!-- <div ref="loader" class="app-loader" style="display: none"> -->
     <div ref="progress" class="app-loader__progress"></div>
     <div class="app-loader__images">
       <div

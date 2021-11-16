@@ -69,7 +69,6 @@
                       <vue-gl-picture
                         url="/img/thesis-img.jpg"
                         data-pp-idx="8"
-                        @click.native="openPPU"
                       />
                     </div>
                   </div>
@@ -132,11 +131,7 @@
             </div>
             <div class="philosophy__img-wrap img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/philosophy-img.jpg"
-                  data-pp-idx="0"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/philosophy-img.jpg" data-pp-idx="0" />
               </div>
             </div>
             <div data-a-t class="img-descr img-descr--color">
@@ -156,11 +151,7 @@
           <div class="poet__left">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/poet-img1.jpg"
-                  data-pp-idx="1"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/poet-img1.jpg" data-pp-idx="1" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -192,11 +183,7 @@
             </div>
             <div class="img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/poet-img2.jpg"
-                  data-pp-idx="2"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/poet-img2.jpg" data-pp-idx="2" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -210,7 +197,7 @@
         </div>
       </div>
     </section>
-    <section ref="meaningParent" data-in-view class="meaning">
+    <section data-in-view class="meaning">
       <div class="center-wrap">
         <div class="meaning__container">
           <div class="meaning__top">
@@ -219,7 +206,7 @@
               уникальное свойство
             </h2>
             <span data-a-l class="meaning__line line line--bg"></span>
-            <div class="meaning__wrap">
+            <div ref="meaningParent" class="meaning__wrap">
               <div
                 data-a-p
                 class="meaning__small-title small-title small-title--color"
@@ -240,22 +227,14 @@
         </div>
         <div class="meaning__img-wrap img-wrap">
           <div ref="meaningImage">
-            <vue-gl-picture
-              url="/img/meaning-img1.jpg"
-              data-pp-idx="3"
-              @click.native="openPPU"
-            />
+            <vue-picture url="/img/meaning-img1.jpg" />
           </div>
         </div>
         <div class="meaning__box">
           <div class="meaning__box-left">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/meaning-img2.jpg"
-                  data-pp-idx="4"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/meaning-img2.jpg" data-pp-idx="4" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -269,11 +248,7 @@
           <div class="meaning__box-right">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/meaning-img3.jpg"
-                  data-pp-idx="5"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/meaning-img3.jpg" data-pp-idx="5" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -306,11 +281,7 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/buber-img1.jpg"
-                  data-pp-idx="6"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/buber-img1.jpg" data-pp-idx="6" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -324,11 +295,7 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture
-                  url="/img/buber-img2.jpg"
-                  data-pp-idx="7"
-                  @click.native="openPPU"
-                />
+                <vue-gl-picture url="/img/buber-img2.jpg" data-pp-idx="7" />
               </div>
             </div>
             <div class="img-descr img-descr--color">
@@ -360,7 +327,7 @@
         </footer>
       </div>
     </div>
-    <pictures-pop-up ref="ppu" />
+    <!-- <pictures-pop-up ref="ppu" /> -->
   </main>
 </template>
 
@@ -374,7 +341,6 @@ import TheExposition from '~/components/TheExposition.vue'
 import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
-import PicturesPopUp from '~/components/PicturesPopUp.vue'
 import TheBiography from '~/components/TheBiography.vue'
 
 export default {
@@ -383,7 +349,6 @@ export default {
     VueGlPicture,
     TheExposition,
     ExpoStages,
-    PicturesPopUp,
     TheBiography,
   },
   mixins: [AnchorVue, AnchorLink, transition],
@@ -415,6 +380,13 @@ export default {
       this.$refs.textParent,
       this.$refs.imageParent,
       this.$refs.textEl
+    )
+
+    new ImageTransition(
+      this.$refs.meaningParent,
+      this.$refs.meaningImage,
+      null,
+      { scale: 1.8, y: -150 }
     )
 
     if (window.innerWidth > 960) {

@@ -1,0 +1,25 @@
+.slider-window {
+  @include coverdiv(fixed);
+  background-color: var(--primary-bg);
+  z-index: 100003;
+  // opacity: 0;
+  // visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+  display: none;
+}
+
+.slider-window--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-window__close {
+  position: absolute;
+  right: 40px;
+  top: 3%;
+  z-index: 2;
+  background-color: transparent;
+  @include media('<=#{$br3}') {
+    right: 40px;
+  }
+}
