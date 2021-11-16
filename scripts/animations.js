@@ -12,7 +12,7 @@ export const animations = (elem, h1dur = 2.3) => {
 
   elem.querySelectorAll('[data-a-l]').animation({
     duration: 2.5,
-    width: '100%',
+    scaleX: 1,
     delay: 0.5,
     ease,
     stagger: 0.2,
