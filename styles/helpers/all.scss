@@ -231,8 +231,9 @@ h4 {
 // }
 
 [data-a-l] {
-  width: 0%;
-  will-change: width;
+  transform: scaleX(0);
+  will-change: transform;
+  transform-origin: left;
 }
 
 [data-a-t] {

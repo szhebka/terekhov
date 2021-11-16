@@ -9,6 +9,9 @@
 .exposition {
   overflow: hidden;
   width: 100%;
+  @include media('<=#{$br1}') {
+    background-color: var(--primary-c);
+  }
   @media screen and (min-width: $large_mobile) {
     position: sticky;
     top: 0;

@@ -38,7 +38,7 @@
                 class="thesis__simple-title simple-title simple-title--color"
               >
                 Плоскость холста предупреждает — здесь вы встретитесь с заведомо
-                иным.
+                иным
               </h2>
             </div>
             <div class="thesis__body">
@@ -227,7 +227,7 @@
         </div>
         <div class="meaning__img-wrap img-wrap">
           <div ref="meaningImage">
-            <vue-picture url="/img/meaning-img1.jpg" />
+            <vue-gl-picture url="/img/meaning-img1.jpg" />
           </div>
         </div>
         <div class="meaning__box">
@@ -382,12 +382,12 @@ export default {
       this.$refs.textEl
     )
 
-    new ImageTransition(
-      this.$refs.meaningParent,
-      this.$refs.meaningImage,
-      null,
-      { scale: 1.8, y: -150 }
-    )
+    // new ImageTransition(
+    //   this.$refs.meaningParent,
+    //   this.$refs.meaningImage,
+    //   null,
+    //   { scale: 1.8, y: -150 }
+    // )
 
     if (window.innerWidth > 960) {
       this.$refs.thesis.setAttribute('data-dark-offset-top', '1.5')

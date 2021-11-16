@@ -217,7 +217,6 @@
                 <div class="contact__box-title">Фото</div>
                 <div class="contact__box-info">
                   <p>Виктор Фроликов</p>
-                  <p>Вадим Феоктистов</p>
                 </div>
               </div>
               <div class="contact__box-row">
