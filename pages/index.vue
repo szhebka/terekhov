@@ -386,7 +386,7 @@ export default {
       this.$refs.meaningParent,
       this.$refs.meaningImage,
       null,
-      { scale: 1.5, opacity: false }
+      { scale: 1.8, y: -150 }
     )
 
     if (window.innerWidth > 960) {
