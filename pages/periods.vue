@@ -30,7 +30,7 @@
           </div>
           <div id="periods__box-one" class="periods__box">
             <div class="periods__box-top">
-              <div class="periods__box-number">опус №01</div>
+              <div class="periods__box-number">Оpus I</div>
               <div class="periods__box-year">1989/2002</div>
             </div>
             <div class="periods__box-wrap">
@@ -169,7 +169,7 @@
           </div>
           <div id="periods__box-two" class="periods__box">
             <div class="periods__box-top">
-              <div class="periods__box-number">опус №02</div>
+              <div class="periods__box-number">Opus II</div>
               <div class="periods__box-year">2003/2007</div>
             </div>
             <div class="periods__box-wrap">
@@ -304,7 +304,7 @@
           </div>
           <div id="periods__box-three" class="periods__box">
             <div class="periods__box-top">
-              <div class="periods__box-number">опус №03</div>
+              <div class="periods__box-number">Opus III</div>
               <div class="periods__box-year">2008/2010</div>
             </div>
             <div class="periods__box-wrap">
@@ -380,7 +380,7 @@
           </div>
           <div id="periods__box-four" class="periods__box">
             <div class="periods__box-top">
-              <div class="periods__box-number">опус №04</div>
+              <div class="periods__box-number">Opus IV</div>
               <div class="periods__box-year">2010/2020</div>
             </div>
             <div class="periods__box-wrap">
