@@ -42,27 +42,27 @@ body {
   font-size: 62.5%;
 
   @media screen and (max-width: $large_desktop) {
-    font-size: 100vw / (1600/10);
+    font-size: math.div(100vw, math.div(1600, 10));
   }
 
   @media screen and (max-width: $small_desktop) {
-    font-size: 100vw / (1340/10);
+    font-size: math.div(100vw, math.div(1340, 10));
   }
 
   @media screen and (max-width: $large_tablet) {
-    font-size: 100vw / (1000/10);
+    font-size: math.div(100vw, math.div(1000, 10));
   }
 
   @media screen and (max-width: $large_mobile) {
-    font-size: 100vw / (640/10);
+    font-size: math.div(100vw, math.div(640, 10));
   }
 
   @media screen and (max-width: $small_mobile) {
-    font-size: 100vw / (320/10);
+    font-size: math.div(100vw, math.div(320, 10));
   }
 
   @media screen and (max-width: 320px) {
-    font-size: 100vw / (320/10);
+    font-size: math.div(100vw, math.div(320, 10));
   }
 }
 
