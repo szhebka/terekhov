@@ -5,7 +5,6 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s ease, visibility 1s ease;
-  // display: none;
 }
 
 .slider-window--open {
@@ -25,6 +24,9 @@
   text-transform: uppercase;
 
   background-color: transparent;
+  @include media('<=#{$br1}') {
+    top: 26px;
+  }
   @media screen and (max-width: $small_mobile) {
     font-size: 1rem;
   }
