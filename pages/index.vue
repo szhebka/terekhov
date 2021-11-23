@@ -93,13 +93,13 @@
       <div class="center-wrap">
         <div class="philosophy__wrap">
           <div class="philosophy__left">
-            <h2 data-a-h class="philosophy__title">Αλήθεια</h2>
+            <h2 class="philosophy__title">Αλήθεια</h2>
             <div class="philosophy__author-name philosophy__author-name--sm">
               М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
             </div>
           </div>
           <div class="philosophy__right">
-            <div data-a-t class="philosophy__descr">
+            <div class="philosophy__descr">
               άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
               ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
               θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών

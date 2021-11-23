@@ -21,7 +21,8 @@
     "nuxt": "^2.15.3",
     "split-type": "^0.2.5",
     "supports-webp": "^2.0.1",
-    "vue-multi-ref": "^2.0.1"
+    "vue-multi-ref": "^2.0.1",
+    "vue2-touch-events": "^3.2.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",
@@ -37,8 +38,8 @@
     "gulp-ttf2woff2": "3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-webp": "^4.0.1",
-    "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
+    "sass": "^1.43.4",
     "sass-loader": "^10.1.1",
     "webpack-glsl-loader": "^1.0.1"
   }

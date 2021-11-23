@@ -1,9 +1,9 @@
 <template>
-  <div class="slider">
+  <div v-touch:swipe.left="next" v-touch:swipe.right="prev" class="slider">
     <ul class="slider__slides">
       <li
         v-for="(item, idx) in items"
-        :key="item._id"
+        :key="item._uid"
         class="slider__slide slide"
         :class="[currentSlide === idx && 'slide--active']"
       >
@@ -18,6 +18,19 @@
         <vue-arrow-icon />
       </button>
     </nav>
+    <ul class="slider__texts">
+      <li
+        v-for="(item, idx) in items"
+        :key="item._uid"
+        class="slider__text sl-text"
+        :class="[currentSlide === idx && 'sl-text--active']"
+      >
+        <small class="sl-text__date">{{ item.date }}</small>
+        <small class="sl-text__size">{{ item.size }}</small>
+        <small class="sl-text__type">{{ item.type }}</small>
+      </li>
+    </ul>
+    <div class="slider__counter">{{ currentSlide + 1 }}/{{ length }}</div>
   </div>
 </template>
 
@@ -42,10 +55,24 @@ export default {
     }
   },
 
+  computed: {
+    length() {
+      return this.items.length
+    },
+  },
+
   watch: {
     current() {
       this.currentSlide = this.current
     },
+  },
+
+  mounted() {
+    window.addEventListener('keydown', this.sliderHandler)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.sliderHandler)
   },
 
   methods: {
@@ -61,6 +88,15 @@ export default {
         this.currentSlide++
       } else {
         this.currentSlide = 0
+      }
+    },
+    sliderHandler(e) {
+      if (e.key === 'ArrowLeft') {
+        this.prev()
+      }
+
+      if (e.key === 'ArrowRight') {
+        this.next()
       }
     },
   },

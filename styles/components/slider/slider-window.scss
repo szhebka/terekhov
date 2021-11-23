@@ -2,10 +2,9 @@
   @include coverdiv(fixed);
   background-color: var(--primary-bg);
   z-index: 100003;
-  // opacity: 0;
-  // visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 1s ease, visibility 1s ease;
-  display: none;
 }
 
 .slider-window--open {
@@ -18,8 +17,33 @@
   right: 40px;
   top: 3%;
   z-index: 2;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.21429;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  color: var(--black);
+
   background-color: transparent;
+  @include media('<=#{$br1}') {
+    top: 26px;
+  }
+  @media screen and (max-width: $small_mobile) {
+    font-size: 1rem;
+  }
   @include media('<=#{$br3}') {
     right: 40px;
+  }
+}
+
+.slider-window__period {
+  position: absolute;
+  left: 40px;
+  top: 3%;
+  font-size: 3rem;
+  font-family: $secondary-f2;
+  @include media('<=#{$br2}') {
+    display: none;
   }
 }

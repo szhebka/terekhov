@@ -172,7 +172,7 @@
 
 .periods__box-top {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   color: var(--black);
   font-family: 'Forum', cursive;
@@ -191,7 +191,7 @@
   text-transform: none;
 
   @media screen and (max-width: $small_mobile) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 

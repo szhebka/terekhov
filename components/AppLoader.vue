@@ -21,6 +21,7 @@
 
 
 <script>
+// eslint-disable-next-line import/no-named-as-default
 import gsap from 'gsap'
 import VuePicture from '~/components/ThePicture.vue'
 
