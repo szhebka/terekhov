@@ -3,7 +3,7 @@
     <ul class="slider__slides">
       <li
         v-for="(item, idx) in items"
-        :key="item._id"
+        :key="item._uid"
         class="slider__slide slide"
         :class="[currentSlide === idx && 'slide--active']"
       >
@@ -18,6 +18,18 @@
         <vue-arrow-icon />
       </button>
     </nav>
+    <ul class="slider__texts">
+      <li
+        v-for="(item, idx) in items"
+        :key="item._uid"
+        class="slider__text sl-text"
+        :class="[currentSlide === idx && 'sl-text--active']"
+      >
+        <small class="sl-text__date">{{ item.date }}</small>
+        <small class="sl-text__size">{{ item.size }}</small>
+        <small class="sl-text__type">{{ item.type }}</small>
+      </li>
+    </ul>
   </div>
 </template>
 

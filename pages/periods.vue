@@ -538,7 +538,7 @@
         </div>
       </div>
     </footer>
-    <periods-slider />
+    <periods-slider :items="slides[0]" period="1989/2002" />
   </main>
 </template>
 
@@ -547,9 +547,54 @@ import vuePicture from '~/components/ThePicture.vue'
 import PeriodsSlider from '~/components/slider/SliderWindow.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
+import { keysGenerator } from '~/scripts/utils/keysGenerator'
 
 export default {
   components: { vuePicture, PeriodsSlider },
   mixins: [anchorVue, transition],
+
+  data() {
+    return {
+      slides: [
+        [
+          {
+            _uid: keysGenerator(8),
+            img: '/img/periods-img1.jpg',
+            date: '01.93',
+            size: '73х60 см  2004 г.',
+            type: 'холст, масло',
+          },
+          {
+            _uid: keysGenerator(8),
+            img: '/img/periods-img2.jpg',
+            date: '01.2001',
+            size: '73х60 см  2001 г.',
+            type: 'холст, масло',
+          },
+          {
+            _uid: keysGenerator(8),
+            img: '/img/periods-img3.jpg',
+            date: '01.91',
+            size: '73х60 см  2008 г.',
+            type: 'холст, масло',
+          },
+          {
+            _uid: keysGenerator(8),
+            img: '/img/periods-img4.jpg',
+            date: '03.93',
+            size: '73х60 см  2004 г.',
+            type: 'холст, масло',
+          },
+          {
+            _uid: keysGenerator(8),
+            img: '/img/periods-img10.jpg',
+            date: '05.93',
+            size: '73х60 см  2004 г.',
+            type: 'холст, масло',
+          },
+        ],
+      ],
+    }
+  },
 }
 </script>
