@@ -22,6 +22,8 @@
   line-height: 1.21429;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  -webkit-appearance: none;
+  color: var(--black);
 
   background-color: transparent;
   @include media('<=#{$br1}') {

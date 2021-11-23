@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div v-touch:swipe.left="next" v-touch:swipe.right="prev" class="slider">
     <ul class="slider__slides">
       <li
         v-for="(item, idx) in items"
@@ -67,6 +67,14 @@ export default {
     },
   },
 
+  mounted() {
+    window.addEventListener('keydown', this.sliderHandler)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.sliderHandler)
+  },
+
   methods: {
     prev() {
       if (this.currentSlide > 0) {
@@ -80,6 +88,15 @@ export default {
         this.currentSlide++
       } else {
         this.currentSlide = 0
+      }
+    },
+    sliderHandler(e) {
+      if (e.key === 'ArrowLeft') {
+        this.prev()
+      }
+
+      if (e.key === 'ArrowRight') {
+        this.next()
       }
     },
   },
