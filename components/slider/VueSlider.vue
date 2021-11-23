@@ -30,6 +30,7 @@
         <small class="sl-text__type">{{ item.type }}</small>
       </li>
     </ul>
+    <div class="slider__counter">{{ currentSlide + 1 }}/{{ length }}</div>
   </div>
 </template>
 
@@ -52,6 +53,12 @@ export default {
     return {
       currentSlide: this.current,
     }
+  },
+
+  computed: {
+    length() {
+      return this.items.length
+    },
   },
 
   watch: {

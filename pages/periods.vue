@@ -543,6 +543,13 @@
 </template>
 
 <script>
+/**
+* @todo
+1. Сделать открытие картин по клику
+2. Сделать перелистывание по свайпу
+3. Сделать адаптив и доделать вёрстку
+* */
+
 import vuePicture from '~/components/ThePicture.vue'
 import PeriodsSlider from '~/components/slider/SliderWindow.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'

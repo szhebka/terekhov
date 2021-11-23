@@ -2,8 +2,8 @@
   @include coverdiv(fixed);
   background-color: var(--primary-bg);
   z-index: 100003;
-  // opacity: 0;
-  // visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 1s ease, visibility 1s ease;
   // display: none;
 }
@@ -39,7 +39,7 @@
   top: 3%;
   font-size: 3rem;
   font-family: $secondary-f2;
-  @include media('<=#{$br3}') {
-    left: 40px;
+  @include media('<=#{$br2}') {
+    display: none;
   }
 }
