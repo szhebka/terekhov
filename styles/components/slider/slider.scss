@@ -29,6 +29,9 @@ $bigScreen: '1150px';
     width: calc(100% - 40px);
     max-width: none;
   }
+  @include media('<=#{$br4}') {
+    width: 100%;
+  }
 }
 
 .slide {
@@ -103,6 +106,8 @@ $bigScreen: '1150px';
   }
   @include media('<=#{$br4}') {
     font-size: 14px;
+    left: 10px;
+    top: 36px;
   }
 }
 

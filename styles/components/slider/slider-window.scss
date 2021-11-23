@@ -35,6 +35,10 @@
   @include media('<=#{$br3}') {
     right: 40px;
   }
+  @include media('<=#{$br4}') {
+    right: 10px;
+    top: 36px;
+  }
 }
 
 .slider-window__period {
