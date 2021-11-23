@@ -93,7 +93,7 @@
       <div class="center-wrap">
         <div class="philosophy__wrap">
           <div class="philosophy__left">
-            <h2 data-a-h class="philosophy__title">Αλήθεια</h2>
+            <h2 class="philosophy__title">Αλήθεια</h2>
             <div class="philosophy__author-name philosophy__author-name--sm">
               М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
             </div>

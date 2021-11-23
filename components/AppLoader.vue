@@ -1,6 +1,6 @@
 <template>
-  <!-- <div ref="loader" class="app-loader"> -->
-  <div ref="loader" class="app-loader" style="display: none">
+  <div ref="loader" class="app-loader">
+    <!-- <div ref="loader" class="app-loader" style="display: none"> -->
     <div ref="progress" class="app-loader__progress"></div>
     <div class="app-loader__images">
       <div
@@ -21,6 +21,7 @@
 
 
 <script>
+// eslint-disable-next-line import/no-named-as-default
 import gsap from 'gsap'
 import VuePicture from '~/components/ThePicture.vue'
 
@@ -33,9 +34,9 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      // this.animation()
-      this.$store.commit('app/setLoaded', true)
-      window.ss && (window.ss.isFixed = false)
+      this.animation()
+      // this.$store.commit('app/setLoaded', true)
+      // window.ss && (window.ss.isFixed = false)
     }, 1000)
   },
   methods: {
