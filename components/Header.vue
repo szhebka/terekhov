@@ -23,19 +23,13 @@
         <div class="header__burger" @click="openMenu">меню</div>
         <nav class="header__nav">
           <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <nuxt-link class="header__nav-link" to="/about">
-                биография
-              </nuxt-link>
-            </li>
-            <li class="header__nav-item">
-              <nuxt-link class="header__nav-link" to="/periods">
-                периоды
-              </nuxt-link>
-            </li>
-            <li class="header__nav-item">
-              <nuxt-link class="header__nav-link" to="/texts">
-                тексты
+            <li
+              v-for="item in menuItems"
+              :key="item._uid"
+              class="header__nav-item"
+            >
+              <nuxt-link class="header__nav-link" :to="item.to">
+                {{ item.text }}
               </nuxt-link>
             </li>
           </ul>
@@ -53,6 +47,7 @@
 <script>
 import MobileMenu from './MobileMenu.vue'
 import { getStory } from '~/scripts/utils/getStory'
+import { getLink } from '~/scripts/utils/getLink'
 export default {
   components: { MobileMenu },
   data() {
@@ -65,7 +60,7 @@ export default {
   },
 
   async fetch() {
-    const menuData = await getStory(this, '/global/menu', 'ru')
+    const menuData = await getStory(this, '/global/menu', this.$i18n.locale)
     this.story.menu = menuData.story
   },
 
@@ -76,6 +71,16 @@ export default {
           ? this.switchLocalePath('ru')
           : this.switchLocalePath('en')
       return path.slice(-1) === '/' ? path : path + '/'
+    },
+
+    menuItems() {
+      const storyItems = this.story.menu.content.links
+
+      return storyItems.map(el => ({
+        _uid: el._uid,
+        text: el.text,
+        to: getLink(el.link),
+      }))
     },
   },
 

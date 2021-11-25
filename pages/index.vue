@@ -10,7 +10,9 @@
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
           <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
-          <h2 data-a-t class="main-screen__subtitle">живопись</h2>
+          <h2 data-a-t class="main-screen__subtitle">
+            {{ story.content.first_screen_description }}
+          </h2>
         </div>
         <div ref="imageParent" data-a-img-main class="main-screen__e-image">
           <div ref="imageEl" class="main-screen__img-wrap img-wrap">
@@ -342,6 +344,7 @@ import ExpoStages from '~/components/ExpoStages.vue'
 import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 import TheBiography from '~/components/TheBiography.vue'
+import homeStory from '~/mixins/stories/home.vue'
 
 export default {
   components: {
@@ -351,7 +354,7 @@ export default {
     ExpoStages,
     TheBiography,
   },
-  mixins: [AnchorVue, AnchorLink, transition],
+  mixins: [AnchorVue, AnchorLink, transition, homeStory],
 
   async mounted() {
     const { initImages } = await import('~/scripts/GL/Images/init')
@@ -382,16 +385,11 @@ export default {
       this.$refs.textEl
     )
 
-    // new ImageTransition(
-    //   this.$refs.meaningParent,
-    //   this.$refs.meaningImage,
-    //   null,
-    //   { scale: 1.8, y: -150 }
-    // )
-
     if (window.innerWidth > 960) {
       this.$refs.thesis.setAttribute('data-dark-offset-top', '1.5')
     }
+
+    console.log(this.story.content)
   },
 
   beforeDestroy() {
