@@ -389,6 +389,12 @@ export default {
       this.$refs.thesis.setAttribute('data-dark-offset-top', '1.5')
     }
 
+    if (window.innerWidth <= 960) {
+      const expo = document.querySelector('#expo [data-dark]')
+      expo.removeAttribute('data-dark')
+      this.blackBg && this.blackBg.update()
+    }
+
     console.log(this.story.content)
   },
 

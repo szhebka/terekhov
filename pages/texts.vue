@@ -9,7 +9,9 @@
         </div>
         <div class="texts__top">
           <div data-a-t class="back">
-            <nuxt-link class="back__link" to="/"> назад</nuxt-link>
+            <nuxt-link class="back__link" :to="localePath('index')">
+              назад</nuxt-link
+            >
           </div>
           <h2 data-a-h class="texts__top-title">тексты</h2>
         </div>

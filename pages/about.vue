@@ -5,7 +5,9 @@
         <div class="about__header">
           <div class="about__header-left">
             <div data-a-o class="back about__back">
-              <nuxt-link class="back__link" to="/"> назад</nuxt-link>
+              <nuxt-link class="back__link" :to="localePath('index')">
+                назад</nuxt-link
+              >
             </div>
             <div class="about__email">
               <a data-a-h href="mailto:artiter@gmail.com">artiter@gmail.com</a>

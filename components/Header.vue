@@ -19,7 +19,9 @@
             en
           </a>
         </div>
-        <nuxt-link class="header__logo" to="/"> Igor Terekhov </nuxt-link>
+        <nuxt-link class="header__logo" :to="localePath('index')">
+          Igor Terekhov
+        </nuxt-link>
         <div class="header__burger" @click="openMenu">меню</div>
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -38,6 +40,7 @@
     </div>
     <mobile-menu
       :is-open="isOpen"
+      :items="menuItems"
       :lang-link="langLink"
       @closeMenu="closeMenu"
     />
@@ -48,6 +51,7 @@
 import MobileMenu from './MobileMenu.vue'
 import { getStory } from '~/scripts/utils/getStory'
 import { getLink } from '~/scripts/utils/getLink'
+
 export default {
   components: { MobileMenu },
   data() {
@@ -79,7 +83,11 @@ export default {
       return storyItems.map(el => ({
         _uid: el._uid,
         text: el.text,
-        to: getLink(el.link),
+        to: this.localePath(
+          getLink(el.link)
+            .replace(`//${this.$i18n.locale}/`, '')
+            .replace('/', '')
+        ),
       }))
     },
   },
@@ -89,6 +97,8 @@ export default {
 
     this.navbarPos = new NavbarPos()
     this.navbarPos.init()
+
+    console.log(this.menuItems)
   },
 
   methods: {

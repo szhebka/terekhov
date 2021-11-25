@@ -33,28 +33,39 @@
       </div>
       <nav class="mobile-menu__nav anchors">
         <ul class="mobile-menu__nav-list">
-          <li class="mobile-menu__nav-item" @click="closeMenu">
-            <nuxt-link class="mobile-menu__nav-link" to="/about">
-              биография
-            </nuxt-link>
-          </li>
-          <li class="mobile-menu__nav-item" @click="closeMenu">
-            <nuxt-link class="mobile-menu__nav-link" to="/periods">
-              периоды
-            </nuxt-link>
-          </li>
-          <li class="mobile-menu__nav-item" @click="closeMenu">
-            <nuxt-link class="mobile-menu__nav-link" to="/texts">
-              Тексты
+          <li
+            v-for="item in items"
+            :key="item._uid"
+            class="mobile-menu__nav-item"
+            @click="closeMenu"
+          >
+            <nuxt-link class="mobile-menu__nav-link" :to="item.to">
+              {{ item.text }}
             </nuxt-link>
           </li>
         </ul>
       </nav>
       <div class="mobile-menu__bottom">
         <div class="mobile-menu__language">
-          <a class="mobile-menu__language-link" :href="langLink"> ru </a>
+          <a
+            class="mobile-menu__language-link"
+            :class="[
+              $i18n.locale === 'ru' && 'mobile-menu__language-link--active',
+            ]"
+            :href="langLink"
+          >
+            ru
+          </a>
 
-          <a class="mobile-menu__language-link" :href="langLink"> en </a>
+          <a
+            class="mobile-menu__language-link"
+            :class="[
+              $i18n.locale === 'en' && 'mobile-menu__language-link--active',
+            ]"
+            :href="langLink"
+          >
+            en
+          </a>
         </div>
         <div class="mobile-menu__right">
           <a class="mobile-menu__email" href="mailto:artiter@gmail.com"
@@ -77,6 +88,10 @@ export default {
     langLink: {
       type: String,
       default: '',
+    },
+    items: {
+      type: Array,
+      default: () => [],
     },
   },
 
