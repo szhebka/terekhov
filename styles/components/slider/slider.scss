@@ -75,6 +75,7 @@ $bigScreen: '1150px';
   padding-top: 10px;
   padding-bottom: 10px;
   display: block;
+  opacity: 0.1;
   transition: opacity 0.3s ease;
   &--right {
     svg {
@@ -86,7 +87,7 @@ $bigScreen: '1150px';
     max-width: 100%;
   }
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
 
