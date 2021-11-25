@@ -52,8 +52,9 @@
       </nav>
       <div class="mobile-menu__bottom">
         <div class="mobile-menu__language">
-          <a class="mobile-menu__language-link" href="/">ru</a
-          ><a class="mobile-menu__language-link" href="/">en</a>
+          <a class="mobile-menu__language-link" :href="langLink"> ru </a>
+
+          <a class="mobile-menu__language-link" :href="langLink"> en </a>
         </div>
         <div class="mobile-menu__right">
           <a class="mobile-menu__email" href="mailto:artiter@gmail.com"
@@ -73,7 +74,12 @@ export default {
       type: Boolean,
       default: false,
     },
+    langLink: {
+      type: String,
+      default: '',
+    },
   },
+
   methods: {
     closeMenu() {
       this.$emit('closeMenu')

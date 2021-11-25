@@ -65,6 +65,9 @@
 .header__language-link {
   margin-right: 0.7rem;
   position: relative;
+  font: inherit;
+  background-color: transparent;
+  text-transform: uppercase;
 }
 
 .header__language-link::before {
