@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { imgixTransform } from '~/scripts/utils/imgix'
+import { transformImage } from '~/scripts/utils/storyblokImage'
 export default {
   props: {
     url: {
@@ -16,13 +18,11 @@ export default {
 
   computed: {
     getWebpUrl() {
-      const reg = /\.(jpe?g|png)/gm
-      const ext = '.webp'
-
-      return this.url.replace(reg, '') + ext
+      return transformImage(this.url)
     },
     fullUrl() {
-      return this.$store.state.app.isWebp ? this.getWebpUrl : this.url
+      const fullUrl = this.$store.state.app.isWebp ? this.getWebpUrl : this.url
+      return imgixTransform(fullUrl)
     },
   },
 }

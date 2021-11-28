@@ -9,15 +9,15 @@
     >
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 data-a-h class="main-screen__title">{{ firstScreen.title }}</h1>
+          <h1 data-a-h class="main-screen__title">{{ home1.title }}</h1>
           <h2 data-a-t class="main-screen__subtitle">
-            {{ firstScreen.description }}
+            {{ home1.description }}
           </h2>
         </div>
         <div ref="imageParent" data-a-img-main class="main-screen__e-image">
           <div ref="imageEl" class="main-screen__img-wrap img-wrap">
             <div>
-              <vue-picture :url="firstScreen.picture.filename" />
+              <vue-picture :url="home1.picture.filename" />
             </div>
           </div>
         </div>
@@ -35,13 +35,13 @@
           <div class="center-wrap">
             <div class="thesis__top">
               <div data-a-o class="thesis__small-title small-title">
-                {{ secondScreen.small_text }}
+                {{ home2.small_text }}
               </div>
               <h2
                 data-a-thesis
                 class="thesis__simple-title simple-title simple-title--color"
               >
-                {{ secondScreen.small_text }}
+                {{ home2.title }}
               </h2>
             </div>
             <div class="thesis__body">
@@ -51,16 +51,7 @@
                 </div>
                 <div class="thesis__right">
                   <div data-a-o class="thesis__content content">
-                    <p>
-                      Возможности этого пространства расширились, в сравнении с
-                      «абстрактной живописью». Мы имеем дело с открытой формой и
-                      она конденсируется из квантованного пространства.
-                      Гераклитов огонь, вспыхивающий и меркнущий, голос света.
-                    </p>
-                    <p>
-                      Замаскированный под «живопись», объект обретает бытие.
-                      Вместо живописи действия – процесс становления, подъёма.
-                    </p>
+                    <p v-html="breakLine(home2.text)"></p>
                   </div>
                 </div>
               </div>
@@ -70,7 +61,7 @@
                   <div class="thesis__img-wrap img-wrap">
                     <div>
                       <vue-gl-picture
-                        url="/img/thesis-img.jpg"
+                        :url="home2.picture.filename"
                         data-pp-idx="8"
                       />
                     </div>
@@ -80,9 +71,9 @@
                   <span data-a-l class="line"></span>
                   <div data-a-t class="img-descr">
                     <div class="img-descr__wrap">
-                      <p>Воздух</p>
-                      <p>180х170 см 2008 г.</p>
-                      <p>холст, масло</p>
+                      <p>{{ home2.picture_name }}</p>
+                      <p>{{ home2.picture_size }}</p>
+                      <p>{{ home2.picture_type }}</p>
                     </div>
                   </div>
                 </div>
@@ -96,17 +87,14 @@
       <div class="center-wrap">
         <div class="philosophy__wrap">
           <div class="philosophy__left">
-            <h2 class="philosophy__title">Αλήθεια</h2>
+            <h2 class="philosophy__title">{{ home3.name }}</h2>
             <div class="philosophy__author-name philosophy__author-name--sm">
-              М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
+              {{ home3.description }}
             </div>
           </div>
           <div class="philosophy__right">
             <div class="philosophy__descr">
-              άναχωρήσας δ' εις το ιερόν της 'Αρτέμιδος μετά των παίδων
-              ήστραγάλιζε περιστάντων δ' αυτόν των Έφεσίων, ί, ω κάκιστοι,
-              θαυμάζετε; είπεν 'ή ου κρεΐττον τούτο ποιεΐν ή μεθ' υμών
-              πολιτεύεσθαι;
+              {{ home3.quote }}
             </div>
             <span class="line line--bg philosophy__line"></span>
           </div>
@@ -118,30 +106,26 @@
                 <div
                   class="philosophy__author-name philosophy__author-name--lm"
                 >
-                  М. Хайдеггер «Гераклит», перевод A. II. Шурбелева.
+                  {{ home3.description }}
                 </div>
               </div>
               <div class="philosophy__content content content--color">
-                <p>
-                  «Он же вернулся в святилище Артемиды, чтобы поиграть с детьми
-                  в кости; вокруг него собрались эфесяне, и он сказал им: «Чему
-                  дивитесь, негодяи?
-                </p>
-                <p>
-                  Не лучше ли делать это, чем вместе с вами хлопотать о πόλις?».
-                </p>
+                <p v-html="breakLine(home3.quote_1)" />
               </div>
             </div>
             <div class="philosophy__img-wrap img-wrap">
               <div>
-                <vue-gl-picture url="/img/philosophy-img.jpg" data-pp-idx="0" />
+                <vue-gl-picture
+                  :url="home3.big_picture.filename"
+                  data-pp-idx="0"
+                />
               </div>
             </div>
             <div data-a-t class="img-descr img-descr--color">
               <div class="img-descr__wrap">
-                <p>01.13</p>
-                <p>200х138 см 2013 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home3.picture_name }}</p>
+                <p>{{ home3.picture_date }}</p>
+                <p>{{ home3.picture_type }}</p>
               </div>
             </div>
           </div>
@@ -154,14 +138,17 @@
           <div class="poet__left">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/poet-img1.jpg" data-pp-idx="1" />
+                <vue-gl-picture
+                  :url="home4.big_picture.filename"
+                  data-pp-idx="1"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap img-descr__wrap--right">
-                <p>10.08</p>
-                <p>180х170 см 2008 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home4.picture_name }}</p>
+                <p>{{ home4.picture_date }}</p>
+                <p>{{ home4.picture_type }}</p>
               </div>
             </div>
           </div>
@@ -169,31 +156,34 @@
             <div class="poet__photo">
               <div class="img-wrap img-wrap--contain">
                 <div>
-                  <vue-gl-picture url="/img/poet-photo.jpg" />
+                  <vue-gl-picture :url="home4.small_picture.filename" />
                 </div>
               </div>
             </div>
-            <h2 data-a-h class="poet__simple-title simple-title">Ли Бо</h2>
+            <h2 data-a-h class="poet__simple-title simple-title">
+              {{ home4.title }}
+            </h2>
             <span data-a-l class="poet__line line line--bg"></span>
             <div class="poet__descr">
               <div class="poet__descr-wrap">
                 <p data-a-p>
-                  Желтая Река идет в Восточную Бездну, Белое солнце опускается в
-                  западное море. Уходящий поток и струящийся свет Летят, мчатся,
-                  никого не ждут.
+                  {{ home4.text }}
                 </p>
               </div>
             </div>
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/poet-img2.jpg" data-pp-idx="2" />
+                <vue-gl-picture
+                  :url="home4.big_picture_1.filename"
+                  data-pp-idx="2"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap">
-                <p>01.93</p>
-                <p>73х60 см 1993 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home4.picture1_name }}</p>
+                <p>{{ home4.picture1_date }}</p>
+                <p>{{ home4.picture1_type }}</p>
               </div>
             </div>
           </div>
@@ -205,8 +195,7 @@
         <div class="meaning__container">
           <div class="meaning__top">
             <h2 data-a-h class="meaning__simple-title simple-title">
-              Смысл живописной деятельности и её содержание неразделимы и это её
-              уникальное свойство
+              {{ home5.title }}
             </h2>
             <span data-a-l class="meaning__line line line--bg"></span>
             <div ref="meaningParent" class="meaning__wrap">
@@ -214,15 +203,11 @@
                 data-a-p
                 class="meaning__small-title small-title small-title--color"
               >
-                Мерло–Понти
+                {{ home5.name }}
               </div>
               <div class="meaning__content content content--color">
                 <p data-a-p>
-                  Поэтому, вероятно, художники с такой неохотой рассказывают о
-                  том, чем они занимаются. Перед ними есть пример создания
-                  текстов, призванных объяснить то или иное, и непрестанно
-                  возникающий при этом парадокс разрыва смысла и содержания в
-                  сферах вербального.
+                  {{ home5.text }}
                 </p>
               </div>
             </div>
@@ -230,35 +215,41 @@
         </div>
         <div class="meaning__img-wrap img-wrap">
           <div ref="meaningImage">
-            <vue-gl-picture url="/img/meaning-img1.jpg" />
+            <vue-gl-picture :url="home5.picture_1.filename" />
           </div>
         </div>
         <div class="meaning__box">
           <div class="meaning__box-left">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-gl-picture url="/img/meaning-img2.jpg" data-pp-idx="4" />
+                <vue-gl-picture
+                  :url="home5.picture_2.filename"
+                  data-pp-idx="4"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap img-descr__wrap--right">
-                <p>Ворон</p>
-                <p>60х50 см 1993 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home5.picture2_name }}</p>
+                <p>{{ home5.picture2_date }}</p>
+                <p>{{ home5.picture2_type }}</p>
               </div>
             </div>
           </div>
           <div class="meaning__box-right">
             <div class="meaning__img-wrap img-wrap">
               <div>
-                <vue-gl-picture url="/img/meaning-img3.jpg" data-pp-idx="5" />
+                <vue-gl-picture
+                  :url="home5.picture_3.filename"
+                  data-pp-idx="5"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap">
-                <p>10.04</p>
-                <p>90х110 см 2004 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home5.picture3_name }}</p>
+                <p>{{ home5.picture3_date }}</p>
+                <p>{{ home5.picture3_type }}</p>
               </div>
             </div>
           </div>
@@ -269,14 +260,12 @@
       <div class="center-wrap">
         <div class="buber__top">
           <h2 data-a-h class="buber__simple-title simple-title">
-            Мартин Бубер
+            {{ home6.title }}
           </h2>
           <div class="buber__top-left">
             <span data-a-l class="buber__line"></span>
             <div data-a-p class="buber__descr">
-              Чистый жест, который не похищает мир для себя, но выражает себя
-              для мира – какое совершенное определение для последней фазы
-              современного искусства.
+              {{ home6.text }}
             </div>
           </div>
         </div>
@@ -284,39 +273,45 @@
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/buber-img1.jpg" data-pp-idx="6" />
+                <vue-gl-picture
+                  :url="home6.picture_1.filename"
+                  data-pp-idx="6"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap">
-                <p>05.04</p>
-                <p>91х100 см 2004 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home6.picture1_name }}</p>
+                <p>{{ home6.picture1_date }}</p>
+                <p>{{ home6.picture1_type }}</p>
               </div>
             </div>
           </div>
           <div class="buber__wrap-img">
             <div class="img-wrap">
               <div>
-                <vue-gl-picture url="/img/buber-img2.jpg" data-pp-idx="7" />
+                <vue-gl-picture
+                  :url="home6.picture_2.filename"
+                  data-pp-idx="7"
+                />
               </div>
             </div>
             <div class="img-descr img-descr--color">
               <div class="img-descr__wrap img-descr__wrap--right">
-                <p>06.08</p>
-                <p>60х80 см 2008 г.</p>
-                <p>холст, масло</p>
+                <p>{{ home6.picture2_name }}</p>
+                <p>{{ home6.picture2_date }}</p>
+                <p>{{ home6.picture2_type }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <the-exposition />
+    <the-exposition :expo="expo" />
     <expo-stages />
     <div data-parallax-wrapper>
       <div v-multi-ref:parallax data-offset="0.1">
-        <the-biography />
+        <the-biography :bio="bio" />
         <footer class="footer">
           <div class="center-wrap">
             <div class="footer__wrap">
