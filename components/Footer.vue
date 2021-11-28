@@ -2,7 +2,8 @@
   <footer class="footer">
     <div class="center-wrap">
       <div class="footer__wrap">
-        <a class="footer__home" href="/">домой</a
+        <nuxt-link class="footer__home" :to="localePath('index')"
+          >домой</nuxt-link
         ><a class="footer__email" href="mailto:artiter@gmail.com"
           >artiter@gmail.com</a
         >

@@ -14,7 +14,9 @@
           />
         </div>
       </div>
-      <nuxt-link class="biography__link" to="/about">биография</nuxt-link>
+      <nuxt-link class="biography__link" :to="localePath('about')"
+        >биография</nuxt-link
+      >
     </div>
   </section>
 </template>

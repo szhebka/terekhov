@@ -4,7 +4,9 @@
       <div class="center-wrap">
         <div class="periods__header">
           <div data-a-o class="back">
-            <nuxt-link class="back__link" to="/">назад</nuxt-link>
+            <nuxt-link class="back__link" :to="localePath('index')"
+              >назад</nuxt-link
+            >
           </div>
           <div class="periods__header-right">
             <div data-a-h class="periods__header-text">
