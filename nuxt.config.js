@@ -1,12 +1,10 @@
-import { fi } from './gulp-src/fonts-include.js'
-
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // target: 'static',
 
   server: {
     port: '3000',
@@ -36,7 +34,6 @@ export default {
         type: 'image/x-icon',
         href: '/favicon.ico',
       },
-      ...fi,
     ],
   },
 

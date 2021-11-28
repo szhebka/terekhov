@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { transformImage } from '~/scripts/utils/storyblokImage'
 export default {
   props: {
     url: {
@@ -16,10 +17,7 @@ export default {
 
   computed: {
     getWebpUrl() {
-      const reg = /\.(jpe?g|png)/gm
-      const ext = '.webp'
-
-      return this.url.replace(reg, '') + ext
+      return transformImage(this.url)
     },
   },
 }

@@ -97,8 +97,6 @@ export default {
 
     this.navbarPos = new NavbarPos()
     this.navbarPos.init()
-
-    console.log(this.menuItems)
   },
 
   methods: {

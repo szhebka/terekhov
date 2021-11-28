@@ -9,15 +9,15 @@
     >
       <div class="center-wrap">
         <div ref="textEl" class="main-screen__e-text">
-          <h1 data-a-h class="main-screen__title">Igor Terekhov</h1>
+          <h1 data-a-h class="main-screen__title">{{ firstScreen.title }}</h1>
           <h2 data-a-t class="main-screen__subtitle">
-            {{ story.content.first_screen_description }}
+            {{ firstScreen.description }}
           </h2>
         </div>
         <div ref="imageParent" data-a-img-main class="main-screen__e-image">
           <div ref="imageEl" class="main-screen__img-wrap img-wrap">
             <div>
-              <vue-picture url="/img/main-screen-img.jpg" />
+              <vue-picture :url="firstScreen.picture.filename" />
             </div>
           </div>
         </div>
@@ -34,13 +34,14 @@
         <section class="thesis">
           <div class="center-wrap">
             <div class="thesis__top">
-              <div data-a-o class="thesis__small-title small-title">тезис</div>
+              <div data-a-o class="thesis__small-title small-title">
+                {{ secondScreen.small_text }}
+              </div>
               <h2
                 data-a-thesis
                 class="thesis__simple-title simple-title simple-title--color"
               >
-                Плоскость холста предупреждает — здесь вы встретитесь с заведомо
-                иным
+                {{ secondScreen.small_text }}
               </h2>
             </div>
             <div class="thesis__body">
