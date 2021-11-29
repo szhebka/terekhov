@@ -1,7 +1,7 @@
 <template>
   <picture>
     <source :srcset="getWebpUrl" />
-    <img :src="url" alt="" />
+    <img :src="url" alt="" :class="imgClass" />
   </picture>
 </template>
 
@@ -10,6 +10,10 @@ import { transformImage } from '~/scripts/utils/storyblokImage'
 export default {
   props: {
     url: {
+      type: String,
+      default: '',
+    },
+    imgClass: {
       type: String,
       default: '',
     },

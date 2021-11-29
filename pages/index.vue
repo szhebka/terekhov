@@ -308,7 +308,7 @@
       </div>
     </section>
     <the-exposition :expo="expo" />
-    <expo-stages />
+    <expo-stages :images="stages" />
     <div data-parallax-wrapper>
       <div v-multi-ref:parallax data-offset="0.1">
         <the-biography :bio="bio" />
@@ -325,7 +325,6 @@
         </footer>
       </div>
     </div>
-    <!-- <pictures-pop-up ref="ppu" /> -->
   </main>
 </template>
 
@@ -390,8 +389,6 @@ export default {
       expo.removeAttribute('data-dark')
       this.blackBg && this.blackBg.update()
     }
-
-    console.log(this.story.content)
   },
 
   beforeDestroy() {

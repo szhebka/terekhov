@@ -30,6 +30,9 @@ export default {
     expo() {
       return this.story.content.seventh_exposure_screen[0]
     },
+    stages() {
+      return this.story.content.stages[0].stage_images
+    },
     bio() {
       return this.story.content.home_eighth_screen[0]
     },

@@ -12,58 +12,24 @@
               class="stage__img-wrap img-wrap"
             >
               <div class="stage__img-container">
-                <vue-picture :url="image.a" />
+                <vue-picture :url="image.first_picture.filename" />
               </div>
               <div class="stage__img-container">
-                <vue-picture :url="image.b" />
+                <vue-picture :url="image.second_picture.filename" />
               </div>
             </div>
           </div>
           <anchor-link
+            v-for="(period, idx) in story.content.periods"
+            :key="period._uid"
             v-multi-ref:parent
-            data-parent-idx="0"
+            :data-parent-idx="idx"
             class="stage__list-row"
-            data-anchor-href="periods/#periods__box-one"
+            :data-anchor-href="`periods/#period-${idx + 1}`"
           >
             <div class="stage__list-info">
-              <div class="stage__list-number">№01</div>
-              <div class="stage__list-date">1989/2002</div>
-            </div>
-          </anchor-link>
-
-          <anchor-link
-            v-multi-ref:parent
-            data-parent-idx="1"
-            class="stage__list-row"
-            data-anchor-href="periods/#periods__box-two"
-          >
-            <div class="stage__list-info">
-              <div class="stage__list-number">№02</div>
-              <div class="stage__list-date">2003/2007</div>
-            </div>
-          </anchor-link>
-
-          <anchor-link
-            v-multi-ref:parent
-            data-parent-idx="2"
-            class="stage__list-row"
-            data-anchor-href="periods/#periods__box-three"
-          >
-            <div class="stage__list-info">
-              <div class="stage__list-number">№03</div>
-              <div class="stage__list-date">2008/2010</div>
-            </div>
-          </anchor-link>
-
-          <anchor-link
-            v-multi-ref:parent
-            data-parent-idx="3"
-            class="stage__list-row"
-            data-anchor-href="periods/#periods__box-four"
-          >
-            <div class="stage__list-info">
-              <div class="stage__list-number">№04</div>
-              <div class="stage__list-date">2010/2021</div>
+              <div class="stage__list-number">№0{{ idx + 1 }}</div>
+              <div class="stage__list-date">{{ period.date }}</div>
             </div>
           </anchor-link>
         </div>
@@ -75,21 +41,26 @@
 <script>
 import AnchorLink from '~/components/AnchorLink.vue'
 import VuePicture from '~/components/ThePicture.vue'
+import { getStory } from '~/scripts/utils/getStory'
 
 export default {
   components: { AnchorLink, VuePicture },
-  computed: {
-    images() {
-      const images = []
-
-      for (let i = 0; i < 4; i++) {
-        images.push({
-          a: `/img/stages/${i + 1}a.jpg`,
-          b: `/img/stages/${i + 1}b.jpg`,
-        })
-      }
-      return images
+  props: {
+    images: {
+      type: Array,
+      default: () => [],
     },
+  },
+
+  data() {
+    return {
+      story: {},
+    }
+  },
+
+  async fetch() {
+    const periodsData = await getStory(this, '/periods/', this.$i18n.locale)
+    this.story = periodsData.story
   },
 
   async mounted() {

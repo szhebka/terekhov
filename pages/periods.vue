@@ -4,15 +4,17 @@
       <div class="center-wrap">
         <div class="periods__header">
           <div data-a-o class="back">
-            <nuxt-link class="back__link" :to="localePath('index')"
-              >назад</nuxt-link
-            >
+            <nuxt-link class="back__link" :to="localePath('index')">{{
+              story.content.link_text
+            }}</nuxt-link>
           </div>
           <div class="periods__header-right">
             <div data-a-h class="periods__header-text">
-              Некоторые работы основных творческих периодов
+              {{ story.content.description }}
             </div>
-            <div data-a-h class="periods__header-title">периоды</div>
+            <div data-a-h class="periods__header-title">
+              {{ story.content.title }}
+            </div>
           </div>
         </div>
         <div data-a-o class="periods__body anchors">
@@ -21,7 +23,7 @@
               v-for="(period, idx) in periods"
               :key="period._uid"
               class="periods__body-item"
-              :data-href="`period-${idx + 1}`"
+              :data-href="`#period-${idx + 1}`"
             >
               {{ period.date }}
             </div>
@@ -106,35 +108,26 @@ export default {
         }))
       })
     },
-    sliders: {
-      get() {
-        return this.periods.map((period, idx) => {
-          return {
-            isSliderOpen: false,
-            startFrom: 0,
-            period: period.date,
-            items: this.slidersPictures[idx],
-          }
-        })
-      },
-      set(value) {
-        console.log(value)
-        this.sliders = [...this.sliders, ...value]
-      },
+    sliders() {
+      return this.periods.map((period, idx) => {
+        return {
+          isSliderOpen: false,
+          startFrom: 0,
+          period: period.date,
+          items: this.slidersPictures[idx],
+        }
+      })
     },
   },
 
+  mounted() {},
+
   methods: {
     openSlider(slider = 0, idx = 0) {
-      // this.sliders[slider].startFrom = idx
-      // this.sliders[slider].isSliderOpen = true
-      this.sliders = this.sliders.map((slider, i) => {
-        if (i === slider) {
-          slider.isSliderOpen = true
-          slider.startFrom = idx
-        }
-        return slider
-      })
+      this.sliders[slider].startFrom = idx
+      this.sliders[slider].isSliderOpen = true
+      this.$forceUpdate()
+
       window.ss && (window.ss.isFixed = true)
     },
     closeSlider() {
@@ -142,6 +135,8 @@ export default {
         slider.startFrom = 0
         slider.isSliderOpen = false
       })
+      this.$forceUpdate()
+
       window.ss && (window.ss.isFixed = false)
     },
   },
