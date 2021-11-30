@@ -4,7 +4,7 @@
       <div class="center-wrap">
         <div data-a-img class="texts__img-wrap img-wrap">
           <div>
-            <vue-picture url="/img/text-img.jpg" />
+            <vue-picture :url="story.content.picture.filename" />
           </div>
         </div>
         <div class="texts__top">
@@ -13,7 +13,7 @@
               назад</nuxt-link
             >
           </div>
-          <h2 data-a-h class="texts__top-title">тексты</h2>
+          <h2 data-a-h class="texts__top-title">{{ story.content.title }}</h2>
         </div>
         <div ref="textBody" data-a-o class="texts__body toogles toogles--fade">
           <div class="texts__body-left">
@@ -100,12 +100,13 @@
 <script>
 import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
+import textsVue from '~/mixins/stories/texts.vue'
 import transition from '~/mixins/transition.vue'
 
 import { keysGenerator } from '~/scripts/utils/keysGenerator'
 export default {
   components: { vuePicture },
-  mixins: [anchorVue, transition],
+  mixins: [anchorVue, transition, textsVue],
   data() {
     return {
       items: [

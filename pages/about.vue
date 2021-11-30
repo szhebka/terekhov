@@ -15,54 +15,27 @@
           </div>
           <div data-a-img class="about__header-right img-wrap">
             <div>
-              <vue-picture url="/img/about-img.jpg" />
+              <vue-picture :url="bioScreens.picture.filename" />
             </div>
           </div>
         </div>
         <div data-a-o class="about__wrap">
           <div class="about__wrap-left">
             <div class="about__box">
-              <h2 class="about__box-title">Терехов Игорь</h2>
+              <h2 class="about__box-title">{{ bioScreens.name_artist }}</h2>
               <div>
-                <div class="about__box-row">
-                  <div class="about__box-date"></div>
+                <div
+                  v-for="item in bioScreens.biography_items[0].items"
+                  :key="item._uid"
+                  class="about__box-row"
+                >
+                  <div
+                    class="about__box-date"
+                    v-html="replaceSpace(item.year)"
+                  />
+
                   <div class="about__box-info">
-                    Родился в 1954 г. в Екатеринбурге.
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>До</p>
-                    <p>1971 г.</p>
-                  </div>
-                  <div class="about__box-info">жил в Уфе, башкортостан</div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>с</p>
-                    <p>1972 г.</p>
-                  </div>
-                  <div class="about__box-info">
-                    живет в г. Жуковском, Московской области
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>В</p>
-                    <p>1977 г.</p>
-                  </div>
-                  <div class="about__box-info">
-                    окончил Московский Физико-технический институт по
-                    специальности инженер-физик. Живописью занимается с 1973 г.
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>В</p>
-                    <p>1991 г.</p>
-                  </div>
-                  <div class="about__box-info">
-                    жил и работал в швейцарии (женева, лозанна)
+                    {{ item.description }}
                   </div>
                 </div>
               </div>
@@ -70,95 +43,34 @@
           </div>
           <div class="about__wrap-right">
             <div class="about__box">
-              <h2 class="about__box-title">Участие в выставках</h2>
+              <h2 class="about__box-title">
+                {{ bioScreens.EXHIBITIONS }}
+              </h2>
               <div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1989</div>
+                <div
+                  v-for="item in bioScreens.exhibition[0].items"
+                  :key="item._uid"
+                  class="about__box-row"
+                >
+                  <div class="about__box-date">{{ item.year }}</div>
                   <div class="about__box-info">
-                    Осенняя выставка комитета художников — графиков (Малая
-                    Грузинская 28)
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1992</div>
-                  <div class="about__box-info">
-                    Выставка объединения «Пиковая Дама» в Государственной
-                    Третьяковской галерее
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2002</div>
-                  <div class="about__box-info">
-                    «Абстракция в России. 20 век», Государственный Русский
-                    музей, Санкт-Петербург
+                    {{ item.description }}
                   </div>
                 </div>
               </div>
             </div>
             <div class="about__box">
-              <h2 class="about__box-title">Персональные выставки</h2>
+              <h2 class="about__box-title">
+                {{ bioScreens.personal_exhibitions }}
+              </h2>
               <div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1995</div>
-                  <div class="about__box-info">выставка в Доме Композитора</div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1995</div>
-                  <div class="about__box-info">
-                    «Пути. Абстракция на пороге нового века». Выставка в галерее
-                    «Нагорная» г.Москва
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1997</div>
-                  <div class="about__box-info">
-                    «Контр-авангард» - выставка в Государственном институте
-                    искусствознания
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2005</div>
-                  <div class="about__box-info">
-                    «Чистейшая абстракция 05». Галерея «Pop/off/art».
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2005</div>
-                  <div class="about__box-info">
-                    «Actus purus». выставка в галерее «А3»
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2006</div>
-                  <div class="about__box-info">
-                    «Alabama song». Двойной портрет. Владимир Николаев - музыка.
-                    Игорь Терехов – живопись. Культурный центр «ДОМ», г. Москва
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2007</div>
-                  <div class="about__box-info">
-                    выставка в посольстве Республики Сингапур, г.Москва
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2012</div>
-                  <div class="about__box-info">
-                    выставка в Красноярском музейном центре
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2014</div>
-                  <div class="about__box-info">
-                    «Αλήθεια». выставка, галерея Товарищества живописцев МСХ
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2018</div>
-                  <div class="about__box-info">
-                    «Устойчивое неравновесье». выставка в выставочном павильоне
-                    «Арт-парк», г.Москва
-                  </div>
+                <div
+                  v-for="item in bioScreens.personal_exhibition[0].items"
+                  :key="item._uid"
+                  class="about__box-row"
+                >
+                  <div class="about__box-date">{{ item.year }}</div>
+                  <div class="about__box-info">{{ item.description }}</div>
                 </div>
               </div>
             </div>
@@ -166,9 +78,7 @@
         </div>
         <div class="about__text">
           <p>
-            Работы находятся в коллекциях Государственного Русского Музея
-            г.Санкт-Петербург, частных собраниях России, Германии, Швейцарии,
-            Франции, Канады, Сингапура, Японии.
+            {{ bioScreens.text }}
           </p>
         </div>
       </div>
@@ -249,10 +159,11 @@
 <script>
 import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
+import aboutVue from '~/mixins/stories/about.vue'
 import transition from '~/mixins/transition.vue'
 
 export default {
   components: { vuePicture },
-  mixins: [anchorVue, transition],
+  mixins: [anchorVue, aboutVue, transition],
 }
 </script>
