@@ -87,6 +87,7 @@ export default {
           getLink(el.link)
             .replace(`//${this.$i18n.locale}/`, '')
             .replace('/', '')
+            .replace('/', '')
         ),
       }))
     },

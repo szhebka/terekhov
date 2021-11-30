@@ -10,7 +10,7 @@
               >
             </div>
             <div class="about__email">
-              <a data-a-h href="mailto:artiter@gmail.com">artiter@gmail.com</a>
+              <a data-a-h :href="`mailto:${email}`">{{ email }}</a>
             </div>
           </div>
           <div data-a-img class="about__header-right img-wrap">
