@@ -61,17 +61,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer footer--bg">
-      <div class="center-wrap">
-        <div class="footer__wrap">
-          <a class="footer__home" href="/">домой</a
-          ><a class="footer__email" href="mailto:artiter@gmail.com"
-            >artiter@gmail.com</a
-          >
-          <p class="footer__copyr">© 2021 все права защищены</p>
-        </div>
-      </div>
-    </footer>
+    <the-footer :bg="true" />
     <periods-slider
       v-for="slider in sliders"
       :key="slider.period"
@@ -91,9 +81,10 @@ import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 
 import periodsVue from '~/mixins/stories/periods.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: { vuePicture, PeriodsSlider },
+  components: { vuePicture, PeriodsSlider, TheFooter },
   mixins: [anchorVue, transition, periodsVue],
 
   computed: {

@@ -20,7 +20,11 @@ export default {
               })
             }
           } else {
-            window.location.reload(true)
+            // window.location.reload(true)
+            this.$nuxt.$router.go({
+              path: this.$nuxt.$router.currentRoute,
+              force: true,
+            })
           }
         })
       },

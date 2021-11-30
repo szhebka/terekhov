@@ -8,10 +8,6 @@ export default {
     return getStory(context.app, '/texts/', context.app.i18n.locale)
   },
 
-  mounted() {
-    console.log(this.story)
-  },
-
   computed: {
     texts() {
       return this.story.content.texts_items

@@ -12,6 +12,9 @@ export default {
     bioScreens() {
       return this.story.content.biography_screens[0]
     },
+    footer() {
+      return this.story.content.biography_footer[0]
+    },
   },
   methods: {
     breakLine(string) {

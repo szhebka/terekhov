@@ -6,7 +6,7 @@
           <div class="about__header-left">
             <div data-a-o class="back about__back">
               <nuxt-link class="back__link" :to="localePath('index')">
-                назад</nuxt-link
+                {{ $i18n.locale === 'en' ? 'back' : 'назад' }}</nuxt-link
               >
             </div>
             <div class="about__email">
@@ -89,52 +89,50 @@
           <div class="contact__wrap-right contact__wrap-right--mobile">
             <div class="contact__box">
               <div class="contact__box-row">
-                <div class="contact__box-title">техника</div>
+                <div class="contact__box-title">{{ footer.techique }}</div>
                 <div class="contact__box-info">
-                  <p>холст, масло</p>
+                  <p>{{ footer.techique_description }}</p>
                 </div>
               </div>
               <div class="contact__box-row">
-                <div class="contact__box-title">формат</div>
+                <div class="contact__box-title">{{ footer.formats }}</div>
                 <div class="contact__box-info">
-                  <p>от 60х50 до 200х160</p>
+                  <p>{{ footer.formats_description }}</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="contact__wrap-left">
-            <h2 class="about__box-title">контакты</h2>
+            <h2 class="about__box-title">{{ footer.contacts }}</h2>
             <p>Е</p>
-            <a class="contact__email" href="mailto:artiter@gmail.com"
-              >artiter@gmail.com</a
-            >
+            <a class="contact__email" :href="`mailto:${email}`">{{ email }}</a>
           </div>
           <div class="contact__wrap-right">
             <div class="contact__box contact__box--desktop">
               <div class="contact__box-row">
-                <div class="contact__box-title">техника</div>
+                <div class="contact__box-title">{{ footer.techique }}</div>
                 <div class="contact__box-info">
-                  <p>холст, масло</p>
+                  <p>{{ footer.techique_description }}</p>
                 </div>
               </div>
               <div class="contact__box-row">
-                <div class="contact__box-title">формат</div>
+                <div class="contact__box-title">{{ footer.formats }}</div>
                 <div class="contact__box-info">
-                  <p>от 60х50 до 200х160</p>
+                  <p>{{ footer.formats_description }}</p>
                 </div>
               </div>
             </div>
             <div class="contact__box">
               <div class="contact__box-row">
-                <div class="contact__box-title">Фото</div>
+                <div class="contact__box-title">{{ footer.photo }}</div>
                 <div class="contact__box-info">
-                  <p>Виктор Фроликов</p>
+                  <p>{{ footer.photo_description }}</p>
                 </div>
               </div>
               <div class="contact__box-row">
-                <div class="contact__box-title">дизайн</div>
+                <div class="contact__box-title">{{ footer.design }}</div>
                 <div class="contact__box-info">
-                  <p>алексей яковлев</p>
+                  <p>{{ footer.design_description }}</p>
                 </div>
               </div>
             </div>
@@ -142,28 +140,35 @@
         </div>
       </div>
     </section>
-    <footer class="footer footer--bg">
-      <div class="center-wrap">
-        <div class="footer__wrap">
-          <a class="footer__home" href="/">домой</a
-          ><a class="footer__email" href="mailto:artiter@gmail.com"
-            >artiter@gmail.com</a
-          >
-          <p class="footer__copyr">© 2021 все права защищены</p>
-        </div>
-      </div>
-    </footer>
+    <the-footer :bg="true" />
   </main>
 </template>
 
 <script>
+import TheFooter from '~/components/TheFooter.vue'
 import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
 import aboutVue from '~/mixins/stories/about.vue'
 import transition from '~/mixins/transition.vue'
+import { getStory } from '~/scripts/utils/getStory'
 
 export default {
-  components: { vuePicture },
+  components: { vuePicture, TheFooter },
   mixins: [anchorVue, aboutVue, transition],
+
+  data() {
+    return {
+      email: null,
+    }
+  },
+
+  async fetch() {
+    const contactsData = await getStory(
+      this,
+      '/global/contacts',
+      this.$i18n.locale
+    )
+    this.email = contactsData.story.content.email
+  },
 }
 </script>

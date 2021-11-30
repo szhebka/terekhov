@@ -24,13 +24,21 @@
 // eslint-disable-next-line import/no-named-as-default
 import gsap from 'gsap'
 import VuePicture from '~/components/ThePicture.vue'
+import { getStory } from '~/scripts/utils/getStory'
 
 export default {
   components: { VuePicture },
   data() {
     return {
-      images: ['/img/stages/1.jpg', '/img/stages/2.jpg', '/img/stages/3.jpg'],
+      images: [],
     }
+  },
+  async fetch() {
+    const imagesData = await getStory(this, '/global/loader')
+    // eslint-disable-next-line camelcase
+    const { image_1, image_2, image_3 } = imagesData.story.content
+
+    this.images = [image_1.filename, image_2.filename, image_3.filename]
   },
   mounted() {
     setTimeout(() => {

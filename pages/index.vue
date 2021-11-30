@@ -312,17 +312,7 @@
     <div data-parallax-wrapper>
       <div v-multi-ref:parallax data-offset="0.1">
         <the-biography :bio="bio" />
-        <footer class="footer">
-          <div class="center-wrap">
-            <div class="footer__wrap">
-              <a class="footer__home" href="/">домой</a
-              ><a class="footer__email" href="mailto:artiter@gmail.com"
-                >artiter@gmail.com</a
-              >
-              <p class="footer__copyr">© 2021 все права защищены</p>
-            </div>
-          </div>
-        </footer>
+        <the-footer />
       </div>
     </div>
   </main>
@@ -340,6 +330,7 @@ import AnchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 import TheBiography from '~/components/TheBiography.vue'
 import homeStory from '~/mixins/stories/home.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
   components: {
@@ -348,6 +339,7 @@ export default {
     TheExposition,
     ExpoStages,
     TheBiography,
+    TheFooter,
   },
   mixins: [AnchorVue, AnchorLink, transition, homeStory],
 
