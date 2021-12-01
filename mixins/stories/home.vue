@@ -4,8 +4,16 @@ import { getStory } from '~/scripts/utils/getStory'
 export default {
   mixins: [storyBridgeVue],
 
-  asyncData(context) {
-    return getStory(context.app, '/index/', context.app.i18n.locale)
+  async asyncData(context) {
+    const home = await getStory(context.app, '/index/', context.app.i18n.locale)
+    const periods = await getStory(
+      context.app,
+      '/periods/',
+      context.app.i18n.locale
+    )
+
+    const data = { story: home.story, periods: periods.story }
+    return data
   },
 
   computed: {

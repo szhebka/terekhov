@@ -1,5 +1,5 @@
 <template>
-  <div class="stage">
+  <div v-if="story.content" class="stage">
     <div class="center-wrap">
       <div class="stage__list anchors">
         <div ref="stageParent" class="stage__list-wrap">
@@ -41,7 +41,6 @@
 <script>
 import AnchorLink from '~/components/AnchorLink.vue'
 import VuePicture from '~/components/ThePicture.vue'
-import { getStory } from '~/scripts/utils/getStory'
 
 export default {
   components: { AnchorLink, VuePicture },
@@ -50,20 +49,14 @@ export default {
       type: Array,
       default: () => [],
     },
-  },
-
-  data() {
-    return {
-      story: {},
-    }
-  },
-
-  async fetch() {
-    const periodsData = await getStory(this, '/periods/', this.$i18n.locale)
-    this.story = periodsData.story
+    story: {
+      type: Object,
+      default: () => {},
+    },
   },
 
   async mounted() {
+    console.log(this.story)
     await this.initImages()
   },
 
@@ -76,6 +69,10 @@ export default {
       if (window.innerWidth > 960) {
         const links = this.$refs.parent
         const images = this.$refs.child
+
+        if (!links || !images) {
+          return
+        }
 
         const { ExpoImages } = await import('~/scripts/ExpoImages')
 

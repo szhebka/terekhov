@@ -308,7 +308,7 @@
       </div>
     </section>
     <the-exposition :expo="expo" />
-    <expo-stages :images="stages" />
+    <expo-stages :images="stages" :story="periods" />
     <div data-parallax-wrapper>
       <div v-multi-ref:parallax data-offset="0.1">
         <the-biography :bio="bio" />
