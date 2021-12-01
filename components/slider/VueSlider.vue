@@ -7,7 +7,7 @@
         class="slider__slide slide"
         :class="[currentSlide === idx && 'slide--active']"
       >
-        <the-picture :url="item.img" img-class="slide__img" />
+        <the-picture :url="item.img" img-class="slide__img" width="1000" />
       </li>
     </ul>
     <nav class="slider__nav">

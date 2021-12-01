@@ -27,6 +27,20 @@ export default {
         name: 'description',
         content: '',
       },
+      {
+        name: 'twitter:image',
+        content: '/twitter.jpg',
+      },
+      {
+        property: 'og:image',
+        content: '/twitter.jpg',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Igor Terekhov',
+      },
+      { hid: 'theme-color', name: 'theme-color', content: '#1E1E1E' },
     ],
     link: [
       {

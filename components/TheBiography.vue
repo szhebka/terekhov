@@ -42,6 +42,7 @@ export default {
         getLink(this.bio.link)
           .replace(`//${this.$i18n.locale}/`, '')
           .replace('/', '')
+          .replace('/', '')
       )
     },
   },

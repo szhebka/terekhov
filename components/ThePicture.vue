@@ -17,11 +17,22 @@ export default {
       type: String,
       default: '',
     },
+    width: {
+      type: String,
+      default: '',
+    },
   },
 
   computed: {
     getWebpUrl() {
-      return transformImage(this.url)
+      if (!this.width) {
+        return transformImage(this.url)
+      } else {
+        return transformImage(
+          this.url,
+          `${this.width}x0/filters:quality(92):format(webp)`
+        )
+      }
     },
   },
 }
