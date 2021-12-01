@@ -140,6 +140,11 @@
   }
 }
 
+.mobile-menu__language-link--active {
+  color: var(--grey-light);
+  pointer-events: none;
+}
+
 .mobile-menu__bottom {
   display: flex;
   justify-content: space-between;

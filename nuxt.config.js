@@ -1,8 +1,10 @@
-import { fi } from './gulp-src/fonts-include.js'
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // target: 'static',
 
   server: {
     port: '3000',
@@ -25,6 +27,20 @@ export default {
         name: 'description',
         content: '',
       },
+      {
+        name: 'twitter:image',
+        content: '/twitter.jpg',
+      },
+      {
+        property: 'og:image',
+        content: '/twitter.jpg',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Igor Terekhov',
+      },
+      { hid: 'theme-color', name: 'theme-color', content: '#1E1E1E' },
     ],
     link: [
       {
@@ -32,7 +48,6 @@ export default {
         type: 'image/x-icon',
         href: '/favicon.ico',
       },
-      ...fi,
     ],
   },
 
@@ -58,7 +73,29 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-i18n',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_KEY,
+        cacheProvider: 'memory',
+      },
+    ],
+    ['@nuxtjs/dotenv', { filename: `.env.${process.env.NODE_ENV}` }],
   ],
+
+  i18n: {
+    langDir: 'locales/',
+    locales: [
+      { code: 'en', file: 'en.js', iso: 'en-US' },
+      { code: 'ru', file: 'ru.js', iso: 'ru' },
+    ],
+    defaultLocale: 'ru',
+    strategy: 'prefix_except_default',
+    // seo: true,
+    detectBrowserLanguage: false,
+    lazy: true,
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -79,10 +116,6 @@ export default {
         exclude: '/node_modules/',
         loader: 'webpack-glsl-loader',
       })
-      // config.resolve.alias['debug.addIndicators'] =
-      //   '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
-      // config.resolve.alias['animation.gsap'] =
-      //   '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
     },
   },
   // generate: { fallback: '404.html' },

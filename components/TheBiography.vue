@@ -2,31 +2,49 @@
   <section class="biography">
     <div class="center-wrap">
       <h2 class="biography__title">
-        Работы находятся в собрании Государственного Русского музея в
-        Санкт-Петербурге, частных коллекциях России, Европы, Канады, Сингапура,
-        Японии.
+        {{ bio.title }}
       </h2>
       <div class="biography__img-wrap img-wrap img-wrap--contain">
         <div>
           <vue-picture
-            url="/img/biography-img.jpg"
+            :url="bio.picture.filename"
             :class="[isHovered && 'bio-img--active']"
           />
         </div>
       </div>
-      <nuxt-link class="biography__link" to="/about">биография</nuxt-link>
+      <nuxt-link class="biography__link" :to="getLink">{{
+        bio.link_text
+      }}</nuxt-link>
     </div>
   </section>
 </template>
 
 <script>
 import VuePicture from '~/components/ThePicture.vue'
+import { getLink } from '~/scripts/utils/getLink'
 export default {
   components: { VuePicture },
+  props: {
+    bio: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
       isHovered: false,
     }
+  },
+
+  computed: {
+    getLink() {
+      return this.localePath(
+        getLink(this.bio.link)
+          .replace(`//${this.$i18n.locale}/`, '')
+          .replace('/', '')
+          .replace('/', '')
+      )
+    },
   },
 
   methods: {

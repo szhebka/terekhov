@@ -5,62 +5,37 @@
         <div class="about__header">
           <div class="about__header-left">
             <div data-a-o class="back about__back">
-              <nuxt-link class="back__link" to="/"> назад</nuxt-link>
+              <nuxt-link class="back__link" :to="localePath('index')">
+                {{ $i18n.locale === 'en' ? 'back' : 'назад' }}</nuxt-link
+              >
             </div>
             <div class="about__email">
-              <a data-a-h href="mailto:artiter@gmail.com">artiter@gmail.com</a>
+              <a data-a-h :href="`mailto:${email}`">{{ email }}</a>
             </div>
           </div>
           <div data-a-img class="about__header-right img-wrap">
             <div>
-              <vue-picture url="/img/about-img.jpg" />
+              <vue-picture :url="bioScreens.picture.filename" />
             </div>
           </div>
         </div>
         <div data-a-o class="about__wrap">
           <div class="about__wrap-left">
             <div class="about__box">
-              <h2 class="about__box-title">Терехов Игорь</h2>
+              <h2 class="about__box-title">{{ bioScreens.name_artist }}</h2>
               <div>
-                <div class="about__box-row">
-                  <div class="about__box-date"></div>
+                <div
+                  v-for="item in bioScreens.biography_items[0].items"
+                  :key="item._uid"
+                  class="about__box-row"
+                >
+                  <div
+                    class="about__box-date"
+                    v-html="replaceSpace(item.year)"
+                  />
+
                   <div class="about__box-info">
-                    Родился в 1954 г. в Екатеринбурге.
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>До</p>
-                    <p>1971 г.</p>
-                  </div>
-                  <div class="about__box-info">жил в Уфе, башкортостан</div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>с</p>
-                    <p>1972 г.</p>
-                  </div>
-                  <div class="about__box-info">
-                    живет в г. Жуковском, Московской области
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>В</p>
-                    <p>1977 г.</p>
-                  </div>
-                  <div class="about__box-info">
-                    окончил Московский Физико-технический институт по
-                    специальности инженер-физик. Живописью занимается с 1973 г.
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">
-                    <p>В</p>
-                    <p>1991 г.</p>
-                  </div>
-                  <div class="about__box-info">
-                    жил и работал в швейцарии (женева, лозанна)
+                    {{ item.description }}
                   </div>
                 </div>
               </div>
@@ -68,95 +43,34 @@
           </div>
           <div class="about__wrap-right">
             <div class="about__box">
-              <h2 class="about__box-title">Участие в выставках</h2>
+              <h2 class="about__box-title">
+                {{ bioScreens.EXHIBITIONS }}
+              </h2>
               <div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1989</div>
+                <div
+                  v-for="item in bioScreens.exhibition[0].items"
+                  :key="item._uid"
+                  class="about__box-row"
+                >
+                  <div class="about__box-date">{{ item.year }}</div>
                   <div class="about__box-info">
-                    Осенняя выставка комитета художников — графиков (Малая
-                    Грузинская 28)
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1992</div>
-                  <div class="about__box-info">
-                    Выставка объединения «Пиковая Дама» в Государственной
-                    Третьяковской галерее
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2002</div>
-                  <div class="about__box-info">
-                    «Абстракция в России. 20 век», Государственный Русский
-                    музей, Санкт-Петербург
+                    {{ item.description }}
                   </div>
                 </div>
               </div>
             </div>
             <div class="about__box">
-              <h2 class="about__box-title">Персональные выставки</h2>
+              <h2 class="about__box-title">
+                {{ bioScreens.personal_exhibitions }}
+              </h2>
               <div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1995</div>
-                  <div class="about__box-info">выставка в Доме Композитора</div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1995</div>
-                  <div class="about__box-info">
-                    «Пути. Абстракция на пороге нового века». Выставка в галерее
-                    «Нагорная» г.Москва
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">1997</div>
-                  <div class="about__box-info">
-                    «Контр-авангард» - выставка в Государственном институте
-                    искусствознания
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2005</div>
-                  <div class="about__box-info">
-                    «Чистейшая абстракция 05». Галерея «Pop/off/art».
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2005</div>
-                  <div class="about__box-info">
-                    «Actus purus». выставка в галерее «А3»
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2006</div>
-                  <div class="about__box-info">
-                    «Alabama song». Двойной портрет. Владимир Николаев - музыка.
-                    Игорь Терехов – живопись. Культурный центр «ДОМ», г. Москва
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2007</div>
-                  <div class="about__box-info">
-                    выставка в посольстве Республики Сингапур, г.Москва
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2012</div>
-                  <div class="about__box-info">
-                    выставка в Красноярском музейном центре
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2014</div>
-                  <div class="about__box-info">
-                    «Αλήθεια». выставка, галерея Товарищества живописцев МСХ
-                  </div>
-                </div>
-                <div class="about__box-row">
-                  <div class="about__box-date">2018</div>
-                  <div class="about__box-info">
-                    «Устойчивое неравновесье». выставка в выставочном павильоне
-                    «Арт-парк», г.Москва
-                  </div>
+                <div
+                  v-for="item in bioScreens.personal_exhibition[0].items"
+                  :key="item._uid"
+                  class="about__box-row"
+                >
+                  <div class="about__box-date">{{ item.year }}</div>
+                  <div class="about__box-info">{{ item.description }}</div>
                 </div>
               </div>
             </div>
@@ -164,9 +78,7 @@
         </div>
         <div class="about__text">
           <p>
-            Работы находятся в коллекциях Государственного Русского Музея
-            г.Санкт-Петербург, частных собраниях России, Германии, Швейцарии,
-            Франции, Канады, Сингапура, Японии.
+            {{ bioScreens.text }}
           </p>
         </div>
       </div>
@@ -177,52 +89,50 @@
           <div class="contact__wrap-right contact__wrap-right--mobile">
             <div class="contact__box">
               <div class="contact__box-row">
-                <div class="contact__box-title">техника</div>
+                <div class="contact__box-title">{{ footer.techique }}</div>
                 <div class="contact__box-info">
-                  <p>холст, масло</p>
+                  <p>{{ footer.techique_description }}</p>
                 </div>
               </div>
               <div class="contact__box-row">
-                <div class="contact__box-title">формат</div>
+                <div class="contact__box-title">{{ footer.formats }}</div>
                 <div class="contact__box-info">
-                  <p>от 60х50 до 200х160</p>
+                  <p>{{ footer.formats_description }}</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="contact__wrap-left">
-            <h2 class="about__box-title">контакты</h2>
+            <h2 class="about__box-title">{{ footer.contacts }}</h2>
             <p>Е</p>
-            <a class="contact__email" href="mailto:artiter@gmail.com"
-              >artiter@gmail.com</a
-            >
+            <a class="contact__email" :href="`mailto:${email}`">{{ email }}</a>
           </div>
           <div class="contact__wrap-right">
             <div class="contact__box contact__box--desktop">
               <div class="contact__box-row">
-                <div class="contact__box-title">техника</div>
+                <div class="contact__box-title">{{ footer.techique }}</div>
                 <div class="contact__box-info">
-                  <p>холст, масло</p>
+                  <p>{{ footer.techique_description }}</p>
                 </div>
               </div>
               <div class="contact__box-row">
-                <div class="contact__box-title">формат</div>
+                <div class="contact__box-title">{{ footer.formats }}</div>
                 <div class="contact__box-info">
-                  <p>от 60х50 до 200х160</p>
+                  <p>{{ footer.formats_description }}</p>
                 </div>
               </div>
             </div>
             <div class="contact__box">
               <div class="contact__box-row">
-                <div class="contact__box-title">Фото</div>
+                <div class="contact__box-title">{{ footer.photo }}</div>
                 <div class="contact__box-info">
-                  <p>Виктор Фроликов</p>
+                  <p>{{ footer.photo_description }}</p>
                 </div>
               </div>
               <div class="contact__box-row">
-                <div class="contact__box-title">дизайн</div>
+                <div class="contact__box-title">{{ footer.design }}</div>
                 <div class="contact__box-info">
-                  <p>алексей яковлев</p>
+                  <p>{{ footer.design_description }}</p>
                 </div>
               </div>
             </div>
@@ -230,27 +140,69 @@
         </div>
       </div>
     </section>
-    <footer class="footer footer--bg">
-      <div class="center-wrap">
-        <div class="footer__wrap">
-          <a class="footer__home" href="/">домой</a
-          ><a class="footer__email" href="mailto:artiter@gmail.com"
-            >artiter@gmail.com</a
-          >
-          <p class="footer__copyr">© 2021 все права защищены</p>
-        </div>
-      </div>
-    </footer>
+    <the-footer :bg="true" />
   </main>
 </template>
 
 <script>
+import TheFooter from '~/components/TheFooter.vue'
 import vuePicture from '~/components/ThePicture.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
+import aboutVue from '~/mixins/stories/about.vue'
 import transition from '~/mixins/transition.vue'
+import { getStory } from '~/scripts/utils/getStory'
 
 export default {
-  components: { vuePicture },
-  mixins: [anchorVue, transition],
+  components: { vuePicture, TheFooter },
+  mixins: [anchorVue, aboutVue, transition],
+
+  data() {
+    return {
+      email: null,
+    }
+  },
+
+  async fetch() {
+    const contactsData = await getStory(
+      this,
+      '/global/contacts',
+      this.$i18n.locale
+    )
+    this.email = contactsData.story.content.email
+  },
+
+  head() {
+    const { title, description } = this.story.content.meta[0]
+
+    return {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description,
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:title',
+          content: description,
+        },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        {
+          name: 'twitter:title',
+          content: title,
+        },
+        {
+          name: 'twitter:description',
+          content: description,
+        },
+      ],
+    }
+  },
 }
 </script>
