@@ -69,6 +69,7 @@ export default {
 
   mounted() {
     window.addEventListener('keydown', this.sliderHandler)
+    console.log(this.items)
   },
 
   beforeDestroy() {

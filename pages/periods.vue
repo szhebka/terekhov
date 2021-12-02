@@ -127,7 +127,7 @@ export default {
         return period.period_pictures.map(image => ({
           _uid: image._uid,
           img: image.big_picture.filename,
-          date: image.date || '',
+          name: image.name || '',
           size: image.size || '',
           type: image.type || '',
         }))

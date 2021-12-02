@@ -13,11 +13,6 @@ export default {
               console.log('updating')
               this.story = event.story
               this.$forceUpdate()
-              this.$nextTick(() => {
-                this.story = event.story
-                this.$forceUpdate()
-                window.location.reload(true)
-              })
             }
           } else {
             // window.location.reload(true)
