@@ -25,7 +25,7 @@
         class="slider__text sl-text"
         :class="[currentSlide === idx && 'sl-text--active']"
       >
-        <small class="sl-text__date">{{ item.date }}</small>
+        <small class="sl-text__date">{{ item.name }}</small>
         <small class="sl-text__size">{{ item.size }}</small>
         <small class="sl-text__type">{{ item.type }}</small>
       </li>
