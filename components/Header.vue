@@ -22,7 +22,9 @@
         <nuxt-link class="header__logo" :to="localePath('index')">
           Igor Terekhov
         </nuxt-link>
-        <div class="header__burger" @click="openMenu">меню</div>
+        <div class="header__burger" @click="openMenu">
+          {{ $i18n.locale === 'en' ? 'menu' : 'меню' }}
+        </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li
