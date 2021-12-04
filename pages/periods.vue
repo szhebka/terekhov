@@ -87,6 +87,12 @@ export default {
   components: { vuePicture, PeriodsSlider, TheFooter },
   mixins: [anchorVue, transition, periodsVue],
 
+  data() {
+    return {
+      sliders: [],
+    }
+  },
+
   head() {
     const { title, description } = this.story.content.meta[0]
 
@@ -133,7 +139,7 @@ export default {
         }))
       })
     },
-    sliders() {
+    slidersContent() {
       return this.periods.map((period, idx) => {
         return {
           isSliderOpen: false,
@@ -145,22 +151,33 @@ export default {
     },
   },
 
+  watch: {
+    slidersContent() {
+      this.sliders = this.slidersContent
+    },
+  },
+
+  created() {
+    this.sliders = this.slidersContent
+  },
+
   mounted() {},
 
   methods: {
     openSlider(slider = 0, idx = 0) {
       this.sliders[slider].startFrom = idx
       this.sliders[slider].isSliderOpen = true
-      this.$forceUpdate()
 
       window.ss && (window.ss.isFixed = true)
     },
     closeSlider() {
-      this.sliders.forEach(slider => {
-        slider.startFrom = 0
-        slider.isSliderOpen = false
-      })
-      this.$forceUpdate()
+      this.sliders = this.sliders.map(slider => ({
+        ...slider,
+        startFrom: 0,
+        isSliderOpen: false,
+      }))
+
+      console.log(this.sliders)
 
       window.ss && (window.ss.isFixed = false)
     },

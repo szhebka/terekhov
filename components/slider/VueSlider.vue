@@ -51,7 +51,7 @@ export default {
 
   data() {
     return {
-      currentSlide: this.current,
+      currentSlide: 0,
     }
   },
 
@@ -65,6 +65,10 @@ export default {
     current() {
       this.currentSlide = this.current
     },
+  },
+
+  created() {
+    this.currentSlide = this.current
   },
 
   mounted() {

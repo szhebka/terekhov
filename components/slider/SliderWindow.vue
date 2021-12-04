@@ -11,8 +11,8 @@
     </div>
   </div>
 </template>
-
 <script>
+// change start from to data and watch
 import VueSlider from './VueSlider.vue'
 export default {
   components: { VueSlider },
