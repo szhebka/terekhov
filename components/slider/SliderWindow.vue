@@ -34,6 +34,7 @@ export default {
       default: true,
     },
   },
+
   methods: {
     close() {
       this.$emit('close')

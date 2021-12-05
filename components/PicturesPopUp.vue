@@ -33,7 +33,6 @@ export default {
 
   methods: {
     open(idx) {
-      // console.log(idx)
       window.ss && (window.ss.isFixed = true)
       const imagesWrapper = this.$refs.images
       const images = imagesWrapper.querySelectorAll('.ppu__image-wrapper')

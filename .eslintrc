@@ -25,6 +25,7 @@
     "no-unused-vars": "warn",
     "prefer-const": "warn",
     "no-lonely-if": "off",
+    "import/no-named-as-default": "off",
     "prettier/prettier": [
       "off",
       {

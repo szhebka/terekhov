@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import VueArrowIcon from './VueArrowIcon.vue'
 export default {
   components: { VueArrowIcon },
@@ -51,7 +53,7 @@ export default {
 
   data() {
     return {
-      currentSlide: 0,
+      currentSlide: this.current,
     }
   },
 
@@ -67,12 +69,12 @@ export default {
     },
   },
 
-  created() {
-    this.currentSlide = this.current
-  },
-
   mounted() {
     window.addEventListener('keydown', this.sliderHandler)
+
+    emitter.on('resetCurrent', () => {
+      this.currentSlide = 0
+    })
   },
 
   beforeDestroy() {

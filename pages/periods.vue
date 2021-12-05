@@ -75,6 +75,8 @@
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import vuePicture from '~/components/ThePicture.vue'
 import PeriodsSlider from '~/components/slider/SliderWindow.vue'
 import anchorVue from '~/mixins/anchor-vue.vue'
@@ -177,7 +179,7 @@ export default {
         isSliderOpen: false,
       }))
 
-      console.log(this.sliders)
+      emitter.emit('resetCurrent')
 
       window.ss && (window.ss.isFixed = false)
     },

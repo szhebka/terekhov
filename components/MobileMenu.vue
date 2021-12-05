@@ -71,7 +71,14 @@
           <a class="mobile-menu__email" href="mailto:artiter@gmail.com"
             >artiter@gmail.com</a
           >
-          <p class="mobile-menu__copyr">© 2021 все права защищены</p>
+          <p class="mobile-menu__copyr">
+            © 2021
+            {{
+              $i18n.locale === 'en'
+                ? 'all rights reserved'
+                : 'все права защищены'
+            }}
+          </p>
         </div>
       </div>
     </div>

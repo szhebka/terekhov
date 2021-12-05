@@ -56,7 +56,6 @@ export default {
   },
 
   async mounted() {
-    console.log(this.story)
     await this.initImages()
   },
 
