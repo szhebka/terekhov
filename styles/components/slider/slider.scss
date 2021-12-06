@@ -9,6 +9,7 @@ $bigScreen: '1150px';
   @include media('<=#{$br1}') {
     height: calc(var(--vh) - 70px);
     margin-top: 70px;
+    width: 100%;
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div v-touch:swipe.left="next" v-touch:swipe.right="prev" class="slider">
+  <div class="slider">
     <ul class="slider__slides">
       <li
         v-for="(item, idx) in items"
@@ -36,8 +36,9 @@
 
 <script>
 import emitter from 'tiny-emitter/instance'
-
 import VueArrowIcon from './VueArrowIcon.vue'
+import swipedetect from '@/scripts/utils/swipe'
+
 export default {
   components: { VueArrowIcon },
   props: {
@@ -75,10 +76,16 @@ export default {
     emitter.on('resetCurrent', () => {
       this.currentSlide = 0
     })
+
+    this.sdDestroy = swipedetect(this.$el, swipedir => {
+      swipedir === 'left' ? this.next() : this.prev()
+    })
   },
 
   beforeDestroy() {
     window.removeEventListener('keydown', this.sliderHandler)
+
+    this.sdDestroy && this.sdDestroy()
   },
 
   methods: {

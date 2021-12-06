@@ -3,7 +3,9 @@
     <div class="center-wrap">
       <div class="slider-window__period">{{ period }}</div>
       <button class="back slider-window__close" @click="close">
-        <span class="back__link"> назад </span>
+        <span class="back__link">
+          {{ $i18n.locale === 'en' ? 'back' : 'назад' }}
+        </span>
       </button>
       <div class="slider-window__slider">
         <vue-slider :items="items" :current="startFrom" />

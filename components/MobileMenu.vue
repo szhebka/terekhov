@@ -2,7 +2,12 @@
   <div class="mobile-menu" :class="{ 'mobile-menu--active': isOpen }">
     <div class="mobile-menu__wrap">
       <div class="mobile-menu__top">
-        <a class="mobile-menu__logo" href="/">Igor Terekhov</a>
+        <nuxt-link
+          class="mobile-menu__logo"
+          :to="localePath('index')"
+          @click.native="closeMenu"
+          >Igor Terekhov</nuxt-link
+        >
         <div
           class="mobile-menu__act mobile-menu__act--close"
           @click="closeMenu"
