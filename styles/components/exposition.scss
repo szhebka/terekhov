@@ -120,6 +120,9 @@
   @media screen and (max-width: $large_mobile) {
     max-width: 38rem;
     margin-top: 0px;
+    .e-line {
+      display: block !important;
+    }
   }
 
   @media screen and (max-width: $small_mobile) {
