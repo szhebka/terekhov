@@ -1,6 +1,6 @@
 <template>
   <main data-route data-periods>
-    <section class="periods" data-preload>
+    <section class="periods">
       <div class="center-wrap">
         <div class="periods__header">
           <div data-a-o class="back">
@@ -32,6 +32,7 @@
             v-for="(period, idx) in periods"
             :id="`period-${idx + 1}`"
             :key="period._uid"
+            :data-preload="idx === 0 && true"
             class="period"
             :class="[`period-${idx + 1}`]"
           >
@@ -78,7 +79,7 @@
 import emitter from 'tiny-emitter/instance'
 
 import vuePicture from '~/components/ThePicture.vue'
-import PeriodsSlider from '~/components/slider/SliderWindow.vue'
+
 import anchorVue from '~/mixins/anchor-vue.vue'
 import transition from '~/mixins/transition.vue'
 
@@ -86,7 +87,11 @@ import periodsVue from '~/mixins/stories/periods.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: { vuePicture, PeriodsSlider, TheFooter },
+  components: {
+    vuePicture,
+    PeriodsSlider: () => import('~/components/slider/SliderWindow.vue'),
+    TheFooter,
+  },
   mixins: [anchorVue, transition, periodsVue],
 
   data() {

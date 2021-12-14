@@ -26,9 +26,13 @@ export default {
         gsap.to(rewealer, { duration: 0.5, opacity: 0 })
         gsap.to(rewealerWhite, { duration: 0.5, opacity: 0 })
 
-        imagesLoaded(document.querySelector('[data-preload]'), () => {
+        if (document.querySelector('[data-preload]')) {
+          imagesLoaded(document.querySelector('[data-preload]'), () => {
+            loadAnimation()
+          })
+        } else {
           loadAnimation()
-        })
+        }
       },
       leave(_, done) {
         window.ss && (window.ss.isFixed = true)
@@ -63,9 +67,13 @@ export default {
   watch: {
     isLoaded() {
       if (this.isLoaded) {
-        imagesLoaded(document.querySelector('[data-preload]'), () => {
+        if (document.querySelector('[data-preload]')) {
+          imagesLoaded(document.querySelector('[data-preload]'), () => {
+            loadAnimation()
+          })
+        } else {
           loadAnimation()
-        })
+        }
       }
     },
   },

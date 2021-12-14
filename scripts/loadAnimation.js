@@ -11,10 +11,6 @@ export const loadAnimation = cb => {
 
   if (!$el) return
 
-  NodeList.prototype.animation = function (options) {
-    this.length > 0 && gsap.to(this, options)
-  }
-
   callback()
 
   if ($sc && !$sc.classList.contains('sc-loaded')) {
