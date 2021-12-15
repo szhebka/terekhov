@@ -32,7 +32,6 @@
             v-for="(period, idx) in periods"
             :id="`period-${idx + 1}`"
             :key="period._uid"
-            :data-preload="idx === 0 && true"
             class="period"
             :class="[`period-${idx + 1}`]"
           >

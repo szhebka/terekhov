@@ -22,6 +22,8 @@ export default {
       const href = anchor
 
       this.$nextTick(() => {
+        window.ss.opts.friction = 1
+        document.body.style.opacity = 0
         setTimeout(() => {
           this.goToAnchor(href)
         }, 2500)
@@ -36,9 +38,12 @@ export default {
 
       const distance = endLocation - startLocation + window.innerHeight / 4
 
+      document.body.style.opacity = 1
+
       if (window.innerWidth >= 1024) {
         window.ss.state.target = distance - window.innerHeight / 2
         await delayPromise(1000)
+        window.ss.opts.friction = 0.03
       } else {
         $sc.scrollTop = distance - window.innerHeight / 2
       }
