@@ -14,15 +14,10 @@ export default {
 
     return {
       mode: 'out-in',
-      enter(el, done) {
+      enter(_, done) {
         resetScroll()
-        gsap.fromTo(
-          el,
-          { opacity: 0 },
-          { duration: 0.5, opacity: 1, onComplete: done }
-        )
 
-        gsap.to(rewealer, { duration: 0.5, opacity: 0 })
+        gsap.to(rewealer, { duration: 0.5, opacity: 0, onComplete: done })
         gsap.to(rewealerWhite, { duration: 0.5, opacity: 0 })
 
         loadAnimation()
