@@ -2,6 +2,7 @@
 import gsap from 'gsap'
 import { resetScroll } from '~/scripts/utils/resetScroll'
 import { loadAnimation } from '~/scripts/loadAnimation'
+import { anchorHandler } from '~/scripts/utils/anchorScroll'
 
 export default {
   transition() {
@@ -14,8 +15,18 @@ export default {
 
     return {
       mode: 'out-in',
-      enter(_, done) {
+      enter(el, done) {
         resetScroll()
+
+        console.log(this.$route)
+        if (this.$route.query.anchor) {
+          el.style.opacity = 0
+          const target = document.querySelector(this.$route.query.anchor)
+          anchorHandler(target, () => {
+            gsap.to(el, { duration: 0.5, opacity: 1 })
+            this.$router.replace({ query: null })
+          })
+        }
 
         gsap.to(rewealer, { duration: 0.5, opacity: 0, onComplete: done })
         gsap.to(rewealerWhite, { duration: 0.5, opacity: 0 })
