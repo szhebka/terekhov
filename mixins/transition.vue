@@ -18,14 +18,15 @@ export default {
       enter(el, done) {
         resetScroll()
 
-        console.log(this.$route)
         if (this.$route.query.anchor) {
           el.style.opacity = 0
           const target = document.querySelector(this.$route.query.anchor)
-          anchorHandler(target, () => {
-            gsap.to(el, { duration: 0.5, opacity: 1 })
-            this.$router.replace({ query: null })
-          })
+          setTimeout(() => {
+            anchorHandler(target, () => {
+              gsap.to(el, { duration: 0.5, opacity: 1 })
+              this.$router.replace({ query: null })
+            })
+          }, 1000)
         }
 
         gsap.to(rewealer, { duration: 0.5, opacity: 0, onComplete: done })

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { delayPromise } from '~/scripts/utils/delay'
+import { anchorHandler } from '~/scripts/utils/anchorScroll'
 export default {
   methods: {
     onClick(e) {
@@ -20,21 +20,9 @@ export default {
       }
       this.$router.push({ path: page, query: { anchor } })
     },
-    async goToAnchor(href) {
-      const $sc = document.querySelector('#scroll-container')
+    goToAnchor(href) {
       const target = document.querySelector(href)
-
-      const startLocation = window.pageYOffset
-      const endLocation = target.offsetTop
-
-      const distance = endLocation - startLocation + window.innerHeight / 4
-
-      if (window.innerWidth >= 1024) {
-        window.ss.state.target = distance - window.innerHeight / 2
-        await delayPromise(1000)
-      } else {
-        $sc.scrollTop = distance - window.innerHeight / 2
-      }
+      anchorHandler(target)
     },
   },
 }
