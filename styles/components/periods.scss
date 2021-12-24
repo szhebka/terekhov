@@ -222,6 +222,12 @@
   }
 }
 
+[data-wait] {
+  .period__i {
+    min-height: 200px;
+  }
+}
+
 .period__i {
   max-width: 100%;
   display: block;

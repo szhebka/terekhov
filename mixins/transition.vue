@@ -1,8 +1,14 @@
 <script>
 import gsap from 'gsap'
+import imagesloaded from 'imagesloaded'
 import { resetScroll } from '~/scripts/utils/resetScroll'
 import { loadAnimation } from '~/scripts/loadAnimation'
 import { anchorHandler } from '~/scripts/utils/anchorScroll'
+
+const onLoad = () => {
+  loadAnimation()
+  document.querySelector('[data-wait]').removeAttribute('data-wait')
+}
 
 export default {
   transition() {
@@ -21,18 +27,20 @@ export default {
         if (this.$route.query.anchor) {
           el.style.opacity = 0
           const target = document.querySelector(this.$route.query.anchor)
-          setTimeout(() => {
-            anchorHandler(target, () => {
-              gsap.to(el, { duration: 0.5, opacity: 1 })
-              this.$router.replace({ query: null })
-            })
-          }, 1000)
+          anchorHandler(target, () => {
+            gsap.to(el, { duration: 0.5, opacity: 1 })
+            this.$router.replace({ query: null })
+          })
         }
 
         gsap.to(rewealer, { duration: 0.5, opacity: 0, onComplete: done })
         gsap.to(rewealerWhite, { duration: 0.5, opacity: 0 })
 
-        loadAnimation()
+        if (document.querySelector('[data-wait]')) {
+          imagesloaded(document.querySelector('[data-wait]'), onLoad)
+        } else {
+          loadAnimation()
+        }
       },
       leave(_, done) {
         window.ss && (window.ss.isFixed = true)
@@ -67,7 +75,11 @@ export default {
   watch: {
     isLoaded() {
       if (this.isLoaded) {
-        loadAnimation()
+        if (document.querySelector('[data-wait]')) {
+          imagesloaded(document.querySelector('[data-wait]'), onLoad)
+        } else {
+          loadAnimation()
+        }
       }
     },
   },
