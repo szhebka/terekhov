@@ -18,7 +18,10 @@ export default {
         this.goToAnchor(anchor)
         return
       }
-      this.$router.push({ path: page, query: { anchor } })
+      this.$router.push({
+        path: this.localePath(page.replace('/', '')),
+        query: { anchor },
+      })
     },
     goToAnchor(href) {
       const target = document.querySelector(href)

@@ -25,7 +25,7 @@
             v-multi-ref:parent
             :data-parent-idx="idx"
             class="stage__list-row"
-            :data-anchor-href="`/periods/#period-${idx + 1}`"
+            :data-anchor-href="`periods/#period-${idx + 1}`"
           >
             <div class="stage__list-info">
               <div class="stage__list-number">№0{{ idx + 1 }}</div>
