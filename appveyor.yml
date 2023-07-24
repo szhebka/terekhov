@@ -22,7 +22,7 @@ install:
   - npm run generate
   # configure global git credentials store (https://www.appveyor.com/docs/how-to/git-push/)
   - git config --global credential.helper store
-  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:github_access_token):x-oauth-basic@github.com`n" -NoNewline
   - git config --global user.email $env:github_email
   - git config --global user.name "szhebka"
   # deploy to GitHub pages
