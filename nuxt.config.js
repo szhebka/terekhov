@@ -4,7 +4,10 @@ require('dotenv').config({
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  // target: 'static',
+  target: 'static',
+  router: {
+    base: '/szhebka/terekhov/'
+  },
 
   server: {
     port: '3000',

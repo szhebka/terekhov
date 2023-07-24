@@ -3,7 +3,7 @@ name: Publish
 on: [push, pull_request]
 
 jobs:
-  cd:
+  Build and deploy:
     runs-on: ${{ matrix.os }}
 
     strategy:
