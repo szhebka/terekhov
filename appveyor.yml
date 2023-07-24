@@ -7,6 +7,7 @@ environment:
   github_email:
     secure: 3ls/VLzUKkAJ159ttBx97K6/BgDX9X9XKmzn1mpdItE=
 
+
 # Only run on master branch
 branches:
   only:
