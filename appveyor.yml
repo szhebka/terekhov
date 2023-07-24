@@ -3,9 +3,9 @@ environment:
   nodejs_version: '16'
   # Encrypt sensitive data (https://ci.appveyor.com/tools/encrypt)
   github_access_token:
-    secure: 'I7RPeTL4c4+5bd4RlRHTpa/igM7yiYQeQM8HhsLoCHWaqJ/EZPi6kJecLSMiH43b'
+    secure: I7RPeTL4c4+5bd4RlRHTpa/igM7yiYQeQM8HhsLoCHWaqJ/EZPi6kJecLSMiH43b
   github_email:
-    secure: '3ls/VLzUKkAJ159ttBx97K6/BgDX9X9XKmzn1mpdItE='
+    secure: 3ls/VLzUKkAJ159ttBx97K6/BgDX9X9XKmzn1mpdItE=
 
 # Only run on master branch
 branches:
@@ -22,7 +22,7 @@ install:
   - npm run generate
   # configure global git credentials store (https://www.appveyor.com/docs/how-to/git-push/)
   - git config --global credential.helper store
-  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
   - git config --global user.email $env:github_email
   # deploy to GitHub pages
   - npm run deploy
