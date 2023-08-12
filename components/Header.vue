@@ -80,6 +80,9 @@ export default {
     },
 
     menuItems() {
+      if (!this.story.menu || !this.story.menu.content || !this.story.menu.content.links)
+        return [];
+
       const storyItems = this.story.menu.content.links
 
       return storyItems.map(el => ({
