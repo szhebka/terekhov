@@ -1,6 +1,4 @@
-# emotion
-
-## Build Setup
+# Build Setup
 
 ```bash
 # install dependencies
