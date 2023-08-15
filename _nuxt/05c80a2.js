@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[38],{378:function(n,t,o){"use strict";o.r(t),o.d(t,"winSizes",(function(){return e}));var e=function(){var n=window.innerHeight,t=window.innerWidth;document.body.style.setProperty("--vh","".concat(n,"px")),document.body.style.setProperty("--vw","".concat(t,"px"))}}}]);

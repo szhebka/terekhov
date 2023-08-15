@@ -1,0 +1,2 @@
+/*! For license information please see LICENSES */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[40],{376:function(A,n,o){"use strict";var e=new Promise((function(A){var image=new Image;image.onerror=function(){return A(!1)},image.onload=function(){return A(1===image.width)},image.src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA="})).catch((function(){return!1}));A.exports=e}}]);
